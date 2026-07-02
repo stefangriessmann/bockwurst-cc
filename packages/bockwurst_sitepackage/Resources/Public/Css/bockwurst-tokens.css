@@ -68,3 +68,16 @@ h1, h2, h3, .h1, .h2, .h3,
 /* Links: Cobalt, Hover Pink (Handoff: „title hover → pink") */
 a { color: var(--cobalt); }
 a:hover { color: var(--pink); }
+
+/* ---- Logo-Lockup (Wortmarke + Speichenräder + Claim) ---- */
+.bw-logo { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 1px; text-decoration: none; padding: 4px 0; }
+.bw-logo:hover { text-decoration: none; }
+.bw-wordmark { font-family: var(--ff-display); font-weight: 800; letter-spacing: -0.035em; font-size: 28px; line-height: 1; color: var(--ink); display: inline-flex; align-items: center; }
+.bw-dot { color: var(--cobalt); }
+.bw-wheels { display: inline-flex; align-items: center; }
+.bw-wheel { height: 0.8em; width: auto; display: inline-block; vertical-align: -0.17em; }
+.bw-wheel-1 { color: var(--cobalt); }
+.bw-wheel-2 { color: var(--pink); margin-left: -0.02em; }
+.bw-claim { font-family: var(--ff-mono); font-size: var(--fs-micro); text-transform: uppercase; letter-spacing: 0.14em; color: var(--mut); }
+/* Dunkler Header (falls navbar dunkel): Wortmarke weiß, Räder behalten Farbe */
+.navbar-dark .bw-wordmark, .bg-dark .bw-wordmark { color: #fff; }
