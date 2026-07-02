@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bockwurst.cc — Vorschau Desktop / Mobile</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --ink:#0C0E14; --cobalt:#2B5BFF; --pink:#FF2E86; --line:#2a2f3d; }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{ background:#14171f; color:#fff; font-family:"JetBrains Mono",monospace; display:flex; flex-direction:column; height:100vh; }
+  .bar{ display:flex; align-items:center; gap:18px; padding:14px 22px; border-bottom:1px solid var(--line); flex:none; }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:"Bricolage Grotesque"; font-weight:800; font-size:17px; letter-spacing:-.03em; }
+  .brand .t{ color:#6f93ff; }
+  .seg{ margin-left:auto; display:flex; border:1.5px solid #39405230; background:#1d2230; border-radius:999px; overflow:hidden; }
+  .seg button{ font-family:"JetBrains Mono",monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; padding:9px 18px; border:0; background:transparent; color:#aeb4c2; cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
+  .seg button.on{ background:var(--cobalt); color:#fff; }
+  .seg svg{ width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .dim{ font-size:11px; color:#6b7280; letter-spacing:.08em; }
+
+  .stage{ flex:1; overflow:auto; display:flex; justify-content:center; align-items:flex-start; padding:26px; }
+  .stage.desktop{ padding:0; }
+
+  /* desktop: fill */
+  .frame-desktop{ width:100%; height:100%; border:0; background:#fff; }
+
+  /* mobile: device */
+  .device{ width:402px; flex:none; }
+  .phone{ width:402px; height:858px; background:#0c0e14; border-radius:46px; padding:13px; box-shadow:0 30px 70px -24px rgba(0,0,0,.7); position:relative; }
+  .phone::before{ content:""; position:absolute; top:20px; left:50%; transform:translateX(-50%); width:120px; height:28px; background:#0c0e14; border-radius:0 0 16px 16px; z-index:3; }
+  .screen{ width:100%; height:100%; border-radius:34px; overflow:hidden; background:#fff; display:flex; flex-direction:column; }
+  .screen .sbar{ height:46px; flex:none; background:#fff; }
+  .screen iframe{ width:100%; flex:1; border:0; display:block; }
+  .cap{ text-align:center; margin-top:14px; font-size:11px; color:#6b7280; letter-spacing:.1em; text-transform:uppercase; }
+  .hidex{ display:none !important; }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <div class="brand">bockwurst<span class="t">.cc</span> <span class="dim" style="font-family:'JetBrains Mono'">· Event-Finder Vorschau</span></div>
+    <div class="seg">
+      <button id="bd" class="on" onclick="setView('desktop')"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Desktop</button>
+      <button id="bm" onclick="setView('mobile')"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg> Mobile</button>
+    </div>
+  </div>
+
+  <div class="stage desktop" id="stage">
+    <iframe class="frame-desktop" id="fDesk" src="relaunch.html" title="Desktop"></iframe>
+    <div class="device hidex" id="dev">
+      <div class="phone"><div class="screen"><div class="sbar"></div><iframe id="fMob" title="Mobile"></iframe></div></div>
+      <div class="cap">402 × 858 · iPhone-Größe</div>
+    </div>
+  </div>
+
+<script>
+  const stage=document.getElementById('stage'), fDesk=document.getElementById('fDesk'), dev=document.getElementById('dev'), fMob=document.getElementById('fMob');
+  function setView(v){
+    const d=v==='desktop';
+    document.getElementById('bd').classList.toggle('on',d);
+    document.getElementById('bm').classList.toggle('on',!d);
+    stage.classList.toggle('desktop',d);
+    fDesk.classList.toggle('hidex',!d);
+    dev.classList.toggle('hidex',d);
+    if(!d && !fMob.src) fMob.src='relaunch.html';
+    try{ localStorage.setItem('bwePreviewView', v); }catch(e){}
+  }
+  try{ if(localStorage.getItem('bwePreviewView')==='mobile') setView('mobile'); }catch(e){}
+</script>
+</body>
+</html>
