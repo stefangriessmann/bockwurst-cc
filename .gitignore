@@ -1,0 +1,9 @@
+/vendor/
+/var/
+/public/index.php
+/public/typo3
+/public/fileadmin/_processed_/
+/public/fileadmin/_temp_/
+/public/typo3temp/
+.DS_Store
+*.log
