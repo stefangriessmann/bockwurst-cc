@@ -10,6 +10,19 @@
 3. **TYPO3 Core Changelog** (https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/) — Features, Deprecations, Breaking Changes, neue Empfehlungen.
 4. **Core-Entwickler-Beiträge** (Benni Mack, Georg Ringer, Markus Klein, Christian Kuhn, b13) — nur **ergänzend** zur offiziellen Doku.
 
+### Weitere offene Entwickler-Quellen (ergänzend; offizielle Doku bleibt primär)
+
+> Wir bauen auf **v14 LTS** — auf `docs.typo3.org` oben rechts die Version auf **14/main** schalten. v12.4/v13.4-Beispiele sinngemäß übertragen.
+
+- **Doku (versioniert):** TYPO3 Explained (Core API) · Getting Started Tutorial · TypoScript-/TCA-/Fluid-ViewHelper-Reference · **Sitepackage-Tutorial** (zentral für unser Theme) · Changelog/Deprecation pro Version — alle frei unter `docs.typo3.org`.
+- **Learning Paths** (`typo3.community`, kostenlos): [Developer](https://typo3.community/learning-onboarding/developers) (Extbase, Fluid, Routing, Extensions) · [Integrator](https://typo3.community/learning-onboarding/integrators) (Sitepackages, TypoScript, Backend).
+- **Core-Quellcode** auf GitHub (`typo3/typo3`) + Extension-Quellen selbst — oft die beste „Doku".
+- **typo3.org Blog/News** zu Release-Features.
+- **TYPO3 Slack** (`typo3.slack.com`, kostenlos, aktive Kanäle).
+- **YouTube der TYPO3 Association** (TYPO3 Developer Days / T3CON-Talks).
+- **Agentur-Blogs** (b13, in2code, usetypo3 u. a.) — praxisnahe v12/v13/v14-Artikel.
+- Kostenpflichtig, aber gut: **Certified-Developer-Buch** (Leanpub).
+
 ## Grundsätze
 
 - Möglichst **nah am TYPO3-Core** bleiben; **Standardlösungen** vor Eigenentwicklungen.
