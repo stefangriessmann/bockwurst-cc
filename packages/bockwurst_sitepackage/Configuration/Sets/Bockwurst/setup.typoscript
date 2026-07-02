@@ -1,4 +1,6 @@
-# bockwurst.cc theme – Fonts/Tokens laden + eigenes Page-Template/Partials direkt in page.10 einhängen
+# bockwurst.cc theme – Fonts/Tokens laden + eigenes Page-Template/Partials einhängen.
+# Hinweis: greift, sobald das v14/BSP/Site-Sets page.10-Template-Rendering unser Default.html nutzt
+# (aktuell offener Blocker – erfordert Backend-TypoScript-Analyse).
 page {
     includeCSS {
         bockwurstFonts = EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-fonts.css
