@@ -16,18 +16,18 @@
 |---|-------|-----|-----|-------|-------|-----------|-----|
 | 1 | 2026-07-01 | – | – | _?_ | Event-Guide | Kachel-Rollout: Diagnose roter e2e, Scraper- + zentraler Daten-Fix (ortlose Events), Deploy staging→live, Verifikation | manuell (Schätzung nachtragen) |
 | 2 | 2026-07-02 | – | 14:20 | _?_ | TYPO3 · Planung | Setup-Plan v14 erstellt, Hosting-Auswahl (Hetzner VPS), Netlify-Ausstieg (Cloudflare Pages), Basis-Distribution geklärt | manuell (Schätzung nachtragen) |
-| 3 | 2026-07-02 | 14:20 | _läuft_ | _läuft_ | TYPO3 · Setup | Controlling angelegt; DDEV-/TYPO3-Einrichtung | auto |
+| 3 | 2026-07-02 | 14:20 | 17:34 | 3:14 | TYPO3 · Setup | DDEV + TYPO3 v14 lokal, Bootstrap Package, eigenes Theme-Sitepackage (Schriften self-hosted, Design-Tokens, Logo-SVG, eigenes Page-Template), Design-Pipeline (GitHub-Repo `bockwurst-cc` + `design/`), Governance/Controlling, Frame-Blocker-Diagnose | auto |
 
 ## Summen je Phase (h:mm)
 
 | Phase | Summe |
 |-------|-------|
-| Event-Guide | _?_ |
-| TYPO3 · Planung | _?_ |
-| TYPO3 · Setup | _läuft_ |
-| **Gesamt** | **_?_** |
+| Event-Guide | _Rückblick, offen_ |
+| TYPO3 · Planung | _Rückblick, offen_ |
+| TYPO3 · Setup | 3:14 |
+| **Gesamt (gemessen)** | **3:14** |
 
-_(Summen aktualisiere ich, sobald Dauern feststehen.)_
+_(Gemessen = live getrackte „auto"-Blöcke. Zeilen 1 & 2 sind Rückblick ohne exakte Messung. „auto" enthält Denk-/Interaktionspausen.)_
 
 ## Hinweise
 - **Modus (mit dir abgestimmt):** automatisch — getrackt wird die Zeit, während Claude arbeitet (Interaktions-/Arbeitszeit). Keine manuellen Schätzungen nötig.
