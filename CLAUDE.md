@@ -18,6 +18,23 @@
 - Erweiterungen regelmäßig aktualisieren; **Updates einfach halten**.
 - Wartbarer, nachvollziehbarer Code; TYPO3-Konventionen & Coding Guidelines.
 
+## Website-Spezifikation (übergreifendes Leitbild)
+
+Neben den TYPO3-Regeln gilt **https://specification.website/spec/** als möglichst umfassend anzuwendendes Leitbild — ein plattform-unabhängiger Standard „was eine gute Website ausmacht" (156 Themen, 10 Kategorien, jeweils **Required / Recommended / Avoid / Optional**):
+
+- **Foundations** – HTML-Grundlagen, Metadaten, Favicons, semantisches Markup
+- **SEO** – robots.txt, XML-Sitemap, Canonicals, JSON-LD (structured data), SSR
+- **Accessibility** – WCAG: Kontrast, Tastaturbedienung, Labels, Alt-Texte, Skip-Links
+- **Security** – HTTPS/TLS, CSP, HSTS, sichere Cookie-Attribute, Cross-Origin
+- **Well-Known URIs** – `/.well-known/security.txt`, change-password u. a.
+- **Agent Readiness** – stabile URLs, strukturierte Daten, `/llms.txt`, KI-robots, MCP-Discovery
+- **Performance** – Core Web Vitals, Bild-Kompression, Caching, Font-Loading, HTTP/2-3
+- **Privacy** – Datenschutzerklärung, Cookie-Consent, Global Privacy Control, respektvolle Analytics
+- **Resilience** – korrekte HTTP-Status, Offline/Service-Worker, Monitoring
+- **Internationalization** – hreflang, URL-Struktur, Locale-Formate (deckt DE/EN ab)
+
+Anwendung: bei jeder Seite/jedem Feature die relevanten Spec-Punkte mitdenken — **Required** umsetzen, **Recommended** anstreben, **Avoid** meiden. TYPO3-Doku und Spec ergänzen sich meist; bei echtem Konflikt bleibt der **TYPO3-Core-Weg** maßgeblich für das „Wie" der Umsetzung.
+
 ## Sicherheit (immer empfehlen/umsetzen)
 
 - Ausschließlich **HTTPS** (Frontend **und** Backend); aktuelle **PHP**-Version.
@@ -47,4 +64,6 @@
 - Setup-Plan & Hosting: `sport-events/docs/TYPO3-SETUP-PLAN.md`.
 - Zeit-Controlling: `CONTROLLING.md`.
 - Lokale Entwicklung: DDEV (Traditional Windows) + Docker; TYPO3 **v14 LTS**, docroot `public`.
-- **Offener Prüfpunkt (Basis-Distribution):** Bootstrap Package vs. core-nahes eigenes Sitepackage — im Licht dieser Leitlinien neu abzuwägen (siehe Setup-Plan §7).
+- **Basis-Distribution (entschieden 2026-07-02):** **Bootstrap Package** (`bk2k/bootstrap-package`, v14) + eigenes bockwurst-Theme-Sitepackage darüber. Als gepflegte Standard-Lösung (statt Eigenentwicklung) vertretbar; liefert responsives Layout-Gerüst, fertige Content-Elemente und responsives Bild-Rendering und beschleunigt die Umsetzung der Claude-Design-Vorlagen. Zusatz-Extensions nur, wo der Core keine Antwort hat.
+- **Tracking/Cookies (Stance 2026-07-02):** striktes „kein Tracking" ist bewusst **gelockert** — **wo nötig erlaubt** (z. B. Analytics, externe Embeds). Alle Cookies + Kategorien laufend in `docs/COOKIE-CONSENT-INVENTORY.md` sammeln (für die spätere Consent-Konfiguration). Consent-Werkzeug **offen**: Bootstrap-Package-eigenes cookie-consent (spart eine Extension) vs. `sg_cookie_optin` (siehe Inventar).
+- **Controlling:** `CONTROLLING.md` trackt **Zeit** und (neu) **Verbrauch/Kosten** (siehe dort, inkl. Mess-Grenze).
