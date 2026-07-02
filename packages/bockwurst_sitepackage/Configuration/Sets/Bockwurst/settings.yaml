@@ -1,8 +1,11 @@
 # bockwurst.cc Theme – Set-Settings (überschreibt Bootstrap-Package-Defaults)
 page:
   theme:
+    # Google-Font aus – Schriften self-hosted (kein Google CDN, kein Consent)
     googleFont:
       enable: false
   fluidtemplate:
-    # Eigene Page-Partials (überschreibt bootstrap_package, z. B. Header/Logo)
+    # Eigenes Page-Template (Default.html) + Partials (Header/Logo) überschreiben bootstrap_package.
+    # layoutRootPath NICHT überschrieben – unser Default.html ist self-contained.
+    templateRootPath: 'EXT:bockwurst_sitepackage/Resources/Private/Templates/Page/'
     partialRootPath: 'EXT:bockwurst_sitepackage/Resources/Private/Partials/Page/'

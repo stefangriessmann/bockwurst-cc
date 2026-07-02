@@ -1,7 +1,15 @@
-# bockwurst.cc theme – load self-hosted fonts + brand tokens after Bootstrap Package
+# bockwurst.cc theme – Fonts/Tokens laden + eigenes Page-Template/Partials direkt in page.10 einhängen
 page {
     includeCSS {
         bockwurstFonts = EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-fonts.css
         bockwurstTokens = EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tokens.css
+    }
+    10 {
+        templateRootPaths {
+            200 = EXT:bockwurst_sitepackage/Resources/Private/Templates/Page/
+        }
+        partialRootPaths {
+            200 = EXT:bockwurst_sitepackage/Resources/Private/Partials/Page/
+        }
     }
 }
