@@ -1,0 +1,6 @@
+# bockwurst.cc Theme – Set-Settings (überschreibt Bootstrap-Package-Defaults)
+page:
+  theme:
+    # Google-Font abschalten – wir hosten Bricolage/Familjen/JetBrains selbst (kein Google CDN, kein Consent)
+    googleFont:
+      enable: false

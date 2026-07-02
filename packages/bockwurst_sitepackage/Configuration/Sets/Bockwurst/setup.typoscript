@@ -1,6 +1,7 @@
-# bockwurst.cc theme – load brand tokens after Bootstrap Package
+# bockwurst.cc theme – load self-hosted fonts + brand tokens after Bootstrap Package
 page {
     includeCSS {
+        bockwurstFonts = EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-fonts.css
         bockwurstTokens = EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tokens.css
     }
 }
