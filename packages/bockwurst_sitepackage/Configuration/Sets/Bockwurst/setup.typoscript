@@ -1,0 +1,6 @@
+# bockwurst.cc theme – load brand tokens after Bootstrap Package
+page {
+    includeCSS {
+        bockwurstTokens = EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tokens.css
+    }
+}

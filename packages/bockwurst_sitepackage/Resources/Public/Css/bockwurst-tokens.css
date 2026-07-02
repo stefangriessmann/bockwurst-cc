@@ -1,0 +1,70 @@
+/* =========================================================================
+   bockwurst.cc – Design Tokens
+   Quelle: design_handoff_bockwurst/README.md (High-Fidelity-Handoff).
+   Wird NACH Bootstrap Package geladen und mappt die Marke in Bootstrap-CSS-Variablen.
+   Schriften werden im nächsten Schritt selbst gehostet (@font-face, kein Google CDN).
+   ========================================================================= */
+
+:root {
+    /* Farben – Marke */
+    --ink: #0C0E14;      /* Text, dunkle Bänder, Footer, Rahmen */
+    --bg: #FFFFFF;       /* Seitenhintergrund */
+    --soft: #F4F6F9;     /* Section-Tint / Karten-Grund */
+    --line: #E7EAF0;     /* Hairline-Rahmen */
+    --mut: #4C5363;      /* gedämpfter Sekundärtext (AA auf Weiß) */
+    --cobalt: #2B5BFF;   /* PRIMÄR – Logo, Links, Primär-Buttons, „Rad" */
+    --pink: #FF2E86;     /* Sekundär-Akzent – sparsam (Hover, Triathlon) */
+    --volt: #C7F23A;     /* Action/Signal – CTA-Highlights, Play (nie im Logo) */
+
+    /* Sport-Kategorie-Skala (funktional: Dots/Badges) */
+    --green: #13C766;    /* Laufen */
+    --cyan: #1FB6C9;     /* Schwimmen */
+    --yellow: #FBC400;   /* Kategorie / Highlight */
+
+    /* Typescale */
+    --fs-hero: clamp(34px, 5vw, 58px);
+    --fs-h2: clamp(24px, 3vw, 34px);
+    --fs-h3: 20px;
+    --fs-lead: 18px;
+    --fs-body: 16px;
+    --fs-sm: 14px;
+    --fs-label: 12px;
+    --fs-micro: 11px;
+
+    /* Schrift-Familien (Fallbacks bis Self-Hosting-@font-face steht) */
+    --ff-display: "Bricolage Grotesque", system-ui, sans-serif;
+    --ff-body: "Familjen Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --ff-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    /* Layout / Form */
+    --maxw: 1280px;      /* Event-Guide; Tour = 1080px (seitenspezifisch) */
+    --radius-card: 18px;
+    --radius-pill: 999px;
+
+    /* Schatten */
+    --card-sh: 0 1px 2px rgba(16,20,30,.05), 0 14px 28px -16px rgba(16,20,30,.16);
+    --card-sh-h: 0 2px 6px rgba(16,20,30,.07), 0 26px 46px -20px rgba(16,20,30,.30);
+
+    /* ---- Mapping in Bootstrap-5-CSS-Variablen (Re-Theme) ---- */
+    --bs-primary: var(--cobalt);
+    --bs-primary-rgb: 43, 91, 255;
+    --bs-link-color: var(--cobalt);
+    --bs-link-color-rgb: 43, 91, 255;
+    --bs-link-hover-color: var(--pink);
+    --bs-body-color: var(--ink);
+    --bs-body-bg: var(--bg);
+    --bs-body-font-family: var(--ff-body);
+    --bs-border-color: var(--line);
+    --bs-secondary-color: var(--mut);
+}
+
+/* Überschriften im Display-Font, enge Laufweite (laut Handoff) */
+h1, h2, h3, .h1, .h2, .h3,
+.frame-type-header h1, .navbar-brand {
+    font-family: var(--ff-display);
+    letter-spacing: -0.02em;
+}
+
+/* Links: Cobalt, Hover Pink (Handoff: „title hover → pink") */
+a { color: var(--cobalt); }
+a:hover { color: var(--pink); }

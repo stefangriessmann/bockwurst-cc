@@ -15,6 +15,7 @@
     },
     "require": {
         "bk2k/bootstrap-package": "^16",
+        "bockwurst/sitepackage": "@dev",
         "typo3/cms-backend": "^14.3",
         "typo3/cms-belog": "^14.3",
         "typo3/cms-beuser": "^14.3",

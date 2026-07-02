@@ -1,0 +1,4 @@
+name: bockwurst/theme
+label: 'bockwurst.cc Theme'
+dependencies:
+  - bootstrap-package/full

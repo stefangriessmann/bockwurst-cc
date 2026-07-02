@@ -1,6 +1,6 @@
 base: 'https://bockwurst-cc.ddev.site/'
 dependencies:
-  - bootstrap-package/full
+  - bockwurst/theme
 errorHandling: {  }
 languages:
   -

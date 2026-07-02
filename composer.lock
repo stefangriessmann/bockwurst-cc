@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fff2b6759c62c6915ff9ced54a75457",
+    "content-hash": "b89402e5187ab4b1cbc5ed8de6620624",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -168,6 +168,37 @@
                 }
             ],
             "time": "2025-12-02T14:57:06+00:00"
+        },
+        {
+            "name": "bockwurst/sitepackage",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/bockwurst_sitepackage",
+                "reference": "9a83651572e28fd8e80a84788f251be547432a22"
+            },
+            "require": {
+                "bk2k/bootstrap-package": "^16.0",
+                "typo3/cms-core": "^14.3"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "bockwurst_sitepackage"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bockwurst\\Sitepackage\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "bockwurst.cc theme sitepackage – bockwurst brand design on top of Bootstrap Package (TYPO3 v14).",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "christian-riesen/base32",
@@ -7834,7 +7865,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "bockwurst/sitepackage": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},
