@@ -14,7 +14,9 @@
 ## Nächster Bau-Schritt (Kern + Layout erledigt – Ausbau)
 **MSR300 fertigstellen** (Design-Feedback R1) – die noch offenen Blöcke brauchen Assets von Stefan:
 1. **Hero-Foto** (Seiten-Medium der Tour-Seite) + **Galerie-Fotos** (Upload → BSP `Gallery` + Lightbox, Captions).
-2. **Soundtrack**: Spotify-Playlist-URL → Embed mit Klick-zum-Laden (Consent; CARTO-Tiles + Spotify im Cookie-Inventar).
+2. **Consent-Tool aufsetzen** (offene Entscheidung: BSP-eigenes `cookie-consent` vs. `sg_cookie_optin`, siehe Cookie-Inventar), dann:
+   - **YouTube**: echtes Embed + Vorschau **gated über Consent** (Entscheidung 2026-07-03, ersetzt das aktuelle 2-Klick-Link-only-`bockwurst_tourvideo`-CE).
+   - **Soundtrack**: Spotify-Playlist-URL → Player-Embed, ebenfalls consent-gated.
 3. **Highlights**-Karten (BSP `Bullets`/`IconGroup`, direkt unter Hero) + echter **Bericht-Text**.
 4. **Motion** (Scroll-Reveal, `prefers-reduced-motion`), DE/EN für neue Blöcke.
 **Dann:** restliche 8 Tour-Seiten (Datendateien liegen vor; #7/#8 YT-IDs fehlen) · Touren-Übersicht/Grid (BSP `MenuCardList`) · Startseite (Design von Claude Design).
