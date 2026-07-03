@@ -86,7 +86,9 @@
     if (yax) {
       var yl = '';
       for (var e2 = floor; e2 <= ceil; e2 += 50) {
-        yl += '<span style="top:' + y(e2).toFixed(1) + 'px">' + e2 + ' m</span>';
+        // Oberstes Label (e2 == ceil) nicht nach oben clippen → translateY(0).
+        var ty = (e2 === ceil) ? '0' : '-50%';
+        yl += '<span style="top:' + y(e2).toFixed(1) + 'px;transform:translateY(' + ty + ')">' + e2 + ' m</span>';
       }
       yax.innerHTML = yl;
     }
@@ -94,10 +96,13 @@
     if (xax && total) {
       var xl = '';
       var step = total > 150 ? 50 : (total > 60 ? 20 : 10);
-      for (var km = 0; km <= total - step; km += step) {
+      // Erstes Label linksbündig (sonst ragt es links raus).
+      xl += '<span style="left:0;transform:translateX(0)">0</span>';
+      for (var km = step; km <= total - step; km += step) {
         xl += '<span style="left:' + ((km / total) * 100).toFixed(1) + '%">' + km + '</span>';
       }
-      xl += '<span style="left:100%">' + Math.round(total) + ' km</span>';
+      // Letztes Label rechtsbündig (sonst wird es rechts abgeschnitten).
+      xl += '<span style="left:100%;transform:translateX(-100%)">' + Math.round(total) + ' km</span>';
       xax.innerHTML = xl;
     }
   }
