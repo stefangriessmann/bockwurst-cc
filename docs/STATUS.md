@@ -18,7 +18,7 @@ Alternativ: **Startseite** (braucht erst Design von Claude Design).
 
 ## Wiedereinstieg – so läuft die Umgebung wieder
 - **DDEV starten:** neues Terminal → `cd C:\Users\stefan.griessmann\claude\bockwurst-cc` → `ddev start` (Container liegen auf Platte). `ddev launch typo3` öffnet das Backend.
-- **Backend-Login (lokal):** `admin` / `BockwurstDev2026!` (nur lokal; bei Verlust neu setzbar via `ddev exec vendor/bin/typo3 setup ... --admin-user-password=...`).
+- **Backend-Login (lokal):** User `admin`. **Passwort bewusst NICHT im Repo** (Repo kann öffentlich werden) — lokal separat notiert. Neu/zurücksetzen: `ddev exec vendor/bin/typo3 setup ... --admin-user-password=...`.
 - **git/gh:** `gh` unter `C:\Program Files\GitHub CLI\gh.exe`, benutzerweit eingeloggt (keyring, stefangriessmann). Push/pull laufen. Details: Memory `bockwurst-deploy-environment`.
 - **Strava-MCP:** in dieser Session verbunden (Stefan Griessmann). ⚠️ **Kann in einer neuen Session Re-Auth brauchen** — dann Strava-Connector neu verbinden, bevor Tour-Daten geholt werden.
 - **Sprache Deutsch (2026-07-03):** Site-Standardsprache (Sprache 0) = `Deutsch`/`de_DE.UTF-8` (`config/sites/main/config.yaml`, committed). Deutsche Label-Pakete liegen versioniert unter `var/labels/de` (Ignore-Ausnahme `!/var/labels`) → BE-Oberfläche ist auch auf frischem Checkout deutsch. Admin: `be_users.lang='de'` (DB, nicht versioniert – neue BE-User in den Benutzereinstellungen auf Deutsch stellen). Label-Pakete aktualisieren: `LANG/availableLocales=['de']` in `config/system/settings.php` (git-ignoriert) + `ddev exec vendor/bin/typo3 language:update de`.
