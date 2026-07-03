@@ -20,8 +20,9 @@
 | **Google Tag Manager** (via BSP `google-tag-manager`-Set) | Tag-/Tracking-Container | Statistik | ja | aktiv, aber **inert** (keine Container-ID gesetzt) | nur aktivieren, wenn Tracking wirklich gewünscht |
 | **YouTube** (Tour-Videos, Shorts) | Video-Einbettung | Externe Medien | ja | geplant | Klick-zum-Laden; `youtube-nocookie.com` |
 | **Spotify** („Sound der Tour") | Player | Externe Medien | ja | geplant | Klick-zum-Laden |
-| **Karten** (Leaflet + OSM-Tiles) | Streckenkarte, Touren-Landkarte | Funktional / Externe Medien | ja (bei externem Tile-Server) | geplant | ggf. gecachter Tile-Proxy → dann kein Drittabruf |
-| **Strava** (Embeds/API) | Streckendaten, Aktivitäten | Externe Medien | ja bei Embed; serverseitiger API-Abruf unkritisch | geplant | Tourenportal |
+| **Leaflet** (Karten-JS/CSS) | Streckenkarte | Funktional | nein | **self-hosted** (Tour-Map-CE) | v1.9.4 in `Resources/Public/Vendor/leaflet/`, kein CDN-Abruf |
+| **Karten-Tiles** (CARTO Voyager, `basemaps.cartocdn.com`) | Kartenhintergrund | Externe Medien | **ja** (externer Tile-Server) | **aktiv** (Tour-Map-CE) | Drittabruf beim Kartenrendern. TODO: Klick-zum-Laden/Consent oder gecachter Tile-Proxy → dann kein Drittabruf |
+| **Strava** (API) | Streckendaten, Stats, Höhenprofil, GPX | Externe Medien | nein (serverseitig, offline) | **aktiv** (Tourenportal) | Abruf via MCP → als `public/data/touren/<id>.json`+`.gpx` im Repo; **kein** Frontend-Drittabruf. Nur der „In Strava ansehen"-Link führt extern. |
 | **Analytics** (Tool offen) | Besucherstatistik | Statistik | ja | optional/später | GPC respektieren (Website-Spec: Privacy) |
 
 ## Pflege
