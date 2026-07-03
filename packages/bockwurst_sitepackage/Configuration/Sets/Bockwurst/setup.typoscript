@@ -15,3 +15,34 @@ page {
         }
     }
 }
+
+# ---------------------------------------------------------------------------
+# Tourenportal: eigene Content-Elemente (nah am Core, über FSC/BSP-Pipeline).
+# Templates liegen in Resources/Private/Templates/Content/, Daten kommen über
+# den TourDataProcessor aus data/touren/<strava-id>.json.
+# CSS/JS (inkl. self-hosted Leaflet) werden in den Templates per <f:asset>
+# nur dann geladen, wenn das jeweilige CE auf der Seite vorkommt.
+# ---------------------------------------------------------------------------
+lib.contentElement {
+    templateRootPaths.200 = EXT:bockwurst_sitepackage/Resources/Private/Templates/Content/
+    partialRootPaths.200 = EXT:bockwurst_sitepackage/Resources/Private/Partials/Content/
+    layoutRootPaths.200 = EXT:bockwurst_sitepackage/Resources/Private/Layouts/Content/
+}
+
+tt_content {
+    bockwurst_tourstats =< lib.contentElement
+    bockwurst_tourstats {
+        templateName = TourStats
+        dataProcessing {
+            10 = Bockwurst\Sitepackage\DataProcessing\TourDataProcessor
+        }
+    }
+
+    bockwurst_tourmap =< lib.contentElement
+    bockwurst_tourmap {
+        templateName = TourMap
+        dataProcessing {
+            10 = Bockwurst\Sitepackage\DataProcessing\TourDataProcessor
+        }
+    }
+}

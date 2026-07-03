@@ -1,0 +1,56 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>Tour-Eckdaten-CE – Stat-Leiste aus data/touren/&lt;id&gt;.json (TourDataProcessor).</f:comment>
+
+<f:asset.css identifier="bockwurst-tour" href="EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tour.css" />
+
+<f:if condition="{tour}">
+    <f:then>
+        <section class="bw-tourstats-wrap">
+            <f:if condition="{data.header}">
+                <div class="bw-seclab"><span class="bw-seclab-line"></span>{data.header}</div>
+            </f:if>
+            <div class="bw-stats">
+                <div class="bw-stat">
+                    <div class="bw-stat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M3 12l4-4M3 12l4 4M21 12l-4-4M21 12l-4 4"/></svg></div>
+                    <div class="bw-stat-v"><f:format.number decimals="0" decimalSeparator="," thousandsSeparator=".">{tour.stats.distance_km}</f:format.number><small>km</small></div>
+                    <div class="bw-stat-l">Distanz</div>
+                </div>
+                <div class="bw-stat">
+                    <div class="bw-stat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19l5-9 4 6 3-5 6 8z"/></svg></div>
+                    <div class="bw-stat-v"><f:format.number decimals="0" decimalSeparator="," thousandsSeparator=".">{tour.stats.elevation_gain_m}</f:format.number><small>hm</small></div>
+                    <div class="bw-stat-l">Höhenmeter</div>
+                </div>
+                <div class="bw-stat">
+                    <div class="bw-stat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+                    <div class="bw-stat-v">{tour.stats.moving_time_hm}<small>h</small></div>
+                    <div class="bw-stat-l">Fahrzeit</div>
+                </div>
+                <div class="bw-stat">
+                    <div class="bw-stat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12a7 7 0 0 1 14 0"/><path d="M12 12l4-2"/><path d="M5 19h14"/></svg></div>
+                    <div class="bw-stat-v"><f:format.number decimals="1" decimalSeparator="," thousandsSeparator=".">{tour.stats.avg_speed_kmh}</f:format.number><small>km/h</small></div>
+                    <div class="bw-stat-l">Ø Tempo</div>
+                </div>
+                <f:if condition="{tour.stats.avg_watts}">
+                    <f:then>
+                        <div class="bw-stat">
+                            <div class="bw-stat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+                            <div class="bw-stat-v"><f:format.number decimals="0" decimalSeparator="," thousandsSeparator=".">{tour.stats.avg_watts}</f:format.number><small>W</small></div>
+                            <div class="bw-stat-l">Ø Leistung</div>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <div class="bw-stat">
+                            <div class="bw-stat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21C7 17 4 13.5 4 9.5A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8 3.5c0 4-3 7.5-8 11.5z"/></svg></div>
+                            <div class="bw-stat-v"><f:format.number decimals="0" decimalSeparator="," thousandsSeparator=".">{tour.stats.total_calories}</f:format.number><small>kcal</small></div>
+                            <div class="bw-stat-l">Kalorien</div>
+                        </div>
+                    </f:else>
+                </f:if>
+            </div>
+        </section>
+    </f:then>
+    <f:else>
+        <p class="bw-tour-hint">Tour-Eckdaten nicht verfügbar<f:if condition="{tourError}"> – {tourError}</f:if></p>
+    </f:else>
+</f:if>
+</html>

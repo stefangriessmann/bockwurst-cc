@@ -1,0 +1,49 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>Tour-Karte + Höhenprofil-CE. Route/Höhen kommen als JSON aus dem TourDataProcessor;
+Leaflet + tour-map.js sind self-hosted und werden nur bei Vorkommen dieses CEs geladen.</f:comment>
+
+<f:asset.css identifier="bockwurst-tour" href="EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tour.css" />
+<f:asset.css identifier="leaflet" href="EXT:bockwurst_sitepackage/Resources/Public/Vendor/leaflet/leaflet.css" external="false" />
+<f:asset.script identifier="leaflet" src="EXT:bockwurst_sitepackage/Resources/Public/Vendor/leaflet/leaflet.js" priority="false" />
+<f:asset.script identifier="bockwurst-tour-map" src="EXT:bockwurst_sitepackage/Resources/Public/JavaScript/tour-map.js" priority="false" />
+
+<f:if condition="{tour.route}">
+    <f:then>
+        <section class="bw-tourmap" id="bw-tourmap-{data.uid}">
+            <f:if condition="{data.header}">
+                <div class="bw-seclab"><span class="bw-seclab-line"></span>{data.header}</div>
+            </f:if>
+
+            <script type="application/json" class="bw-tourmap-data">{tourMapDataJson -> f:format.raw()}</script>
+
+            <div class="bw-map" role="img" aria-label="Streckenkarte der Tour {tour.display_name}"></div>
+
+            <div class="bw-elev">
+                <div class="bw-elev-head">
+                    <span class="bw-elev-t">Höhenprofil</span>
+                    <span class="bw-elev-r"><f:format.number decimals="0" decimalSeparator="," thousandsSeparator=".">{tour.stats.elevation_gain_m}</f:format.number> hm · max <f:format.number decimals="0">{tour.elevation.max_m}</f:format.number> m</span>
+                </div>
+                <div class="bw-elev-plot">
+                    <div class="bw-elev-yax"></div>
+                    <svg class="bw-elev-svg" viewBox="0 0 1000 130" preserveAspectRatio="none" aria-hidden="true"></svg>
+                    <div class="bw-elev-xax"></div>
+                </div>
+            </div>
+
+            <div class="bw-tour-actions">
+                <a class="bw-btn bw-btn-sec" href="/data/touren/{tour.id}.gpx" download>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+                    <span>GPX herunterladen</span>
+                </a>
+                <a class="bw-btn bw-btn-sec" href="{tour.strava_url}" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l5 9h3M14 14l-2.5 5-2.5-5"/></svg>
+                    <span>In Strava ansehen</span>
+                </a>
+            </div>
+        </section>
+    </f:then>
+    <f:else>
+        <p class="bw-tour-hint">Streckenkarte nicht verfügbar<f:if condition="{tourError}"> – {tourError}</f:if></p>
+    </f:else>
+</f:if>
+</html>

@@ -1,0 +1,110 @@
+/* =========================================================================
+   bockwurst.cc – Tourenportal-Content-Elemente (Tour-Stats + Tour-Map)
+   Baut auf den Design-Tokens (bockwurst-tokens.css) auf. Quelle/Look:
+   design/design_handoff_bockwurst/tour-detail.html.
+   ========================================================================= */
+
+/* Section-Label (kleines Mono-Label mit Strich) ------------------------- */
+.bw-seclab {
+    font-family: var(--ff-mono);
+    font-size: var(--fs-label);
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 14px;
+}
+.bw-seclab-line { width: 26px; height: 2px; background: var(--cobalt); display: inline-block; }
+
+/* Eckdaten-Leiste ------------------------------------------------------- */
+.bw-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+.bw-stat {
+    background: #fff;
+    border: 1px solid rgba(16, 20, 30, .06);
+    border-radius: 16px;
+    box-shadow: var(--card-sh);
+    padding: 16px;
+    text-align: center;
+}
+.bw-stat-ic {
+    width: 34px;
+    height: 34px;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--soft);
+}
+.bw-stat-ic svg { width: 19px; height: 19px; fill: none; stroke: var(--cobalt); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.bw-stat-v { font-family: var(--ff-display); font-weight: 800; font-size: clamp(20px, 2.4vw, 28px); line-height: 1; color: var(--ink); }
+.bw-stat-v small { font-size: .5em; color: var(--mut); font-weight: 500; margin-left: 2px; }
+.bw-stat-l { font-family: var(--ff-mono); font-size: var(--fs-micro); letter-spacing: .08em; text-transform: uppercase; color: var(--mut); margin-top: 7px; }
+
+/* Karte ----------------------------------------------------------------- */
+.bw-tourmap { display: block; }
+.bw-map {
+    height: 420px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    box-shadow: var(--card-sh);
+    margin-top: 4px;
+    background: var(--soft);
+}
+.bw-map .leaflet-tile-pane { filter: saturate(1.05); }
+
+/* Höhenprofil ----------------------------------------------------------- */
+.bw-elev {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--card-sh);
+    padding: 18px 20px;
+    margin-top: 14px;
+}
+.bw-elev-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.bw-elev-t { font-family: var(--ff-mono); font-size: var(--fs-label); letter-spacing: .12em; text-transform: uppercase; color: var(--mut); }
+.bw-elev-r { font-family: var(--ff-mono); font-size: var(--fs-sm); color: var(--ink); }
+.bw-elev-plot { position: relative; padding-left: 42px; padding-bottom: 20px; }
+.bw-elev-svg { width: 100%; height: 130px; display: block; }
+.bw-elev-yax { position: absolute; left: 0; top: 0; width: 38px; height: 130px; }
+.bw-elev-yax span { position: absolute; right: 6px; transform: translateY(-50%); font-family: var(--ff-mono); font-size: 10px; color: var(--mut); white-space: nowrap; }
+.bw-elev-xax { position: absolute; left: 42px; right: 0; bottom: 0; height: 16px; }
+.bw-elev-xax span { position: absolute; transform: translateX(-50%); font-family: var(--ff-mono); font-size: 10px; color: var(--mut); white-space: nowrap; }
+
+/* Aktionen (GPX / Strava) ---------------------------------------------- */
+.bw-tour-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+.bw-btn {
+    font-family: var(--ff-body);
+    font-weight: 700;
+    font-size: var(--fs-body);
+    padding: 13px 22px;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--ink);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s;
+}
+.bw-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.bw-btn-sec { background: #fff; color: var(--ink); }
+.bw-btn-sec:hover { transform: translateY(-2px); box-shadow: var(--card-sh); color: var(--ink); }
+
+.bw-tour-hint { font-family: var(--ff-mono); font-size: var(--fs-sm); color: var(--mut); background: var(--soft); border: 1px dashed var(--line); border-radius: 12px; padding: 14px 18px; }
+
+/* Responsiv ------------------------------------------------------------- */
+@media (max-width: 820px) {
+    .bw-stats { grid-template-columns: repeat(2, 1fr); }
+    .bw-map { height: 320px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .bw-btn { transition: none; }
+}

@@ -6,6 +6,8 @@ nbproject
 /vendor
 /public/*
 !/public/.htaccess
+# Tourdaten (Strava): Quelle der Wahrheit im Repo, zugleich web-served unter /data/touren/
+!/public/data
 
 # Umgebungsspezifisch (Secrets: encryptionKey, DB) – nicht versionieren
 /config/system/settings.php
