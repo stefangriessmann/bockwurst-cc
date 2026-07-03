@@ -30,5 +30,5 @@ Alternativ zuerst: **Startseite** (braucht erst Design von Claude Design; Prompt
 `CLAUDE.md` (Regeln/Leitbild/Quellen) · `docs/TYPO3-SETUP-PLAN.md` · `docs/UMSETZUNGS-KONZEPT.md` (Baustein-Wiederverwendung, Strava-Pfad) · `docs/COOKIE-CONSENT-INVENTORY.md` · `CONTROLLING.md` (Zeit/Kosten).
 
 ## Offene Kleinigkeiten
-- `/cost`-Zahl fürs Kosten-Controlling nachtragen.
+- Kosten-Controlling: **Abo-Modell** → keine €-Grenzkosten pro Projekt; Verbrauch = **Kontingent-Anteil** (App → Usage). Optional als %-Schnappschuss in `CONTROLLING.md`. (`/cost` zeigt nur die jeweilige Session, nicht projektweit.)
 - Fotos fürs Tourenportal: kein Strava-MCP-Foto-Endpoint → separat (Upload).

@@ -38,14 +38,16 @@ _(Gemessen = live getrackte „auto"-Blöcke. Zeilen 1 & 2 sind Rückblick ohne 
 
 ## Verbrauch & Kosten (Claude-Nutzung)
 
-> **Mess-Grenze (ehrlich):** Ich kann meinen eigenen Token-/Kostenverbrauch aus dieser Umgebung **nicht automatisch auslesen** — es gibt hier kein Tool dafür. Verlässliche Quelle: in der interaktiven Claude-Code-CLI der Befehl **`/cost`** (Tokens + Kosten der Session) bzw. die **Anthropic-Console** (Usage-Dashboard).
-> **Vorgehen:** Am Ende einer Arbeits-Session `/cost` ausführen und mir die Zahlen nennen → ich trage sie hier ein. Ohne Angabe bleibt es offen (grobe Schätzung nur auf Wunsch, klar als solche markiert).
+> **Abo-Modell (geklärt 2026-07-03):** Auf dem aktuellen Plan fallen **keine €-Grenzkosten pro Projekt** an — die Nutzungsanzeige (App → Usage) zeigt **$0,00** und misst Verbrauch als **Anteil am Kontingent**: ein rollierendes **5h-Session-Fenster** + ein **Wochen-Limit**, nicht als Geldbetrag.
+> Ein sauberer €-Betrag **pro Projekt ist damit nicht erfassbar**. Die Werte sind zudem **maschinen-lokal + kumulativ** (nicht projekt-isoliert) → nur grobe Orientierung. Steuergröße ist der **Kontingent-Anteil**, nicht €.
 
-| # | Datum | Phase | Tokens (in/out) | Kosten | Quelle | Notiz |
-|---|-------|-------|-----------------|--------|--------|-------|
-| 1 | 2026-07-01/02 | Event-Guide + TYPO3 | _offen_ | _offen_ | `/cost` nachtragen | bisheriger Verlauf; Zahlen bei Gelegenheit aus `/cost` |
+**Kontingent-Schnappschüsse (App → Usage):**
 
-**Summe Kosten:** _offen_
+| Datum | 5h-Session-Fenster | Woche (alle Modelle) | $ (Grenzkosten) |
+|---|---|---|---|
+| 2026-07-03 ~08:25 | 13 % (Reset 12:49) | 17 % (Reset 06.07.) | $0,00 (Abo-inklusiv) |
+
+_Bei Bedarf weitere Schnappschüsse ergänzen; ein €-Posten entfällt (Abo)._
 
 ## Entscheidungen (Bezug)
 - Basis-Distribution: **Bootstrap Package** (`bk2k/bootstrap-package` ^16, v14) + eigenes bockwurst-Theme-Sitepackage darüber. Entschieden 2026-07-02.
