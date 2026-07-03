@@ -4,12 +4,13 @@ dependencies:
 errorHandling: {  }
 languages:
   -
-    title: English
+    title: Deutsch
     enabled: true
     languageId: 0
     base: /
-    locale: en_US.UTF-8
-    navigationTitle: English
-    flag: us
+    locale: de_DE.UTF-8
+    navigationTitle: Deutsch
+    flag: de
+    hreflang: de-DE
 rootPageId: 1
 routes: {  }

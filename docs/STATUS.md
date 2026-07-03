@@ -21,6 +21,7 @@ Alternativ: **Startseite** (braucht erst Design von Claude Design).
 - **Backend-Login (lokal):** `admin` / `BockwurstDev2026!` (nur lokal; bei Verlust neu setzbar via `ddev exec vendor/bin/typo3 setup ... --admin-user-password=...`).
 - **git/gh:** `gh` unter `C:\Program Files\GitHub CLI\gh.exe`, benutzerweit eingeloggt (keyring, stefangriessmann). Push/pull laufen. Details: Memory `bockwurst-deploy-environment`.
 - **Strava-MCP:** in dieser Session verbunden (Stefan Griessmann). ⚠️ **Kann in einer neuen Session Re-Auth brauchen** — dann Strava-Connector neu verbinden, bevor Tour-Daten geholt werden.
+- **Sprache Deutsch (2026-07-03):** Site-Standardsprache (Sprache 0) ist `Deutsch`/`de_DE.UTF-8` (in `config/sites/main/config.yaml`, committed). BE-Oberfläche des Admins auf Deutsch (`be_users.lang='de'`). **Auf frischer Umgebung nötig** (settings.php ist git-ignoriert): `LANG/availableLocales=['de']` in `config/system/settings.php` setzen → `ddev exec vendor/bin/typo3 language:update de` → `cache:flush`.
 
 ## Wichtige Gotchas (auch im Projektgedächtnis)
 - **Frame-Fix:** Nach `typo3 setup` erzeugte `config/sites/<id>/setup.typoscript` **löschen** — sie überschreibt sonst das Site-Set-`page`-Objekt (→ kein Rahmen). *(Bereits erledigt.)*
