@@ -18,15 +18,16 @@
 | 2 | 2026-07-02 | – | 14:20 | _?_ | TYPO3 · Planung | Setup-Plan v14 erstellt, Hosting-Auswahl (Hetzner VPS), Netlify-Ausstieg (Cloudflare Pages), Basis-Distribution geklärt | manuell (Schätzung nachtragen) |
 | 3 | 2026-07-02 | 14:20 | 17:34 | 3:14 | TYPO3 · Setup | DDEV + TYPO3 v14 lokal, Bootstrap Package, eigenes Theme-Sitepackage (Schriften self-hosted, Design-Tokens, Logo-SVG, eigenes Page-Template), Design-Pipeline (GitHub-Repo `bockwurst-cc` + `design/`), Governance/Controlling, Frame-Blocker-Diagnose | auto |
 | 4 | 2026-07-02 | ~21:15 | 21:35 | ~0:20 | TYPO3 · Setup | **Frame-Blocker gelöst**: setup-generierte `config/sites/main/setup.typoscript` entfernt → eigener Header (Logo) + Slim-Footer rendert; Doku/Memory aktualisiert. (Wall-Clock 17:34→21:35 war lange Pause – NICHT gezählt.) | auto (geschätzt) |
+| 5 | 2026-07-03 | ~08:11 | 08:22 | ~0:11 | TYPO3 · Planung | Umsetzungs-Konzept (Baustein-Wiederverwendung Core/BSP, Strava-Datenpfad via MCP validiert), Entwickler-Quellen, Kontext-Absicherung (STATUS.md + Resume-Memory + Wiedereinstiegs-Prompt). (Nacht 07-02→07-03 = Pause, nicht gezählt.) | auto |
 
 ## Summen je Phase (h:mm)
 
 | Phase | Summe |
 |-------|-------|
 | Event-Guide | _Rückblick, offen_ |
-| TYPO3 · Planung | _Rückblick, offen_ |
+| TYPO3 · Planung | ~0:11 (+ Rückblick offen) |
 | TYPO3 · Setup | ~3:34 |
-| **Gesamt (gemessen)** | **~3:34** |
+| **Gesamt (gemessen)** | **~3:45** |
 
 _(Gemessen = live getrackte „auto"-Blöcke. Zeilen 1 & 2 sind Rückblick ohne exakte Messung. „auto" enthält Denk-/Interaktionspausen.)_
 
