@@ -5,16 +5,19 @@
 ## Wo wir stehen
 - **TYPO3 v14.3.4** lokal via **DDEV**, läuft unter `https://bockwurst-cc.ddev.site/`.
 - **bockwurst-Theme** (`packages/bockwurst_sitepackage/`) auf **Bootstrap Package**: eigener **Rahmen rendert** (Header mit Logo-SVG + Slim-Footer „Kein Tracking …"), **Schriften self-hosted**, **Design-Tokens**, eigenes Page-Template.
-- **Tourenportal-Kern steht** (2026-07-03): 9 kuratierte Touren als `public/data/touren/<id>.json`+`.gpx` (Strava via MCP, res=300, downsampled). Zwei Custom-CEs im Sitepackage: **`bockwurst_tourstats`** (Eckdaten-Leiste) + **`bockwurst_tourmap`** (Leaflet-Karte + Höhenprofil-SVG). Gemeinsamer `TourDataProcessor` (DI) liest die JSON; Feld `tx_bockwurst_strava_id` an tt_content. Leaflet **self-hosted**, Assets bedingt via `f:asset`. Beispielseite **MSR300** unter `/tour-msr300` (Seite uid 2, 4 CEs) – Frontend serverseitig verifiziert (Stats/Höhenprofil-Kopf/Karten-JSON/GPX+JSON HTTP 200; alle 9 Payloads round-trip-valid).
+- **Tourenportal-Kern steht** (2026-07-03): 9 kuratierte Touren als `public/data/touren/<id>.json`+`.gpx` (Strava via MCP, res=300, downsampled). Drei Custom-CEs im Sitepackage: **`bockwurst_tourstats`** (Eckdaten), **`bockwurst_tourmap`** (Leaflet-Karte + Höhenprofil-SVG), **`bockwurst_tourvideo`** (2-Klick-YouTube, kein Embed/Consent). Gemeinsamer `TourDataProcessor` (DI) liest die JSON; Feld `tx_bockwurst_strava_id` an tt_content **und pages**. Leaflet **self-hosted**, Assets bedingt via `f:asset`.
+- **Tour-Seitenlayout** (`backend_layout` „tour" → `Tour.html`): Hero (einziges `<h1>`, Region/Datum/Flag/Schwierigkeit aus Strava, Hero-Bild aus Seiten-Medium mit Gradient-Fallback), **1080px-Spalte**, `Article`-JSON-LD, Landmarks, vertikaler Rhythmus, Prose-Maß. Beispielseite **MSR300** unter `/tour-msr300` (Seite uid 2, Layout „tour", Strava-ID als Seiteneigenschaft): Hero → Stats → Karte+Höhenprofil → Video → Bericht. Serverseitig verifiziert (1× h1, JSON-LD, 0 Exceptions).
+- **Design-Feedback R1** (`Downloads/FEEDBACK-tour-detail.md`) abgearbeitet: Bug km-/Höhen-Label gefixt; 1080-Spalte, Reihenfolge, ein h1, JSON-LD, Prose, Video-Block erledigt. **Offen (brauchen Assets):** Hero-**Foto**, Galerie-**Fotos** (Upload; kein Strava-Foto-Endpoint), **Spotify-Playlist-URL** (Embed/Klick-zum-Laden), Highlights-Texte, echter Bericht-Text; dazu Motion/Scroll-Reveal.
 - **Design-Pipeline**: Handoff + Konzepte in `design/`; Claude Design **liest** Repo, Claude Code **schreibt**. Neues Design: ZIP herunterladen → nach `design/` committen.
-- Alles auf GitHub `stefangriessmann/bockwurst-cc`, Branch **`main`** (einziger Branch). Letzter Commit: Tourenportal (`79fbea4`).
+- Alles auf GitHub `stefangriessmann/bockwurst-cc`, Branch **`main`** (einziger Branch). Repo ist **öffentlich** (für Claude-Design-Zugriff; Secrets sauber, lokales BE-PW rotiert). Letzte Commits: Tour-Layout (`d75f46b`), Video-CE (`3080440`).
 
-## Nächster Bau-Schritt (Kern erledigt – Ausbau)
-**Tourenportal ausbauen** (Details `UMSETZUNGS-KONZEPT.md` §3–5):
-1. **MSR300-Seite vervollständigen**: Fotos/Galerie (BSP `Gallery`, Upload – kein Strava-MCP-Foto-Endpoint), YouTube (`YmrZUVxX2yw`) + Spotify via BSP `ExternalMedia` (Klick-zum-Laden), Hero/Rating/Vernetzung als Theme-CSS wie im Design (`tour-detail.html`).
-2. **Restliche 8 Tour-Seiten** anlegen (IDs+YT in `sport-events/docs/TOUREN-KURATIERT.md`; #7/#8 YT-IDs fehlen noch). Datendateien liegen schon vor.
-3. **Touren-Übersicht/Grid** (BSP `MenuCardList`) auf Startseite/Portalseite.
-Alternativ: **Startseite** (braucht erst Design von Claude Design).
+## Nächster Bau-Schritt (Kern + Layout erledigt – Ausbau)
+**MSR300 fertigstellen** (Design-Feedback R1) – die noch offenen Blöcke brauchen Assets von Stefan:
+1. **Hero-Foto** (Seiten-Medium der Tour-Seite) + **Galerie-Fotos** (Upload → BSP `Gallery` + Lightbox, Captions).
+2. **Soundtrack**: Spotify-Playlist-URL → Embed mit Klick-zum-Laden (Consent; CARTO-Tiles + Spotify im Cookie-Inventar).
+3. **Highlights**-Karten (BSP `Bullets`/`IconGroup`, direkt unter Hero) + echter **Bericht-Text**.
+4. **Motion** (Scroll-Reveal, `prefers-reduced-motion`), DE/EN für neue Blöcke.
+**Dann:** restliche 8 Tour-Seiten (Datendateien liegen vor; #7/#8 YT-IDs fehlen) · Touren-Übersicht/Grid (BSP `MenuCardList`) · Startseite (Design von Claude Design).
 
 ## Wiedereinstieg – so läuft die Umgebung wieder
 - **DDEV starten:** neues Terminal → `cd C:\Users\stefan.griessmann\claude\bockwurst-cc` → `ddev start` (Container liegen auf Platte). `ddev launch typo3` öffnet das Backend.
