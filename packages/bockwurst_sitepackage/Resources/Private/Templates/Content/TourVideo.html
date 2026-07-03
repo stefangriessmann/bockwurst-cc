@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>Tour-Video-CE – 2-Klick, statisches Vorschaubild, KEIN Embed/Consent.
+YouTube-ID aus den Strava-Tourdaten; Klick öffnet YouTube extern.</f:comment>
+
+<f:asset.css identifier="bockwurst-tour" href="EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tour.css" />
+
+<f:if condition="{tour.youtube_id}">
+    <f:then>
+        <section class="bw-video-wrap">
+            <f:if condition="{data.header}">
+                <div class="bw-seclab"><span class="bw-seclab-line"></span>{data.header}</div>
+            </f:if>
+            <f:variable name="ytUrl">https://www.youtube.com/watch?v={tour.youtube_id}</f:variable>
+            <div class="bw-ytcard">
+                <a class="bw-ytthumb" href="{ytUrl}" target="_blank" rel="noopener" aria-label="Video auf YouTube ansehen (öffnet extern)">
+                    <img decoding="async" loading="lazy" src="{f:uri.resource(path: 'EXT:bockwurst_sitepackage/Resources/Public/Images/yt-preview.png')}" alt="">
+                    <span class="bw-ytscrim"></span>
+                    <span class="bw-ytplay"><i></i></span>
+                </a>
+                <div class="bw-ytbar">
+                    <div class="bw-ytmeta">
+                        <span class="bw-ytch">Stefans Rennrad Welt · YouTube</span>
+                        <span class="bw-ytt">{tour.display_name}</span>
+                    </div>
+                    <a class="bw-ytsub" href="{ytUrl}" target="_blank" rel="noopener"><span class="bw-ytpi"></span><span>Auf YouTube ansehen</span></a>
+                </div>
+            </div>
+        </section>
+    </f:then>
+    <f:else>
+        <p class="bw-tour-hint">Kein Video hinterlegt<f:if condition="{tourError}"> – {tourError}</f:if></p>
+    </f:else>
+</f:if>
+</html>

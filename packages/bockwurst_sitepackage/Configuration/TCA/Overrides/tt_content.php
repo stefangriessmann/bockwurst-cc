@@ -47,6 +47,14 @@ defined('TYPO3') or die();
         'group' => 'bockwurst',
     ]);
 
+    ExtensionManagementUtility::addTcaSelectItem($table, 'CType', [
+        'label' => 'Tour: Video (YouTube, 2-Klick)',
+        'description' => 'Statische Video-Vorschau mit Klick-zu-YouTube (kein Embed, kein Consent). YouTube-ID aus den Strava-Tourdaten.',
+        'value' => 'bockwurst_tourvideo',
+        'icon' => 'content-media',
+        'group' => 'bockwurst',
+    ]);
+
     $showitem = '--palette--;;general,'
         . 'header;Überschrift (optional),'
         . 'tx_bockwurst_strava_id,'
@@ -57,8 +65,10 @@ defined('TYPO3') or die();
 
     $GLOBALS['TCA'][$table]['types']['bockwurst_tourstats']['showitem'] = $showitem;
     $GLOBALS['TCA'][$table]['types']['bockwurst_tourmap']['showitem'] = $showitem;
+    $GLOBALS['TCA'][$table]['types']['bockwurst_tourvideo']['showitem'] = $showitem;
 
     // Typ-Icons im Backend.
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourstats'] = 'content-text';
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourmap'] = 'content-image';
+    $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourvideo'] = 'content-media';
 })();

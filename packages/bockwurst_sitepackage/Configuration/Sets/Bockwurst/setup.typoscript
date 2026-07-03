@@ -56,4 +56,12 @@ tt_content {
             10 = Bockwurst\Sitepackage\DataProcessing\TourDataProcessor
         }
     }
+
+    bockwurst_tourvideo =< lib.contentElement
+    bockwurst_tourvideo {
+        templateName = TourVideo
+        dataProcessing {
+            10 = Bockwurst\Sitepackage\DataProcessing\TourDataProcessor
+        }
+    }
 }
