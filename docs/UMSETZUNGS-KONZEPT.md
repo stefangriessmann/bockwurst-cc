@@ -63,9 +63,22 @@ Dank BSP-`MenuCardList` ist das **kein Entweder-oder und kein Extra-Bau**:
 - Weitere Seiten nach Bedarf (Über Bockwurst, 6 Points, Zwift).
 - Tour-Detailseite ist **fertig gestaltet** (tour-detail.html) ✅ – kein neuer Design-Bedarf.
 
-**Ich – zum Umsetzen:**
-- Tour-Detail-Design ✅ + Tokens ✅ vorhanden.
-- **Offene Entscheidungen an dich:**
-  1. **Redaktionsmodell bestätigen:** Seiten + Content-Elemente (empfohlen, core-nah) – ok?
-  2. **Datenquelle Karte/Höhenprofil:** v1 **GPX-Upload** je Tour (schlank, sofort) vs. **Strava-API** (mehr, automatisch – laut `TOUREN-KURATIERT.md` liefert Strava Polyline/Höhenprofil/GPX/Fotos). Empfehlung: mit GPX-Upload starten, Strava später.
-- Danach definiere ich die Felder der 2 eigenen CEs (Tour-Stats, Tour-Map) und baue sie.
+**Entschieden (2026-07-02):**
+1. **Redaktionsmodell:** Seiten + Content-Elemente ✅.
+2. **Datenquelle Karte/Höhenprofil/Stats:** **Strava (automatisch)** ✅.
+
+### Strava-Datenpfad (validiert via Strava-MCP)
+Verbunden als Stefan Griessmann. Pro kuratierter Tour (IDs aus `TOUREN-KURATIERT.md`) automatisch verfügbar:
+- **Stats** (Distanz, Höhenmeter, Dauer, Ø-/Max-Tempo, Kalorien, Kadenz) + **`reduced_polyline`** (Route) via `list_activities`.
+- **Höhenprofil + präzise Strecke + GPX** via `get_activity_streams` (`altitude`/`location`/`distance`) — **downsampled** (Resolution ~300 Punkte, sonst zu groß).
+- ⚠️ **Fotos: NICHT** über den MCP verfügbar (kein Foto-Endpoint) → Galerie separat füllen (Upload/manuell).
+
+**Architektur:** MCP-Fetch → **Datendateien** im Repo (`data/touren/<strava-id>.json` + `.gpx`) → TYPO3-CEs rendern daraus:
+- **Tour-Stats-CE** (Eckdaten-Leiste) — liest Stats.
+- **Tour-Map-CE** (Leaflet-Karte + Höhenprofil-SVG) — liest Polyline/Höhen-Stream/GPX.
+- **BSP `Gallery`** für Fotos · **BSP `ExternalMedia`** für YouTube/Spotify · **BSP `Text`** für Bericht.
+- Redakteur setzt je Tour-Seite die **Strava-Activity-ID** (+ YouTube-ID, Bericht, Fotos); der Rest kommt aus der Datendatei.
+
+**Später (optional):** eigener Strava-**OAuth-Pipeline** (GitHub Actions, wie Event-Guide-Scraper) für automatischen Refresh aller ~80 Touren. Für den Start reicht MCP-Fetch der 9 kuratierten Touren.
+
+**Nächster Bau-Schritt:** (a) Datendateien der 9 kuratierten Touren via MCP holen (downsampled), (b) Tour-Stats- + Tour-Map-CE bauen, (c) eine Beispiel-Tour-Seite zusammensetzen.
