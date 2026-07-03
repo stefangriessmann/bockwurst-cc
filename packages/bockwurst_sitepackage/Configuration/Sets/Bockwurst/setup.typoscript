@@ -13,6 +13,17 @@ page {
         partialRootPaths {
             200 = EXT:bockwurst_sitepackage/Resources/Private/Partials/Page/
         }
+        # Tour-Detailseite (backend_layout „tour" → Tour.html): Strava-Tourdaten
+        # + Hero-Bild aus dem Seiten-Medium für Template/Hero/JSON-LD bereitstellen.
+        # Für Nicht-Tour-Seiten (keine Strava-ID) liefert der Processor tour=null.
+        dataProcessing {
+            10 = Bockwurst\Sitepackage\DataProcessing\TourDataProcessor
+            20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            20 {
+                references.fieldName = media
+                as = pageMedia
+            }
+        }
     }
 }
 

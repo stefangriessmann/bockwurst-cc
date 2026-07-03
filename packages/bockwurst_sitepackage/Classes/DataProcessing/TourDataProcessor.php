@@ -30,6 +30,7 @@ final class TourDataProcessor implements DataProcessorInterface
         $processedData['tour'] = null;
         $processedData['tourError'] = null;
         $processedData['tourMapDataJson'] = '{}';
+        $processedData['tourJsonLd'] = '';
 
         if ($stravaId === '') {
             $processedData['tourError'] = 'Keine Strava-Activity-ID gesetzt.';
@@ -62,6 +63,23 @@ final class TourDataProcessor implements DataProcessorInterface
             'totalKm' => is_array($distanceKm) && $distanceKm !== [] ? end($distanceKm) : ($tour['stats']['distance_km'] ?? null),
             'elevationGain' => $tour['stats']['elevation_gain_m'] ?? null,
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?: '{}';
+
+        // Strukturierte Daten (schema.org Article) für die Tour-Detailseite.
+        $stats = $tour['stats'] ?? [];
+        $descParts = array_filter([
+            $tour['region'] ?? null,
+            isset($stats['distance_km']) ? $stats['distance_km'] . ' km' : null,
+            isset($stats['elevation_gain_m']) ? $stats['elevation_gain_m'] . ' hm' : null,
+        ]);
+        $processedData['tourJsonLd'] = json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'Article',
+            'headline' => $tour['display_name'] ?? ($tour['strava_name'] ?? ''),
+            'description' => implode(' · ', $descParts),
+            'keywords' => implode(', ', array_filter(['Rennrad', $tour['region'] ?? null, $tour['country'] ?? null])),
+            'author' => ['@type' => 'Person', 'name' => 'Stefan Grießmann'],
+            'publisher' => ['@type' => 'Organization', 'name' => 'bockwurst.cc'],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?: '';
 
         return $processedData;
     }

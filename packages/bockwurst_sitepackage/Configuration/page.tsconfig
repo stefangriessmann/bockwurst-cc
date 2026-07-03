@@ -1,0 +1,24 @@
+# Backend-Layout „Tour-Detailseite" – mappt via BSP (pagelayout → UpperCamelCase)
+# auf Resources/Private/Templates/Page/Tour.html. Eine Inhaltsspalte (colPos 0);
+# der Rahmen/Hero kommt aus dem Page-Template, nicht aus Content-Elementen.
+mod.web_layout.BackendLayouts {
+    tour {
+        title = Tour-Detailseite
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Tour-Inhalt (Highlights · Karte · Video · Soundtrack · Bericht · Galerie)
+                                colPos = 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
