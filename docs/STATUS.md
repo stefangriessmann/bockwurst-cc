@@ -11,12 +11,17 @@
 - **Design-Pipeline**: Handoff + Konzepte in `design/`; Claude Design **liest** Repo, Claude Code **schreibt**. Neues Design: ZIP herunterladen → nach `design/` committen.
 - Alles auf GitHub `stefangriessmann/bockwurst-cc`, Branch **`main`** (einziger Branch). Repo ist **öffentlich** (für Claude-Design-Zugriff; Secrets sauber, lokales BE-PW rotiert). Letzte Commits: Tour-Layout (`d75f46b`), Video-CE (`3080440`).
 
-## Nächster Bau-Schritt (Kern + Layout erledigt – Ausbau)
-**MSR300 fertigstellen** (Design-Feedback R1) – die noch offenen Blöcke brauchen Assets von Stefan:
-1. **Hero-Foto** (Seiten-Medium der Tour-Seite) + **Galerie-Fotos** (Upload → BSP `Gallery` + Lightbox, Captions).
-2. **Consent (entschieden 2026-07-04): kein Cookie-Banner.** `sg_cookie_optin` verworfen (Dateigenerierung lizenzpflichtig), **BSP-`cookie-consent` deaktiviert** (`page.theme.cookieconsent.enable: false`) — Seite setzt keine nicht-essenziellen Cookies. Externe Medien per **Click-to-Load** über gemeinsames `tour-embed.js` (`[data-embed-src]`): **YouTube ✅** (`bockwurst_tourvideo`) und **Spotify ✅** (`bockwurst_toursound`, Playlist `1WkyAbP0d3CuuYiUjaJhwf` in der Tour-JSON) — beide laden erst auf Klick, kein Drittabruf vorher. Footer-Claim „Kein Tracking/Keine Cookies" entfernt (nur „Werbefrei"); Footer als Partial (`Partials/Page/Footer.html`). Karten-Tiles (CARTO) laden weiter beim Aufruf (bewusst akzeptiert; optional später Click-to-Load/Tile-Proxy). MSR300-Reihenfolge: Hero → Stats → Karte → Video → Soundtrack → Bericht.
-3. **Highlights**-Karten (BSP `Bullets`/`IconGroup`, direkt unter Hero) + echter **Bericht-Text**.
-4. **Motion** (Scroll-Reveal, `prefers-reduced-motion`), DE/EN für neue Blöcke.
+## CE-Baukasten (Sitepackage, alle datengetrieben aus data/touren/<id>.json)
+`bockwurst_tourhighlights` (Karten km/Titel/Text) · `bockwurst_tourstats` (Eckdaten) · `bockwurst_tourmap` (Leaflet+Höhenprofil) · `bockwurst_tourvideo` (YouTube Click-to-Load) · `bockwurst_toursound` (Spotify Click-to-Load). Bericht = BSP `text`. Reihenfolge MSR300: Hero → Stats → Highlights → Karte → Video → Soundtrack → Bericht.
+
+## Consent (entschieden 2026-07-04): kein Cookie-Banner
+`sg_cookie_optin` verworfen (Dateigenerierung lizenzpflichtig), **BSP-`cookie-consent` deaktiviert** (`page.theme.cookieconsent.enable: false`) — Seite setzt keine nicht-essenziellen Cookies. Externe Medien per **Click-to-Load** (gemeinsames `tour-embed.js`, `[data-embed-src]`, lädt erst auf Klick). Footer-Claim „Kein Tracking/Keine Cookies" entfernt (nur „Werbefrei"). Karten-Tiles (CARTO) laden weiter beim Aufruf (bewusst akzeptiert; optional später Click-to-Load/Tile-Proxy).
+
+## Nächster Bau-Schritt (Design-Feedback R1 fast durch)
+**Erledigt:** km-/Höhen-Label-Fix, 1080-Spalte, Reihenfolge, ein h1, JSON-LD, Prose, Video, Soundtrack, Scroll-Reveal, **Bericht-Text** (aus Stefans Video-Beschreibung, im Bericht-CE/DB), **Highlights** (Platzhalter in der JSON, `[[…]]` von Stefan ersetzbar).
+**Offen – braucht Foto-Upload von Stefan** (Chat-Uploads landen NICHT automatisch in fileadmin):
+1. **Galerie**: 5 MSR300-Fotos nach `fileadmin/user_upload/touren/msr300/` hochladen → BSP `Gallery`-CE mit Lightbox + Captions (Vorschläge im Chat 2026-07-04).
+2. **Hero-Foto**: passendes Querformat ins **Seiten-Medium** der Tour-Seite (sonst Gradient-Fallback).
 **Dann:** restliche 8 Tour-Seiten (Datendateien liegen vor; #7/#8 YT-IDs fehlen) · Touren-Übersicht/Grid (BSP `MenuCardList`) · Startseite (Design von Claude Design).
 
 ## Wiedereinstieg – so läuft die Umgebung wieder
