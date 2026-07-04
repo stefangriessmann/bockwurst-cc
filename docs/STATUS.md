@@ -17,12 +17,16 @@
 ## Consent (entschieden 2026-07-04): kein Cookie-Banner
 `sg_cookie_optin` verworfen (Dateigenerierung lizenzpflichtig), **BSP-`cookie-consent` deaktiviert** (`page.theme.cookieconsent.enable: false`) — Seite setzt keine nicht-essenziellen Cookies. Externe Medien per **Click-to-Load** (gemeinsames `tour-embed.js`, `[data-embed-src]`, lädt erst auf Klick). Footer-Claim „Kein Tracking/Keine Cookies" entfernt (nur „Werbefrei"). Karten-Tiles (CARTO) laden weiter beim Aufruf (bewusst akzeptiert; optional später Click-to-Load/Tile-Proxy).
 
-## Nächster Bau-Schritt (Design-Feedback R1 fast durch)
-**Erledigt:** km-/Höhen-Label-Fix, 1080-Spalte, Reihenfolge, ein h1, JSON-LD, Prose, Video, Soundtrack, Scroll-Reveal, **Bericht-Text** (aus Stefans Video-Beschreibung, im Bericht-CE/DB), **Highlights** (Platzhalter in der JSON, `[[…]]` von Stefan ersetzbar).
-**Offen – braucht Foto-Upload von Stefan** (Chat-Uploads landen NICHT automatisch in fileadmin):
-1. **Galerie**: 5 MSR300-Fotos nach `fileadmin/user_upload/touren/msr300/` hochladen → BSP `Gallery`-CE mit Lightbox + Captions (Vorschläge im Chat 2026-07-04).
-2. **Hero-Foto**: passendes Querformat ins **Seiten-Medium** der Tour-Seite (sonst Gradient-Fallback).
-**Dann:** restliche 8 Tour-Seiten (Datendateien liegen vor; #7/#8 YT-IDs fehlen) · Touren-Übersicht/Grid (BSP `MenuCardList`) · Startseite (Design von Claude Design).
+## Stand: MSR300-Detailseite KOMPLETT (Design-Feedback R1 durch)
+Reihenfolge Hero(Foto IMG_3584) → Stats → Highlights → Karte+Höhenprofil → Video → Soundtrack → Bericht → Galerie(9 Fotos+Lightbox). CE-Baukasten inkl. `bockwurst_tourgallery` (Lightbox via `tour-gallery.js`, liest `gallery`-Array). Hero liest `tour.hero_image` (Fallback Seiten-Medium → Gradient).
+**Fotos:** liegen in `fileadmin/user_upload/` (IMG_35xx/36xx), **nicht in git** (`/public/*` ignoriert; Media wird beim Deploy separat synchronisiert), per direkter URL aus der JSON referenziert. Chat-Uploads landen NICHT automatisch in fileadmin → Redakteur/Stefan lädt hoch.
+**Noch von Stefan ersetzbar (Platzhalter):** Highlights-Texte (JSON `highlights`).
+
+## Nächster Bau-Schritt
+- **Restliche 8 Tour-Seiten** anlegen (Datendateien + youtube_id liegen vor; #7/#8 YT-IDs fehlen, Spotify/Highlights/Fotos je Tour optional). Muster: Seite mit backend_layout „tour" + Strava-ID als Seiteneigenschaft + die Tour-CEs.
+- **Touren-Übersicht/Grid** (BSP `MenuCardList`) auf Startseite/Portalseite.
+- **Startseite** (braucht Design von Claude Design).
+- Optional: Karten-Tiles Click-to-Load/Proxy; DE/EN-Zweitsprache.
 
 ## Wiedereinstieg – so läuft die Umgebung wieder
 - **DDEV starten:** neues Terminal → `cd C:\Users\stefan.griessmann\claude\bockwurst-cc` → `ddev start` (Container liegen auf Platte). `ddev launch typo3` öffnet das Backend.
