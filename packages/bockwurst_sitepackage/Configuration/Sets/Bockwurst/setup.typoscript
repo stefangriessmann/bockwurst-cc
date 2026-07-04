@@ -41,6 +41,14 @@ lib.contentElement {
 }
 
 tt_content {
+    bockwurst_tourhighlights =< lib.contentElement
+    bockwurst_tourhighlights {
+        templateName = TourHighlights
+        dataProcessing {
+            10 = Bockwurst\Sitepackage\DataProcessing\TourDataProcessor
+        }
+    }
+
     bockwurst_tourstats =< lib.contentElement
     bockwurst_tourstats {
         templateName = TourStats

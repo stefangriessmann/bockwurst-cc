@@ -32,6 +32,14 @@ defined('TYPO3') or die();
     // Zwei Content-Element-Typen registrieren.
     // ------------------------------------------------------------------
     ExtensionManagementUtility::addTcaSelectItem($table, 'CType', [
+        'label' => 'Tour: Highlights entlang der Strecke',
+        'description' => 'Karten mit km-Marke, Titel und Kurztext (aus der Tour-JSON, Feld „highlights"). Direkt unter dem Hero.',
+        'value' => 'bockwurst_tourhighlights',
+        'icon' => 'content-bullets',
+        'group' => 'bockwurst',
+    ]);
+
+    ExtensionManagementUtility::addTcaSelectItem($table, 'CType', [
         'label' => 'Tour: Eckdaten (Strava)',
         'description' => 'Stat-Leiste: Distanz, Höhenmeter, Fahrzeit, Ø-Tempo, Leistung – automatisch aus den Strava-Daten.',
         'value' => 'bockwurst_tourstats',
@@ -71,12 +79,14 @@ defined('TYPO3') or die();
         . '--div--;Zugriff,'
         . '--palette--;;hidden,--palette--;;access';
 
+    $GLOBALS['TCA'][$table]['types']['bockwurst_tourhighlights']['showitem'] = $showitem;
     $GLOBALS['TCA'][$table]['types']['bockwurst_tourstats']['showitem'] = $showitem;
     $GLOBALS['TCA'][$table]['types']['bockwurst_tourmap']['showitem'] = $showitem;
     $GLOBALS['TCA'][$table]['types']['bockwurst_tourvideo']['showitem'] = $showitem;
     $GLOBALS['TCA'][$table]['types']['bockwurst_toursound']['showitem'] = $showitem;
 
     // Typ-Icons im Backend.
+    $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourhighlights'] = 'content-bullets';
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourstats'] = 'content-text';
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourmap'] = 'content-image';
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourvideo'] = 'content-media';
