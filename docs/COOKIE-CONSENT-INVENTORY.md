@@ -4,10 +4,10 @@
 > Kategorien nach `sport-events/docs/DSGVO-COOKIE-CONSENT-KONZEPT.md`: **Notwendig · Funktional · Externe Medien · Statistik**.
 > Stance (2026-07-02): „kein Tracking" gelockert — **wo nötig erlaubt**; Consent regelt die Freigabe.
 
-## Consent-Werkzeug (offene Entscheidung)
-- **Option A – Bootstrap-Package-eigenes `cookie-consent`** (ist über das `full`-Set schon aktiv): spart eine zusätzliche Extension → näher an „möglichst wenige Extensions".
-- **Option B – `sg_cookie_optin`** (sgalinski, v14 ✅): mächtiger, In-House-Erfahrung (FutureSax), Klick-zum-Laden, Einwilligungs-Hash als Nachweis.
-- → später entscheiden, sobald der Umfang externer Dienste feststeht.
+## Consent-Werkzeug (entschieden 2026-07-04)
+- **✅ Bootstrap-Package-eigenes `cookie-consent`** (im `full`-Set schon aktiv, `page.theme.cookieconsent.enable`). Kostenlos, keine Zusatz-Extension → näher an „möglichst wenige Extensions". Einfacher Hinweis-Banner (Insites/Osano), setzt einen `cookieconsent_status`-Cookie (notwendig).
+- **Verworfen: `sg_cookie_optin`** (sgalinski) — die für Banner/iframe-Blockade **nötige Dateigenerierung ist ohne Lizenzschlüssel deaktiviert** (Freemium). Für ein Hobbyprojekt nicht verhältnismäßig; wieder deinstalliert.
+- **Konsequenz:** BSP-cookie-consent blockt iframes **nicht** automatisch. Externe Medien (YouTube/Spotify) daher per **Click-to-Load** (2-Klick, lädt erst auf Nutzerklick) — technisch die Einwilligung, ohne granularen Opt-in-Manager.
 
 ## Inventar
 
@@ -15,11 +15,11 @@
 |---|---|---|---|---|---|
 | `fe_typo_user` (TYPO3) | Frontend-Session (nur bei Login/Formular) | Notwendig | nein | aktiv (Core) | Session-Cookie |
 | `be_typo_user` (TYPO3) | Backend-Session (Redaktion) | Notwendig | nein | aktiv (Core) | nur Backend |
-| Consent-Speicherung | merkt die Einwilligungs-Entscheidung | Notwendig | nein | geplant | vom Consent-Tool selbst |
+| `cookieconsent_status` (BSP cookie-consent) | merkt die Banner-Entscheidung | Notwendig | nein | **aktiv** (BSP full) | vom BSP-cookie-consent-Banner |
 | **Google Fonts** (via BSP `google-font`-Set) | Web-Schriften | Externe Medien | ja | aktiv (BSP full) | **ersetzen durch selbst gehostete Schriften** (Event-Guide-Prinzip) → dann kein Consent |
 | **Google Tag Manager** (via BSP `google-tag-manager`-Set) | Tag-/Tracking-Container | Statistik | ja | aktiv, aber **inert** (keine Container-ID gesetzt) | nur aktivieren, wenn Tracking wirklich gewünscht |
-| **YouTube** (Tour-Videos, Shorts) | Video-Einbettung | Externe Medien | ja | **entschieden 2026-07-03: echtes Embed + Consent** | Vorschau/Player direkt einbetten (statt „2-Klick, kein Embed"), freigeschaltet über den Cookie-Consent. `youtube-nocookie.com`. → aktuelles `bockwurst_tourvideo`-CE (Link-only) wird auf consent-gated Embed umgestellt, sobald das Consent-Tool steht. |
-| **Spotify** („Sound der Tour") | Player | Externe Medien | ja | geplant (analog YouTube: Embed + Consent) | Player-Embed, freigeschaltet über Cookie-Consent |
+| **YouTube** (Tour-Videos) | Video-Einbettung | Externe Medien | ja | **aktiv: Click-to-Load** (`bockwurst_tourvideo`-CE) | `youtube-nocookie.com`-Embed lädt **erst auf Nutzerklick** (in-place, autoplay). Vor dem Klick **kein** Drittabruf (Quelltext ohne iframe). Ohne JS: Link öffnet YouTube extern. |
+| **Spotify** („Sound der Tour") | Player | Externe Medien | ja | geplant (analog: Click-to-Load) | Player-Embed erst auf Klick; Playlist-URL von Stefan ausstehend |
 | **Leaflet** (Karten-JS/CSS) | Streckenkarte | Funktional | nein | **self-hosted** (Tour-Map-CE) | v1.9.4 in `Resources/Public/Vendor/leaflet/`, kein CDN-Abruf |
 | **Karten-Tiles** (CARTO Voyager, `basemaps.cartocdn.com`) | Kartenhintergrund | Externe Medien | **ja** (externer Tile-Server) | **aktiv** (Tour-Map-CE) | Drittabruf beim Kartenrendern. TODO: Klick-zum-Laden/Consent oder gecachter Tile-Proxy → dann kein Drittabruf |
 | **Strava** (API) | Streckendaten, Stats, Höhenprofil, GPX | Externe Medien | nein (serverseitig, offline) | **aktiv** (Tourenportal) | Abruf via MCP → als `public/data/touren/<id>.json`+`.gpx` im Repo; **kein** Frontend-Drittabruf. Nur der „In Strava ansehen"-Link führt extern. |
