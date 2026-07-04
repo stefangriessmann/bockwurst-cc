@@ -14,9 +14,7 @@
 ## Nächster Bau-Schritt (Kern + Layout erledigt – Ausbau)
 **MSR300 fertigstellen** (Design-Feedback R1) – die noch offenen Blöcke brauchen Assets von Stefan:
 1. **Hero-Foto** (Seiten-Medium der Tour-Seite) + **Galerie-Fotos** (Upload → BSP `Gallery` + Lightbox, Captions).
-2. **Consent-Tool aufsetzen** (offene Entscheidung: BSP-eigenes `cookie-consent` vs. `sg_cookie_optin`, siehe Cookie-Inventar), dann:
-   - **YouTube**: echtes Embed + Vorschau **gated über Consent** (Entscheidung 2026-07-03, ersetzt das aktuelle 2-Klick-Link-only-`bockwurst_tourvideo`-CE).
-   - **Soundtrack**: Spotify-Playlist-URL → Player-Embed, ebenfalls consent-gated.
+2. **Consent = `sg_cookie_optin`** (entschieden 2026-07-04, installiert 8.0.3 + `typo3/cms-scheduler` als harte Abhängigkeit; Static-FE-TS im Theme-Set eingebunden → iframe-Blocker aktiv, sobald Optin generiert). **Offen (BE-Modul, braucht Browser):** im Modul „Cookie Opt-In" auf dem Root (Home, uid 1) eine Optin-Konfiguration anlegen (Gruppe „Externe Medien"/iframe-Schutz aktiv, DE-Texte, Datenschutz-Link) → speichern/generieren (CLI-Alt.: `sg_cookie_optin:generate_static_files 1`). **Danach** (Blocker live) Video-CE auf `youtube-nocookie`-Embed umstellen + Spotify-Playlist-Embed ergänzen. ⚠️ Bis dahin bleibt das Video-CE bewusst Link-only (kein fail-open-Leak).
 3. **Highlights**-Karten (BSP `Bullets`/`IconGroup`, direkt unter Hero) + echter **Bericht-Text**.
 4. **Motion** (Scroll-Reveal, `prefers-reduced-motion`), DE/EN für neue Blöcke.
 **Dann:** restliche 8 Tour-Seiten (Datendateien liegen vor; #7/#8 YT-IDs fehlen) · Touren-Übersicht/Grid (BSP `MenuCardList`) · Startseite (Design von Claude Design).
