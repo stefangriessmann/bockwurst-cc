@@ -4,7 +4,7 @@ youtube-nocookie-Embed in-place (nichts lädt zu YouTube vor dem Klick = Zustimm
 Ohne JS öffnet der Link YouTube extern (Fallback). YouTube-ID aus den Strava-Daten.</f:comment>
 
 <f:asset.css identifier="bockwurst-tour" href="EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tour.css" />
-<f:asset.script identifier="bockwurst-tour-video" src="EXT:bockwurst_sitepackage/Resources/Public/JavaScript/tour-video.js" priority="false" />
+<f:asset.script identifier="bockwurst-tour-embed" src="EXT:bockwurst_sitepackage/Resources/Public/JavaScript/tour-embed.js" priority="false" />
 
 <f:if condition="{tour.youtube_id}">
     <f:then>
@@ -13,8 +13,9 @@ Ohne JS öffnet der Link YouTube extern (Fallback). YouTube-ID aus den Strava-Da
                 <div class="bw-seclab"><span class="bw-seclab-line"></span>{data.header}</div>
             </f:if>
             <f:variable name="ytUrl">https://www.youtube.com/watch?v={tour.youtube_id}</f:variable>
+            <f:variable name="ytEmbed">https://www.youtube-nocookie.com/embed/{tour.youtube_id}?autoplay=1</f:variable>
             <div class="bw-ytcard">
-                <a class="bw-ytthumb" href="{ytUrl}" target="_blank" rel="noopener" data-yt="{tour.youtube_id}" data-title="{tour.display_name}" aria-label="Video laden und abspielen (lädt YouTube; ohne JavaScript öffnet es YouTube extern)">
+                <a class="bw-ytthumb" href="{ytUrl}" target="_blank" rel="noopener" data-embed-src="{ytEmbed}" data-embed-title="{tour.display_name}" aria-label="Video laden und abspielen (lädt YouTube; ohne JavaScript öffnet es YouTube extern)">
                     <img decoding="async" loading="lazy" src="{f:uri.resource(path: 'EXT:bockwurst_sitepackage/Resources/Public/Images/yt-preview.png')}" alt="">
                     <span class="bw-ytscrim"></span>
                     <span class="bw-ytplay"><i></i></span>

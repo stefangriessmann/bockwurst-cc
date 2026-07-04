@@ -64,4 +64,12 @@ tt_content {
             10 = Bockwurst\Sitepackage\DataProcessing\TourDataProcessor
         }
     }
+
+    bockwurst_toursound =< lib.contentElement
+    bockwurst_toursound {
+        templateName = TourSound
+        dataProcessing {
+            10 = Bockwurst\Sitepackage\DataProcessing\TourDataProcessor
+        }
+    }
 }

@@ -48,10 +48,18 @@ defined('TYPO3') or die();
     ]);
 
     ExtensionManagementUtility::addTcaSelectItem($table, 'CType', [
-        'label' => 'Tour: Video (YouTube, 2-Klick)',
-        'description' => 'Statische Video-Vorschau mit Klick-zu-YouTube (kein Embed, kein Consent). YouTube-ID aus den Strava-Tourdaten.',
+        'label' => 'Tour: Video (YouTube, Click-to-Load)',
+        'description' => 'Video-Vorschau; lädt das youtube-nocookie-Embed erst auf Klick (kein Drittabruf vorher). YouTube-ID aus den Strava-Tourdaten.',
         'value' => 'bockwurst_tourvideo',
         'icon' => 'content-media',
+        'group' => 'bockwurst',
+    ]);
+
+    ExtensionManagementUtility::addTcaSelectItem($table, 'CType', [
+        'label' => 'Tour: Soundtrack (Spotify, Click-to-Load)',
+        'description' => 'Soundtrack-Karte; lädt den Spotify-Player erst auf Klick (kein Drittabruf vorher). Playlist-ID aus den Tourdaten.',
+        'value' => 'bockwurst_toursound',
+        'icon' => 'content-audio',
         'group' => 'bockwurst',
     ]);
 
@@ -66,9 +74,11 @@ defined('TYPO3') or die();
     $GLOBALS['TCA'][$table]['types']['bockwurst_tourstats']['showitem'] = $showitem;
     $GLOBALS['TCA'][$table]['types']['bockwurst_tourmap']['showitem'] = $showitem;
     $GLOBALS['TCA'][$table]['types']['bockwurst_tourvideo']['showitem'] = $showitem;
+    $GLOBALS['TCA'][$table]['types']['bockwurst_toursound']['showitem'] = $showitem;
 
     // Typ-Icons im Backend.
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourstats'] = 'content-text';
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourmap'] = 'content-image';
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourvideo'] = 'content-media';
+    $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_toursound'] = 'content-audio';
 })();

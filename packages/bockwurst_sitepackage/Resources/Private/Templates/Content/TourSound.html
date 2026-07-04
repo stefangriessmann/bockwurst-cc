@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>Tour-Soundtrack-CE – Click-to-Load Spotify-Player. Vorschau-Karte, auf Klick
+lädt das Spotify-Embed in-place (nichts an Spotify vor dem Klick = Einwilligung).
+Ohne JS öffnet der Link Spotify extern. Playlist-ID aus den Tourdaten.</f:comment>
+
+<f:asset.css identifier="bockwurst-tour" href="EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tour.css" />
+<f:asset.script identifier="bockwurst-tour-embed" src="EXT:bockwurst_sitepackage/Resources/Public/JavaScript/tour-embed.js" priority="false" />
+
+<f:if condition="{tour.spotify_playlist}">
+    <f:then>
+        <section class="bw-sound-wrap">
+            <f:if condition="{data.header}">
+                <div class="bw-seclab"><span class="bw-seclab-line"></span>{data.header}</div>
+            </f:if>
+            <f:variable name="spUrl">https://open.spotify.com/playlist/{tour.spotify_playlist}</f:variable>
+            <f:variable name="spEmbed">https://open.spotify.com/embed/playlist/{tour.spotify_playlist}?utm_source=generator</f:variable>
+            <a class="bw-soundcard" href="{spUrl}" target="_blank" rel="noopener"
+               data-embed-src="{spEmbed}" data-embed-height="352" data-embed-title="Spotify-Playlist zur Tour">
+                <span class="bw-sc-ic">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M7 9.5c3.5-1 7-.5 10 1.2M7.5 13c3-.8 5.8-.3 8 1M8 16c2.3-.6 4.3-.3 6 .8"/></svg>
+                </span>
+                <span class="bw-sc-body">
+                    <span class="bw-sc-k">Spotify-Playlist</span>
+                    <span class="bw-sc-t">Soundtrack der Tour</span>
+                    <span class="bw-sc-tr">Erst mit Klick wird der Player von Spotify geladen.</span>
+                </span>
+                <span class="bw-sc-cta"><span class="bw-sc-cta-i"><i></i></span><span>Player laden</span></span>
+            </a>
+        </section>
+    </f:then>
+    <f:else>
+        <p class="bw-tour-hint">Kein Soundtrack hinterlegt<f:if condition="{tourError}"> – {tourError}</f:if></p>
+    </f:else>
+</f:if>
+</html>
