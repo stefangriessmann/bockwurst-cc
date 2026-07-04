@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61e13c28f16469ad9284c01c91fc17d6",
+    "content-hash": "b89402e5187ab4b1cbc5ed8de6620624",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2400,42 +2400,6 @@
                 "source": "https://github.com/scssphp/scssphp/tree/v1.13.0"
             },
             "time": "2024-08-17T21:02:11+00:00"
-        },
-        {
-            "name": "sgalinski/sg-cookie-optin",
-            "version": "8.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.sgalinski.de/typo3/sg_cookie_optin.git",
-                "reference": "90972eb2545f27e2007a4872bddae094cd18605d"
-            },
-            "require": {
-                "typo3/cms-core": "^13.4 || ^14.0"
-            },
-            "replace": {
-                "sgalinski/sg_cookie_optin": "self.version"
-            },
-            "type": "typo3-cms-extension",
-            "extra": {
-                "typo3/cms": {
-                    "extension-key": "sg_cookie_optin"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SGalinski\\SgCookieOptin\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Elevate your TYPO3 website with our premier Cookie Consent Solution, placing consent at the forefront! Our highly customizable solution not only offers essential tag manager options, but seamlessly integrates the latest Google Consent Mode v2 and more. Ensure compliance and user trust with our robust consent framework. Explore all the features and benefits on our website: https://www.sgalinski.de/en/typo3-products-web-development/cookie-optin-for-typo3/.",
-            "homepage": "https://www.sgalinski.de",
-            "support": {
-                "issues": "https://gitlab.sgalinski.de/typo3/sg_cookie_optin"
-            },
-            "time": "2026-06-10T15:16:20+00:00"
         },
         {
             "name": "symfony/cache",
@@ -7362,70 +7326,6 @@
             "support": {
                 "chat": "https://typo3.community/meet/slack/",
                 "docs": "https://docs.typo3.org/c/typo3/cms-rte-ckeditor/main/en-us/",
-                "forum": "https://talk.typo3.org/",
-                "issues": "https://forge.typo3.org/issues/",
-                "rss": "https://news.typo3.com/rss/",
-                "security": "https://typo3.org/security/",
-                "source": "https://github.com/TYPO3/typo3/"
-            },
-            "funding": [
-                {
-                    "url": "https://typo3.org/membership",
-                    "type": "membership"
-                }
-            ],
-            "time": "2026-06-16T08:52:34+00:00"
-        },
-        {
-            "name": "typo3/cms-scheduler",
-            "version": "v14.3.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TYPO3-CMS/scheduler.git",
-                "reference": "b5cb0dfbd2e52fc6903cc9e695d7536e55489321"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/scheduler/zipball/b5cb0dfbd2e52fc6903cc9e695d7536e55489321",
-                "reference": "b5cb0dfbd2e52fc6903cc9e695d7536e55489321",
-                "shasum": ""
-            },
-            "require": {
-                "typo3/cms-core": "14.3.4"
-            },
-            "conflict": {
-                "typo3/cms": "*"
-            },
-            "type": "typo3-cms-framework",
-            "extra": {
-                "typo3/cms": {
-                    "extension-key": "scheduler"
-                },
-                "branch-alias": {
-                    "dev-main": "14.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TYPO3\\CMS\\Scheduler\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "TYPO3 Core Team",
-                    "email": "typo3cms@typo3.org",
-                    "role": "Developer"
-                }
-            ],
-            "description": "TYPO3 CMS Scheduler - Schedule tasks to run once or periodically at a specific time.",
-            "homepage": "https://typo3.community/",
-            "support": {
-                "chat": "https://typo3.community/meet/slack/",
-                "docs": "https://docs.typo3.org/c/typo3/cms-scheduler/main/en-us/",
                 "forum": "https://talk.typo3.org/",
                 "issues": "https://forge.typo3.org/issues/",
                 "rss": "https://news.typo3.com/rss/",

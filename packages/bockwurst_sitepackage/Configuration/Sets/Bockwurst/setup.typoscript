@@ -1,8 +1,3 @@
-# sg_cookie_optin: Static-Setup einbinden (lädt Consent-JS/CSS via page.headerData;
-# aktiviert die automatische iframe-/externe-Medien-Blockade). Wirkt erst sichtbar,
-# sobald im BE-Modul eine Optin-Konfiguration angelegt+generiert wurde.
-@import 'EXT:sg_cookie_optin/Configuration/TypoScript/Frontend/setup.typoscript'
-
 # bockwurst.cc theme – Fonts/Tokens laden + eigenes Page-Template/Partials einhängen.
 # Hinweis: greift, sobald das v14/BSP/Site-Sets page.10-Template-Rendering unser Default.html nutzt
 # (aktuell offener Blocker – erfordert Backend-TypoScript-Analyse).
