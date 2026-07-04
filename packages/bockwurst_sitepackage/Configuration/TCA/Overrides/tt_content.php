@@ -71,6 +71,14 @@ defined('TYPO3') or die();
         'group' => 'bockwurst',
     ]);
 
+    ExtensionManagementUtility::addTcaSelectItem($table, 'CType', [
+        'label' => 'Tour: Galerie (Fotos + Lightbox)',
+        'description' => 'Bildergalerie mit Lightbox und Bildunterschriften (aus der Tour-JSON, Feld „gallery"). Fotos liegen in fileadmin.',
+        'value' => 'bockwurst_tourgallery',
+        'icon' => 'content-image',
+        'group' => 'bockwurst',
+    ]);
+
     $showitem = '--palette--;;general,'
         . 'header;Überschrift (optional),'
         . 'tx_bockwurst_strava_id,'
@@ -84,6 +92,7 @@ defined('TYPO3') or die();
     $GLOBALS['TCA'][$table]['types']['bockwurst_tourmap']['showitem'] = $showitem;
     $GLOBALS['TCA'][$table]['types']['bockwurst_tourvideo']['showitem'] = $showitem;
     $GLOBALS['TCA'][$table]['types']['bockwurst_toursound']['showitem'] = $showitem;
+    $GLOBALS['TCA'][$table]['types']['bockwurst_tourgallery']['showitem'] = $showitem;
 
     // Typ-Icons im Backend.
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourhighlights'] = 'content-bullets';
@@ -91,4 +100,5 @@ defined('TYPO3') or die();
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourmap'] = 'content-image';
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourvideo'] = 'content-media';
     $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_toursound'] = 'content-audio';
+    $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes']['bockwurst_tourgallery'] = 'content-image';
 })();

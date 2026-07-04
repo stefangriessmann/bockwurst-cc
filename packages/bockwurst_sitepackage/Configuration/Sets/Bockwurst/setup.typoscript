@@ -80,4 +80,12 @@ tt_content {
             10 = Bockwurst\Sitepackage\DataProcessing\TourDataProcessor
         }
     }
+
+    bockwurst_tourgallery =< lib.contentElement
+    bockwurst_tourgallery {
+        templateName = TourGallery
+        dataProcessing {
+            10 = Bockwurst\Sitepackage\DataProcessing\TourDataProcessor
+        }
+    }
 }

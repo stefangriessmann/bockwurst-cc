@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>Tour-Galerie-CE – Grid + Lightbox + Bildunterschriften aus der Tour-JSON
+(Feld „gallery": [{src, caption, alt}, …]). Fotos liegen in fileadmin.</f:comment>
+
+<f:asset.css identifier="bockwurst-tour" href="EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tour.css" />
+<f:asset.script identifier="bockwurst-tour-gallery" src="EXT:bockwurst_sitepackage/Resources/Public/JavaScript/tour-gallery.js" priority="false" />
+
+<f:if condition="{tour.gallery}">
+    <f:then>
+        <section class="bw-gallery-wrap">
+            <div class="bw-seclab"><span class="bw-seclab-line"></span><f:if condition="{data.header}"><f:then>{data.header}</f:then><f:else>Impressionen</f:else></f:if></div>
+            <div class="bw-gallery">
+                <f:for each="{tour.gallery}" as="img">
+                    <figure class="bw-gfig" data-cap="{img.caption}">
+                        <span class="bw-gph"><img src="{img.src}" alt="{img.alt}" loading="lazy" decoding="async"></span>
+                        <f:if condition="{img.caption}"><figcaption>{img.caption}</figcaption></f:if>
+                    </figure>
+                </f:for>
+            </div>
+        </section>
+    </f:then>
+    <f:else>
+        <p class="bw-tour-hint">Keine Bilder hinterlegt<f:if condition="{tourError}"> – {tourError}</f:if></p>
+    </f:else>
+</f:if>
+</html>

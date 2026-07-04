@@ -22,9 +22,10 @@ lib.dynamicContent colPos 0 in 1080px-Spalte. Rahmen wie Default.html.</f:commen
         <div class="bw-tour">
 
             <f:if condition="{tour}">
-                <section class="bw-hero {f:if(condition: pageMedia.0, then: 'has-img', else: 'no-img')}">
-                    <f:if condition="{pageMedia.0}">
-                        <span class="bw-hero-bg" style="background-image:url('{pageMedia.0.publicUrl}')"></span>
+                <f:variable name="heroImg">{f:if(condition: '{tour.hero_image}', then: '{tour.hero_image}', else: '{pageMedia.0.publicUrl}')}</f:variable>
+                <section class="bw-hero {f:if(condition: heroImg, then: 'has-img', else: 'no-img')}">
+                    <f:if condition="{heroImg}">
+                        <span class="bw-hero-bg" style="background-image:url('{heroImg}')"></span>
                     </f:if>
                     <span class="bw-hero-scrim"></span>
                     <div class="bw-hero-inner">
