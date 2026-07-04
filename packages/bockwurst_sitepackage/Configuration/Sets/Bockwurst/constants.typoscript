@@ -1,0 +1,4 @@
+# bockwurst.cc Theme – Konstanten.
+# sg_cookie_optin: klassisches Static-TypoScript (kein Site-Set) manuell einbinden,
+# damit die Consent-Template-Pfade (plugin.tx_sgcookieoptin.view.*) gesetzt sind.
+@import 'EXT:sg_cookie_optin/Configuration/TypoScript/Frontend/constants.typoscript'

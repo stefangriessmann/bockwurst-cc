@@ -16,6 +16,7 @@
     "require": {
         "bk2k/bootstrap-package": "^16",
         "bockwurst/sitepackage": "@dev",
+        "sgalinski/sg-cookie-optin": "^8.0",
         "typo3/cms-backend": "^14.3",
         "typo3/cms-belog": "^14.3",
         "typo3/cms-beuser": "^14.3",
@@ -34,6 +35,7 @@
         "typo3/cms-reactions": "^14.3",
         "typo3/cms-recycler": "^14.3",
         "typo3/cms-rte-ckeditor": "^14.3",
+        "typo3/cms-scheduler": "^14.3",
         "typo3/cms-seo": "^14.3",
         "typo3/cms-setup": "^14.3",
         "typo3/cms-sys-note": "^14.3",

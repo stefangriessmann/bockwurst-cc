@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2021-01-06T05:24:38Z" target-language="de">
+    <header>
+      <type>module</type>
+      <description>Language labels for the backend module belonging to extension 'sg_cookie_optin'</description>
+      <generator>LFEditor</generator>
+      <authorName>Fabian Galinski</authorName>
+      <authorEmail>fabian.galinski@sgalinski.de</authorEmail>
+    </header>
+    <body>
+      <trans-unit id="optInPluginDescription" approved="yes">
+        <source><![CDATA[Inserts the cookie consent banner.]]></source>
+        <target state="final"><![CDATA[Fügt das Cookie-Opt-In-Banner ein.]]></target>
+      </trans-unit>
+      <trans-unit id="optInPluginLabel" approved="yes">
+        <source><![CDATA[Cookie Consent]]></source>
+        <target state="final"><![CDATA[Cookie-Opt-In]]></target>
+      </trans-unit>
+      <trans-unit id="optInPluginTitle" approved="yes">
+        <source><![CDATA[Cookie Consent]]></source>
+        <target state="final"><![CDATA[Cookie-Opt-In]]></target>
+      </trans-unit>
+      <trans-unit id="cookieListPluginDescription" approved="yes">
+        <source><![CDATA[Displays the configured consent cookies.]]></source>
+        <target state="final"><![CDATA[Zeigt die konfigurierten Consent-Cookies an.]]></target>
+      </trans-unit>
+      <trans-unit id="cookieListPluginLabel" approved="yes">
+        <source><![CDATA[Cookie List]]></source>
+        <target state="final"><![CDATA[Cookie-Liste]]></target>
+      </trans-unit>
+      <trans-unit id="cookieListPluginTitle" approved="yes">
+        <source><![CDATA[Cookie List]]></source>
+        <target state="final"><![CDATA[Cookie-Liste]]></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

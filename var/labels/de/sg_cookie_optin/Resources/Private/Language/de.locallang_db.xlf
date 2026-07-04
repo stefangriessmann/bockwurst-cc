@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2021-01-06T05:24:02Z" target-language="de">
+    <header>
+      <type>database</type>
+      <description>General language labels used in frontend and backend.</description>
+      <generator>LFEditor</generator>
+      <authorName>Fabian Galinski</authorName>
+      <authorEmail>fabian@sgalinski.de</authorEmail>
+    </header>
+    <body>
+      <trans-unit id="backend.searchError.noParametersSentToTheServer" approved="yes">
+        <source><![CDATA[No parameters sent to the server.]]></source>
+        <target state="final"><![CDATA[Es werden keine Parameter an den Server gesendet.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_cookie" approved="yes">
+        <source><![CDATA[Cookie]]></source>
+        <target state="final"><![CDATA[Cookie]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_cookie.hidden" approved="yes">
+        <source><![CDATA[Deactivate]]></source>
+        <target state="final"><![CDATA[Deaktivieren]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_cookie.lifetime" approved="yes">
+        <source><![CDATA[Lifetime]]></source>
+        <target state="final"><![CDATA[Lebenszeit]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_cookie.name" approved="yes">
+        <source><![CDATA[Name]]></source>
+        <target state="final"><![CDATA[Name]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_cookie.parent_group" approved="yes">
+        <source><![CDATA[Group]]></source>
+        <target state="final"><![CDATA[Gruppe]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_cookie.parent_optin" approved="yes">
+        <source><![CDATA[Opt In]]></source>
+        <target state="final"><![CDATA[Opt-In]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_cookie.provider" approved="yes">
+        <source><![CDATA[Provider]]></source>
+        <target state="final"><![CDATA[Anbieter]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_cookie.purpose" approved="yes">
+        <source><![CDATA[Purpose]]></source>
+        <target state="final"><![CDATA[Zweck]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group" approved="yes">
+        <source><![CDATA[Group]]></source>
+        <target state="final"><![CDATA[Gruppe]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.cookies" approved="yes">
+        <source><![CDATA[Cookies]]></source>
+        <target state="final"><![CDATA[Cookies]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.description" approved="yes">
+        <source><![CDATA[Description (explains the use of these scripts & cookies)]]></source>
+        <target state="final"><![CDATA[Beschreibung (erklärt die Verwendung dieser Skripte & Cookies)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.group_name" approved="yes">
+        <source><![CDATA[Group ID (Unique name, do not change while on live mode!)]]></source>
+        <target state="final"><![CDATA[Gruppen-ID (Eindeutiger Name, Nicht im Live-Betrieb ändern!)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.google_name" approved="yes">
+        <source><![CDATA[Google Consent Mode Name (optional)]]></source>
+        <target state="final"><![CDATA[Google Einwilligungsmodus-Name (optional)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.google_name.description" approved="yes">
+        <source><![CDATA[If this value is set and you have set up Google Consent Mode in your website, the Google Consent Mode API would automatically be informed of any changes of the user consent settings.
+				The consents you can choose from are ad_storage, ad_user_data, analytics_storage, ad_personalization, functionality_storage, personalization_storage, security_storage or your own custom user-defined consents in Google Tag Manager
+				See more on https://support.google.com/tagmanager/answer/10718549?hl=en]]></source>
+        <target state="final"><![CDATA[Wenn dieser Wert gesetzt ist und Sie den Google-Zustimmungsmodus auf Ihrer Website eingerichtet haben, wird die Google-Zustimmungsmodus-API automatisch über alle Änderungen der Einstellungen für die Nutzerzustimmung informiert.
+                Sie können zwischen folgenden Zustimmungen wählen: ad_storage, ad_user_data, analytics_storage, ad_personalization, functionality_storage, personalization_storage, security_storage oder Ihren eigenen benutzerdefinierten Zustimmungen in Google Tag Manager
+                Weitere Informationen finden Sie unter https://support.google.com/tagmanager/answer/10718549?hl=de]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.dependent_groups" approved="yes">
+        <source><![CDATA[Granting consent to this group would automatically give consent to these groups as well]]></source>
+        <target state="final"><![CDATA[Die Erteilung der Zustimmung für diese Gruppe würde automatisch auch die Zustimmung für diese Gruppen bedeuten]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.dependent_groups.description" approved="yes">
+        <source><![CDATA[Please enter a comma-separated list of Group-ID's]]></source>
+        <target state="final"><![CDATA[Bitte geben Sie eine kommagetrennte Liste von Gruppen-IDs ein]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.google_name" approved="yes">
+        <source><![CDATA[Google Consent Mode Name (optional)]]></source>
+        <target state="final"><![CDATA[Google Einwilligungsmodus-Name (optional)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.hidden" approved="yes">
+        <source><![CDATA[Deactivate]]></source>
+        <target state="final"><![CDATA[Deaktivieren]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.parent_optin" approved="yes">
+        <source><![CDATA[Opt In]]></source>
+        <target state="final"><![CDATA[Opt-In]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.scripts" approved="yes">
+        <source><![CDATA[Scripts (For translations: Only "translated" scripts are considered. Added scripts without a default language parent will be ignored)]]></source>
+        <target state="final"><![CDATA[Skripte (Für Übersetzungen: Es werden nur "übersetzte" Skripte berücksichtigt. Hinzugefügte Skripte ohne übergeordnete Standardsprache werden ignoriert)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.tab.scripts" approved="yes">
+        <source><![CDATA[Scripts]]></source>
+        <target state="final"><![CDATA[Skripte]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.title" approved="yes">
+        <source><![CDATA[Group Title]]></source>
+        <target state="final"><![CDATA[Gruppentitel]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin" approved="yes">
+        <source><![CDATA[Opt In]]></source>
+        <target state="final"><![CDATA[Opt-In]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.accept_all_text" approved="yes">
+        <source><![CDATA[Button for Accepting all Scripts & Cookies]]></source>
+        <target state="final"><![CDATA[Button zum Akzeptieren aller Skripte & Cookies]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.accept_buttons_texts" approved="yes">
+        <source><![CDATA[Button Texts]]></source>
+        <target state="final"><![CDATA[Button-Texte]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.accept_essential_text" approved="yes">
+        <source><![CDATA[Button for Accepting Only Essential Cookies & Scripts]]></source>
+        <target state="final"><![CDATA[Button zum Akzeptieren ausschließlich essenzieller Skripte & Cookies]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.accept_specific_text" approved="yes">
+        <source><![CDATA[Button for Accepting Selected Cookies & Scripts]]></source>
+        <target state="final"><![CDATA[Button zum Akzeptieren ausgewählter Skripte & Cookies]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.activate_testing_mode" approved="yes">
+        <source><![CDATA[Activate TEST Mode]]></source>
+        <target state="final"><![CDATA[Aktiviere den TEST-Modus]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.activate_testing_mode.description" approved="yes">
+        <source><![CDATA[Dialog not active, add "?showOptIn=1" to the URL to get the dialog]]></source>
+        <target state="final"><![CDATA[Dialog nicht aktiv, der Parameter "?showOptIn=1" muss an die URL angefügt werden um den Dialog anzuzeigen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_button_accept_text" approved="yes">
+        <source><![CDATA[Accept Button Text]]></source>
+        <target state="final"><![CDATA[Akzeptieren-Button Text]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_button_accept_essential_text" approved="yes">
+        <source><![CDATA[Reject Button Text]]></source>
+        <target state="final"><![CDATA[Ablehnen-Button Text]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_button_accept_essential" approved="yes">
+        <source><![CDATA[Background Color Reject Button]]></source>
+        <target state="final"><![CDATA[Hintergrundfarbe Ablehnen-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_button_accept_essential_hover" approved="yes">
+        <source><![CDATA[Hover Color Reject Button]]></source>
+        <target state="final"><![CDATA[Hover-Farbe Ablehnen-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_button_accept_essential_text" approved="yes">
+        <source><![CDATA[Text Color Reject Button]]></source>
+        <target state="final"><![CDATA[Textfarbe Ablehnen-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.banner_accept_essential_button" approved="yes">
+        <source><![CDATA[Essential Button]]></source>
+        <target state="final"><![CDATA[Essenziel-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_button_settings_text" approved="yes">
+        <source><![CDATA[Settings Button Text]]></source>
+        <target state="final"><![CDATA[Einstellungs-Button Text]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_box" approved="yes">
+        <source><![CDATA[Background]]></source>
+        <target state="final"><![CDATA[Hintergrund]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_button_accept" approved="yes">
+        <source><![CDATA[Background Color Accept Button]]></source>
+        <target state="final"><![CDATA[Hintergrundfarbe Akzeptieren-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_button_accept_hover" approved="yes">
+        <source><![CDATA[Hover Color Accept Button]]></source>
+        <target state="final"><![CDATA[Hover-Farbe Akzeptieren-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_button_accept_text" approved="yes">
+        <source><![CDATA[Text Color Accept Button]]></source>
+        <target state="final"><![CDATA[Textfarbe Akzeptieren-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_button_settings" approved="yes">
+        <source><![CDATA[Background Color Settings Button]]></source>
+        <target state="final"><![CDATA[Hintergrundfarbe Einstellungs-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_button_settings_hover" approved="yes">
+        <source><![CDATA[Hover Color Settings Button]]></source>
+        <target state="final"><![CDATA[Hover-Farbe Einstellungs-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_button_settings_text" approved="yes">
+        <source><![CDATA[Text Color Settings Button]]></source>
+        <target state="final"><![CDATA[Textfarbe Einstellungs-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_link_text" approved="yes">
+        <source><![CDATA[Link Text]]></source>
+        <target state="final"><![CDATA[Link-Text]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_color_text" approved="yes">
+        <source><![CDATA[Text]]></source>
+        <target state="final"><![CDATA[Text]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_description" approved="yes">
+        <source><![CDATA[Explanatory Text in the Banner]]></source>
+        <target state="final"><![CDATA[Erklärungstext im Banner]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_enable" approved="yes">
+        <source><![CDATA[Always Show a Less Obtrusive Banner Instead of the Cookie Settings Window]]></source>
+        <target state="final"><![CDATA[Immer ein weniger auffälliges Banner anstelle des Fensters für die Cookie-Einstellungen anzeigen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_force_min_width" approved="yes">
+        <source><![CDATA[Force Displaying the less Obstructive Banner if the Client Window has a Maximum width of x (0 = deactivated)]]></source>
+        <target state="final"><![CDATA[Anzeige des weniger störenden Banners erzwingen, wenn das Client-Fenster eine Maximalbreite von x hat (0 = deaktiviert)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_html" approved="yes">
+        <source><![CDATA[Banner Template Code (HTML, variables and logic are processed with Mustache, see https://mustache.github.io/mustache.5.html) ]]></source>
+        <target state="final"><![CDATA[Banner-Template-Code (HTML, Variablen und Logik werden mit Mustache verarbeitet, siehe https://mustache.github.io/mustache.5.html) ]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_overwritten" approved="yes">
+        <source><![CDATA[Overwrite Template]]></source>
+        <target state="final"><![CDATA[Vorlage überschreiben]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_position" approved="yes">
+        <source><![CDATA[The Position of the Banner on the Website]]></source>
+        <target state="final"><![CDATA[Die Position des Banners auf der Website]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_position.0" approved="yes">
+        <source><![CDATA[Bottom]]></source>
+        <target state="final"><![CDATA[Unten]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_position.1" approved="yes">
+        <source><![CDATA[Top]]></source>
+        <target state="final"><![CDATA[Oben]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_show_again_interval" approved="yes">
+        <source><![CDATA[Show the cookie banner again if not all groups were selected after: (in days)]]></source>
+        <target state="final"><![CDATA[Das Cookie-Banner erneut anzeigen, wenn nicht alle Gruppen ausgewählt wurden, nach: (in Tage)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_show_settings_button" approved="yes">
+        <source><![CDATA[Show the Settings Button within the Banner]]></source>
+        <target state="final"><![CDATA[Einstellungs-Button im Banner anzeigen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.banner_show_settings_button.description" approved="yes">
+        <source><![CDATA[Should be enabled if the website uses cookies]]></source>
+        <target state="final"><![CDATA[Dies sollte aktiviert werden, falls die Website Cookies verwendet]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_Table_data_text" approved="yes">
+        <source><![CDATA[Text Color - Data]]></source>
+        <target state="final"><![CDATA[Textfarbe - Daten]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_box" approved="yes">
+        <source><![CDATA[Window]]></source>
+        <target state="final"><![CDATA[Fenster]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_all" approved="yes">
+        <source><![CDATA[Button-Background: "Accept All"]]></source>
+        <target state="final"><![CDATA[Button-Hintergrund: "Akzeptiere Alle"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_all_hover" approved="yes">
+        <source><![CDATA[Button-Hover "Accept All"]]></source>
+        <target state="final"><![CDATA[Button-Hover: "Akzeptiere Alle"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_all_text" approved="yes">
+        <source><![CDATA[Button-Text "Accept All"]]></source>
+        <target state="final"><![CDATA[Button-Text: "Akzeptiere Alle"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_close" approved="yes">
+        <source><![CDATA[Button-Background: "Close"]]></source>
+        <target state="final"><![CDATA[Button-Hintergrund: "Schließen"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_close_hover" approved="yes">
+        <source><![CDATA[Button-Hover: "Close"]]></source>
+        <target state="final"><![CDATA[Button-Hover: "Schließen"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_close_text" approved="yes">
+        <source><![CDATA[Button-Text: "Close"]]></source>
+        <target state="final"><![CDATA[Button-Text: "Schließen"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_essential" approved="yes">
+        <source><![CDATA[Button-Background: "Accept Essential"]]></source>
+        <target state="final"><![CDATA[Button-Hintergrund: "Akzeptiere Essenzielle"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_essential_hover" approved="yes">
+        <source><![CDATA[Button-Hover "Accept Essential"]]></source>
+        <target state="final"><![CDATA[Button-Hover: "Akzeptiere Essenzielle"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_essential_text" approved="yes">
+        <source><![CDATA[Button-Text "Accept Essential"]]></source>
+        <target state="final"><![CDATA[Button-Text: "Akzeptiere Essenzielle"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_specific" approved="yes">
+        <source><![CDATA[Button-Background: "Accept Selected"]]></source>
+        <target state="final"><![CDATA[Button-Hintergrund: "Akzeptiere Ausgewählte"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_specific_hover" approved="yes">
+        <source><![CDATA[Button-Hover "Accept Selected"]]></source>
+        <target state="final"><![CDATA[Button-Hover: "Akzeptiere Ausgewählte"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_button_specific_text" approved="yes">
+        <source><![CDATA[Button-Text "Accept Selected"]]></source>
+        <target state="final"><![CDATA[Button-Text: "Akzeptiere Ausgewählte"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_checkbox" approved="yes">
+        <source><![CDATA[Optional Cookies & Scripts]]></source>
+        <target state="final"><![CDATA[Optionale Cookies & Skripte]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_checkbox_required" approved="yes">
+        <source><![CDATA[Essential Cookies & Scripts (always ticked off)]]></source>
+        <target state="final"><![CDATA[Essenzielle Cookies & Skripte (immer abgehakt)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_confirmation_background" approved="yes">
+        <source><![CDATA[Confirmation Background]]></source>
+        <target state="final"><![CDATA[Bestätigung Hintergrund]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_confirmation_text" approved="yes">
+        <source><![CDATA[Confirmation Text]]></source>
+        <target state="final"><![CDATA[Bestätigung Text]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_full_box" approved="yes">
+        <source><![CDATA[Window (upper part)]]></source>
+        <target state="final"><![CDATA[Fenster (Oberer Teil)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_full_headline" approved="yes">
+        <source><![CDATA[Headline]]></source>
+        <target state="final"><![CDATA[Überschrift]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_full_text" approved="yes">
+        <source><![CDATA[Text (upper part)]]></source>
+        <target state="final"><![CDATA[Text (Oberer Teil)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_headline" approved="yes">
+        <source><![CDATA[Headline]]></source>
+        <target state="final"><![CDATA[Überschrift]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_list" approved="yes">
+        <source><![CDATA[Background of the Info Boxes of the Groups]]></source>
+        <target state="final"><![CDATA[Hintergrund der Infoboxen zu den Gruppen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_list_text" approved="yes">
+        <source><![CDATA[Text Color in the Info Boxes for the Groups]]></source>
+        <target state="final"><![CDATA[Textfarbe der Infoboxen zu den Gruppen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_notification" approved="yes">
+        <source><![CDATA[Notifcation Colors]]></source>
+        <target state="final"><![CDATA[Farben für Benachrichtigungen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_table" approved="yes">
+        <source><![CDATA[Cell Background - Data]]></source>
+        <target state="final"><![CDATA[Zellenhintergrund - Daten]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_table_header" approved="yes">
+        <source><![CDATA[Cell Background - Row Title]]></source>
+        <target state="final"><![CDATA[Zellenhintergrund - Zeilentitel]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_table_header_text" approved="yes">
+        <source><![CDATA[Text Color - Row Title]]></source>
+        <target state="final"><![CDATA[Textfarbe - Zeilentitel]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_text" approved="yes">
+        <source><![CDATA[Text]]></source>
+        <target state="final"><![CDATA[Text]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.colors_buttons" approved="yes">
+        <source><![CDATA[Buttons]]></source>
+        <target state="final"><![CDATA[Buttons]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.colors_checkboxes" approved="yes">
+        <source><![CDATA[Group Checkboxes]]></source>
+        <target state="final"><![CDATA[Gruppen-Checkboxen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.colors_lists" approved="yes">
+        <source><![CDATA[List of Group Details]]></source>
+        <target state="final"><![CDATA[Liste der Gruppendetails]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.colors_tables" approved="yes">
+        <source><![CDATA[Cookie Description Tables]]></source>
+        <target state="final"><![CDATA[Cookie-Beschreibungstabellen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.consider_do_not_track" approved="yes">
+        <source><![CDATA[Take DoNotTrack into account]]></source>
+        <target state="final"><![CDATA[DoNotTrack berücksichtigen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.cookie_lifetime" approved="yes">
+        <source><![CDATA[Lifetime of cookie that saves the user's choices in days]]></source>
+        <target state="final"><![CDATA[Laufzeit des Cookies, der die Auswahl des Nutzers speichert (in Tagen)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.cookie_lifetime_text" approved="yes">
+        <source><![CDATA[Header for the cookie lifetime]]></source>
+        <target state="final"><![CDATA[Überschrift für die Cookie-Laufzeit]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.cookie_name_text" approved="yes">
+        <source><![CDATA[Header for the cookie name]]></source>
+        <target state="final"><![CDATA[Überschrift für den Cookie-Namen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.cookie_provider_text" approved="yes">
+        <source><![CDATA[Header for the cookie provider]]></source>
+        <target state="final"><![CDATA[Überschrift für den Cookie-Anbieter]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.cookie_purpose_text" approved="yes">
+        <source><![CDATA[Header for the cookie purpose]]></source>
+        <target state="final"><![CDATA[Überschrift für den Cookie-Zweck]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.cookie_texts" approved="yes">
+        <source><![CDATA[Cookie Information Texts]]></source>
+        <target state="final"><![CDATA[Cookie-Informationstexte]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.cookiebanner_whitelist_regex" approved="yes">
+        <source><![CDATA[Don't show cookie banner on the following page URIs. Every new line is interpreted as a new regular expression. Syntax errors may lead to issues on your website!]]></source>
+        <target state="final"><![CDATA[Das Cookie-Banner auf diesen Seiten/URLs nicht anzeigen. Jede neue Zeile wird als ein regulärer Ausdruck interpretiert. Syntax-Fehler können zu Problemen auf der Website führen!]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.cookiebanner_whitelist_regex.description" approved="yes">
+        <source><![CDATA[Please note that you have to include your translated page slugs as well. For example if you want to exclude your privacy policy page in both English and German you must add privacy-policy.html as well as datenschutz.html to the list.]]></source>
+        <target state="final"><![CDATA[Bitte beachten Sie, dass Sie auch Ihre übersetzten Seiten-Slugs mit aufnehmen müssen. Wenn Sie z. B. Ihre Datenschutzseite sowohl auf Englisch als auch auf Deutsch ausschließen möchten, müssen Sie sowohl privacy-policy.html als auch datenschutz.html in die Liste aufnehmen.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.description" approved="yes">
+        <source><![CDATA[Explanation at top of Opt-In Window]]></source>
+        <target state="final"><![CDATA[Erklärung oben im Auswahlfenster]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.disable_for_this_language" approved="yes">
+        <source><![CDATA[Disable OptIn for this language]]></source>
+        <target state="final"><![CDATA[Das OptIn für diese Sprache deaktivieren]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.disable_powered_by" approved="yes">
+        <source><![CDATA[Disable "Powered by" lettering]]></source>
+        <target state="final"><![CDATA["Powered by"-Schriftzug deaktivieren]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.essential_cookies" approved="yes">
+        <source><![CDATA[Cookies]]></source>
+        <target state="final"><![CDATA[Cookies]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.essential_description" approved="yes">
+        <source><![CDATA[Description (explains the use of these scripts & cookies)]]></source>
+        <target state="final"><![CDATA[Beschreibung (erklärt die Verwendung dieser Skripte & Cookies)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.essential_scripts" approved="yes">
+        <source><![CDATA[Scripts]]></source>
+        <target state="final"><![CDATA[Skripte]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.essential_scripts.description" approved="yes">
+        <source><![CDATA[For translations: Only "translated" scripts are considered. Added scripts without a default language parent will be ignored]]></source>
+        <target state="final"><![CDATA[Für Übersetzungen: Es werden nur "übersetzte" Skripte berücksichtigt. Hinzugefügte Skripte ohne übergeordnete Standardsprache werden ignoriert]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.essential_title" approved="yes">
+        <source><![CDATA[Group Title for Essential Cookies & Scripts the User has to Accept]]></source>
+        <target state="final"><![CDATA[Gruppentitel für essenzielle Cookies & Skripte, die der Benutzer akzeptieren muss.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.extend_box_link_text" approved="yes">
+        <source><![CDATA[Link for Displaying Information About the Groups (closed)]]></source>
+        <target state="final"><![CDATA[Link zur Anzeige von Informationen der Gruppen (geschlossen)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.extend_box_link_text_close" approved="yes">
+        <source><![CDATA[Link for Displaying Information About the Groups (open)]]></source>
+        <target state="final"><![CDATA[Link zur Anzeige von Informationen der Gruppen (geöffnet)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.extend_table_link_text" approved="yes">
+        <source><![CDATA[Link to Display Information of Cookies of a Group (closed)]]></source>
+        <target state="final"><![CDATA[Link zur Anzeige von Informationen der Cookies einer Gruppe (geschlossen)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.extend_table_link_text_close" approved="yes">
+        <source><![CDATA[Link to Display Information of Cookies of a Group (open)]]></source>
+        <target state="final"><![CDATA[Link zur Anzeige von Informationen der Cookies einer Gruppe (geöffnet)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.groups" approved="yes">
+        <source><![CDATA[Groups]]></source>
+        <target state="final"><![CDATA[Gruppen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.header" approved="yes">
+        <source><![CDATA[Title of the Opt-In Window]]></source>
+        <target state="final"><![CDATA[Titel des Opt-In Fensters]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_button_allow_all_text" approved="yes">
+        <source><![CDATA[Button: "Allow all external content"]]></source>
+        <target state="final"><![CDATA[Button: "Alle externen Inhalte erlauben"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_button_allow_one_text" approved="yes">
+        <source><![CDATA[Button: "Allow once"]]></source>
+        <target state="final"><![CDATA[Button: "Einmalig erlauben"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_button_load_one_description" approved="yes">
+        <source><![CDATA[Additional Description in the iFrame Replacement]]></source>
+        <target state="final"><![CDATA[Zusätzliche Beschreibung in dem iFrame-Ersatz]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_button_load_one_text" approved="yes">
+        <source><![CDATA[Button: "Load external content"]]></source>
+        <target state="final"><![CDATA[Button: "Externen Inhalt laden"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_button_reject_text" approved="yes">
+        <source><![CDATA[Button: "Don't allow"]]></source>
+        <target state="final"><![CDATA[Button: "Nicht erlauben"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_color_button_load_one" approved="yes">
+        <source><![CDATA[Button: "Load external content"]]></source>
+        <target state="final"><![CDATA[Button: "Externen Inhalt laden"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_color_button_load_one_hover" approved="yes">
+        <source><![CDATA[Button-Hover: "Load external content"]]></source>
+        <target state="final"><![CDATA[Button-Hover: "Externen Inhalt laden"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_color_button_load_one_text" approved="yes">
+        <source><![CDATA[Button-Text: "Load external content"]]></source>
+        <target state="final"><![CDATA[Button-Text: "Externen Inhalt laden"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_color_consent_box_background" approved="yes">
+        <source><![CDATA[Container]]></source>
+        <target state="final"><![CDATA[Container]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_color_open_settings" approved="yes">
+        <source><![CDATA[Link: "Open settings"]]></source>
+        <target state="final"><![CDATA[Link: "Einstellungen öffnen"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_colors" approved="yes">
+        <source><![CDATA[Colors]]></source>
+        <target state="final"><![CDATA[Farben]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_cookies" approved="yes">
+        <source><![CDATA[Cookies]]></source>
+        <target state="final"><![CDATA[Cookies]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_description" approved="yes">
+        <source><![CDATA[Description (Shown in the opt in)]]></source>
+        <target state="final"><![CDATA[Beschreibung (Dargestellt im Opt-In)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_enabled" approved="yes">
+        <source><![CDATA[Activate opt in for external content (iframe)]]></source>
+        <target state="final"><![CDATA[Aktiviere den Opt-In für externe Inhalte (iframe)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_html" approved="yes">
+        <source><![CDATA[Settings Window Template Code (HTML, variables and logic are processed with Mustache, see http://mustache.github.io/mustache.5.html)]]></source>
+        <target state="final"><![CDATA[Einstellungsfenster Template-Code (HTML, Variablen und Logik werden mit Mustache verarbeitet, siehe http://mustache.github.io/mustache.5.html)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_html.description" approved="yes">
+        <source><![CDATA[The templating engine supports markers that you can move inside the code. This template supports the following markers:
+				settings.show_button_close – The setting "Activate the close button in the template" from the Template tab
+				iFrameGroup.label – The value of the Title setting in this tab
+				iFrameGroup.description – The value of the Description setting in this tab
+				textEntries.iframe_button_allow_all_text – The button text for "Allow all"
+				textEntries.iframe_button_allow_one_text – The button text for "Allow once"
+				textEntries.iframe_button_reject_text – The button text for "Don't allow"
+				placeholders.iframe_consent_description – The description, provided for this specific element, or the global additional description, set in this tab
+				footerLinks – The links in the footer from the Labels & Menu tab]]></source>
+        <target state="final"><![CDATA[Die Templating-Engine unterstützt Marker, die Sie innerhalb des Codes verschieben können. Diese Vorlage unterstützt die folgenden Marker:
+				settings.show_button_close – Die Einstellung "Aktiviere den Schließen-Button im Template" im Tab Template
+				iFrameGroup.label – Der Wert der Einstellung "Titel" in diesem Tab
+				iFrameGroup.description – Der Wert der Einstellung "Beschreibung" in diesem Tab
+				textEntries.iframe_button_allow_all_text – Der Button-Text für "Alle erlauben".
+				textEntries.iframe_button_allow_one_text – Der Button-Text für "Einmalig erlauben".
+				textEntries.iframe_button_reject_text – Der Button-Text für "Nicht erlauben"
+				placeholders.iframe_consent_description – Die Beschreibung, die für dieses spezifische Element bereitgestellt wird, oder die globale zusätzliche Beschreibung, die in dieser Registerkarte festgelegt wird
+				footerLinks – Die Links in der Fußzeile aus der Registerkarte Texte & Menü]]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_open_settings_text" approved="yes">
+        <source><![CDATA[Link: "Open settings"]]></source>
+        <target state="final"><![CDATA[Link: "Einstellungen öffnen"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_overwritten" approved="yes">
+        <source><![CDATA[Overwrite Iframe Template (Allows to change the template code below. If this is selected, changes in future updates are not automatically applied. Unset this option to reset the template below.)]]></source>
+        <target state="final"><![CDATA[Template des Einstellungsfensters überschreiben]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_replacement_html" approved="yes">
+        <source><![CDATA[iFrame Replacement Template Code (HTML, variables and logic are processed with Mustache, see http://mustache.github.io/mustache.5.html)]]></source>
+        <target state="final"><![CDATA[iFrame-Ersatz Template-Code (HTML, Variablen und Logik werden mit Mustache verarbeitet, siehe http://mustache.github.io/mustache.5.html)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_replacement_html.description" approved="yes">
+        <source><![CDATA[The templating engine supports markers that you can move inside the code. This template supports the following markers:
+				textEntries.iframe_button_load_one_text – The value of the Button: "Load external content" field
+				placeholders.iframe_consent_description – The description, provided for this specific element, or the global additional description, set in this tab
+				textEntries.iframe_open_settings_text – The value of the Link: "Open settings" field]]></source>
+        <target state="final"><![CDATA[Die Templating-Engine unterstützt Marker, die Sie innerhalb des Codes verschieben können. Diese Vorlage unterstützt die folgenden Marker:
+				textEntries.iframe_button_load_one_text – Der Wert des Feldes: "Externen Inhalt laden"
+				placeholders.iframe_consent_description – Die Beschreibung, die für dieses spezifische Element bereitgestellt wird, oder die globale zusätzliche Beschreibung, die in dieser Registerkarte festgelegt wird
+				textEntries.iframe_open_settings_text – Der Wert des Feldes Link: "Einstellungen öffnen"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_replacement_overwritten" approved="yes">
+        <source><![CDATA[Overwrite iFrame Replacement Template]]></source>
+        <target state="final"><![CDATA[ iFrame-Ersatz-Template überschreiben]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_replacement_template" approved="yes">
+        <source><![CDATA[iFrame Replacement Design Template]]></source>
+        <target state="final"><![CDATA[iFrame-Ersatz Designvorlage]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_template" approved="yes">
+        <source><![CDATA[External Content Settings Window Design Template]]></source>
+        <target state="final"><![CDATA[Designvorlage für das Fenster mit Einstellungen zu externen Inhalten]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_texts" approved="yes">
+        <source><![CDATA[Texts]]></source>
+        <target state="final"><![CDATA[Texte]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_title" approved="yes">
+        <source><![CDATA[Title (Shown in the opt in)]]></source>
+        <target state="final"><![CDATA[Titel (Dargestellt im Opt-In)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_whitelist" approved="yes">
+        <source><![CDATA[External content whitelist. (Object sources matching these regular expressions will not be replaced.)]]></source>
+        <target state="final"><![CDATA[Externe Inhalte whitelisten. (Objekte, deren Quelle diese reguläre Ausdrücke entspricht, werden nicht ersetzt)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_whitelist_regex" approved="yes">
+        <source><![CDATA[Whitelist for external content.]]></source>
+        <target state="final"><![CDATA[Whiteliste für externe Inhalte]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_whitelist_regex.description" approved="yes">
+        <source><![CDATA[Whitelist all external content that matches the following regular expressions. Each new line is interpreted as a new regular expression. Syntax errors in this expression can cause errors on your website! Therefore, please always check your website after changing this value. You can also test the syntax on https://regex101.com.]]></source>
+        <target state="final"><![CDATA[Alle externen Inhalte whitelisten, die mit folgenden regulären Ausdrücken übereinstimmen. Jede neue Zeile wird als ein neuer regulärer Ausdruck interpretiert. Syntaxfehler in diesem Ausdruck können zu Fehlern auf Ihrer Website führen! Überprüfen Sie daher bitte immer Ihre Website, nachdem Sie diesen Wert geändert haben. Sie können die Syntax zudem auf https://regex101.com testen.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.link_texts" approved="yes">
+        <source><![CDATA[Link Texts]]></source>
+        <target state="final"><![CDATA[Linktexte]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.minify_generated_data" approved="yes">
+        <source><![CDATA[Minify Generated Files]]></source>
+        <target state="final"><![CDATA[Erzeugte Dateien minifizieren]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.navigation" approved="yes">
+        <source><![CDATA[Links at the Bottom of the Opt-In Window (Add Imprint and Data Policy!)]]></source>
+        <target state="final"><![CDATA[Links am Ende des Opt-In-Fensters (Impressum und Datenschutzerklärung einfügen!)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.banner_accept_button" approved="yes">
+        <source><![CDATA[Accept Button]]></source>
+        <target state="final"><![CDATA[Akzeptieren-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.multidomain_settings" approved="yes">
+        <source><![CDATA[Multidomain Settings]]></source>
+        <target state="final"><![CDATA[Multidomain-Einstellungen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.consent_mode" approved="yes">
+        <source><![CDATA[Google Consent Mode Settings]]></source>
+        <target state="final"><![CDATA[Google Einwilligungsmodus-Einstellungen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.banner_general" approved="yes">
+        <source><![CDATA[General]]></source>
+        <target state="final"><![CDATA[Allgemein]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.banner_general_colors" approved="yes">
+        <source><![CDATA[Banner Colors]]></source>
+        <target state="final"><![CDATA[Bannerfarben]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.banner_settings_button" approved="yes">
+        <source><![CDATA[Settings Button]]></source>
+        <target state="final"><![CDATA[Einstellungs-Button]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.banner_template" approved="yes">
+        <source><![CDATA[Banner Design Template]]></source>
+        <target state="final"><![CDATA[Banner-Designvorlage]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.cookie_lifetime_settings" approved="yes">
+        <source><![CDATA[Cookie Lifetime]]></source>
+        <target state="final"><![CDATA[Cookie-Laufzeit]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.update_version" approved="yes">
+        <source><![CDATA[Version control]]></source>
+        <target state="final"><![CDATA[Versionskontrolle]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.render_assets_inline" approved="yes">
+        <source><![CDATA[Render CSS and JavaScript contents inline]]></source>
+        <target state="final"><![CDATA[CSS- und JavaScript-Inhalte inline rendern]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.render_assets_inline.description" approved="yes">
+        <source><![CDATA[May impact the performance]]></source>
+        <target state="final"><![CDATA[Kann sich auf die Performance auswirken]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.save_confirmation_text" approved="yes">
+        <source><![CDATA[Text for notification shown when cookie preferences are set]]></source>
+        <target state="final"><![CDATA[Text für die Liste der Gruppen, von denen diese Gruppe abhängt]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.save_confirmation_text" approved="yes">
+        <source><![CDATA[Text for the list of the groups that this group depends on]]></source>
+        <target state="final"><![CDATA[Text für die Liste der Gruppen, von denen diese Gruppe abhängt]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.save_history_webhook" approved="yes">
+        <source><![CDATA[Webhook URL for statistics]]></source>
+        <target state="final"><![CDATA[Webhook-URL für Statistiken]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.save_history_webhook.description" approved="yes">
+        <source><![CDATA[You can change this address if you would like to add some custom logic to the handling of the data. Should you do it, please make sure to add a call to the default webhook address, so that we can keep evalutaing the data for you in our statistics module.]]></source>
+        <target state="final"><![CDATA[Sie können diese Adresse ändern, wenn Sie eine eigene Logik für die Verarbeitung der Daten hinzufügen möchten. Sollten Sie dies tun, stellen Sie bitte sicher, dass Sie einen Aufruf an die Standard-Webhook-Adresse hinzufügen, damit wir die Daten weiterhin für Sie in unserem Statistikmodul auswerten können.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.session_only_essential_cookies" approved="yes">
+        <source><![CDATA[Show the dialog again in the next user session if only essential cookies are accepted.]]></source>
+        <target state="final"><![CDATA[Zeigen Sie den Dialog in der nächsten Benutzersitzung erneut an, wenn nur wesentliche Cookies akzeptiert werden.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.overwrite_baseurl" approved="yes">
+        <source><![CDATA[Overwrite Base-URL]]></source>
+        <target state="final"><![CDATA[Base-URL überschreiben]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.overwrite_baseurl.description" approved="yes">
+        <source><![CDATA[You can use this field to overwrite the URL from which the files are loaded in your website. If it is on another (sub)domain, please make sure to include it in your CORS policy headers.]]></source>
+        <target state="final"><![CDATA[Sie können dieses Feld verwenden, um die URL zu überschreiben, von der die Dateien auf Ihrer Website geladen werden. Wenn sie sich auf einer anderen (Sub-)Domain befindet, stellen Sie bitte sicher, dass Sie sie in Ihre CORS-Policy-Header aufnehmen.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.set_cookie_for_domain" approved="yes">
+        <source><![CDATA[Override what domain this cookie is set for]]></source>
+        <target state="final"><![CDATA[Domain, für die der Cookie gesetzt werden soll, überschreiben]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.set_cookie_for_domain.description" approved="yes">
+        <source><![CDATA[!!! In most cases this is not really GDPR compliant. Do at your own risk !!!
+Here you can override the secondary domain that the cookie will be set for. The default is your website current domain, trimmed until the first dot. Example: www.example.com -> .example.com.]]></source>
+        <target state="final"><![CDATA[!!! Dies ist im Normalfall nicht DSVGO-konform. Setzen Sie dies auf eigenes Risiko !!!
+Hier können Sie die sekundäre Domain überschreiben, für die das Cookie gesetzt werden soll. Die Standardeinstellung ist die aktuelle Domäne Ihrer Website, die bis zum ersten Punkt gekürzt wird. Beispiel: www.example.com -> .example.com.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.subdomain_support" approved="yes">
+        <source><![CDATA[Support subomains]]></source>
+        <target state="final"><![CDATA[Subdomains unterstützen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.subdomain_support.description" approved="yes">
+        <source><![CDATA[!!! In most cases this is not really GDPR compliant. Do at your own risk !!!
+Without this setting, this configuration only applies to the domain where it is stored. With this setting you can use the cookie configuration for multiple domains, for example if your domain is de.example.com so the configuration will be stored for both for both de.example.com and .example.com and thus will be valid also for en.example.com.]]></source>
+        <target state="final"><![CDATA[!!! Dies ist im Normalfall nicht DSVGO-konform. Setzen Sie dies auf eigenes Risiko !!!
+Ohne diese Einstellung gilt diese Konfiguration nur für die Domäne, in der sie gespeichert ist. Mit dieser Einstellung können Sie die Cookie-Konfiguration für mehrere Domänen verwenden, z. B. wenn Ihre Domäne de.example.com ist, wird die Konfiguration sowohl für de.example.com als auch für .example.com gespeichert und gilt somit auch für en.example.com.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.show_button_close" approved="yes">
+        <source><![CDATA[Activate the close button in the template]]></source>
+        <target state="final"><![CDATA[Aktiviere den Schließen-Button im Template]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.tab.banner" approved="yes">
+        <source><![CDATA[Banner]]></source>
+        <target state="final"><![CDATA[Banner]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.tab.color" approved="yes">
+        <source><![CDATA[Template]]></source>
+        <target state="final"><![CDATA[Template]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.tab.essential" approved="yes">
+        <source><![CDATA[Essential Scripts & Cookies]]></source>
+        <target state="final"><![CDATA[Essenzielle Skripte & Cookies]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.tab.group" approved="yes">
+        <source><![CDATA[Other Scripts & Cookies]]></source>
+        <target state="final"><![CDATA[Weitere Skripte & Cookies]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.tab.iframes" approved="yes">
+        <source><![CDATA[External Content]]></source>
+        <target state="final"><![CDATA[Externe Inhalte]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.tab.settings" approved="yes">
+        <source><![CDATA[Settings]]></source>
+        <target state="final"><![CDATA[Einstellungen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.tab.textAndMenu" approved="yes">
+        <source><![CDATA[Labels & Menu]]></source>
+        <target state="final"><![CDATA[Texte & Menü]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.template" approved="yes">
+        <source><![CDATA[Window Design Template]]></source>
+        <target state="final"><![CDATA[Fenster-Designvorlage]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.template_html" approved="yes">
+        <source><![CDATA[Template Code (HTML, variables and logic are processed with Mustache, see http://mustache.github.io/mustache.5.html)]]></source>
+        <target state="final"><![CDATA[Template-Code (HTML, Variablen und Logik werden mit Mustache verarbeitet, siehe http://mustache.github.io/mustache.5.html)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.template_html.description" approved="yes">
+        <source><![CDATA[The templating engine supports markers that you can move inside the code. This template supports the following markers:
+				settings.show_button_close – The setting "Activate the close button in the template" from the Template tab
+				textEntries.header – The header of the Cookie Opt-In (Tab Labels & Menu)
+				textEntries.description – The description of the Cookie Opt-In (Tab Labels & Menu)
+				cookieGroups – A list of the defined cookies
+				cookieData (Name, Provider, Lifetime, Purpose) – The data for each cookie and their respective value
+				textEntries.cookie_name_text – The text for the name label
+				textEntries.cookie_provider_text – The text for the provider label
+				textEntries.cookie_lifetime_text – The text for the lifetime label
+				textEntries.cookie_purpose_text – The text for the purpose label
+				textEntries.extend_table_link_text – The value of the Link to Display Information of Cookies of a Group (closed) field (Tab Labels & Menu)
+				textEntries.extend_box_link_text – The value of the Link to Display Information of Cookies of a Group (open) field (Tab Labels & Menu)
+				textEntries.user_hash_text – The hash field label (Tab Labels & Menu)
+				footerLinks (name) – A list of the footer links with their respective name]]></source>
+        <target state="final"><![CDATA[Die Templating-Engine unterstützt Marker, die Sie innerhalb des Codes verschieben können. Diese Vorlage unterstützt die folgenden Marker:
+				settings.show_button_close – Die Einstellung "Aktiviere den Schließen-Button in der Vorlage" in der Registerkarte Template
+				textEntries.header – Die Titelzeile des Cookie Opt-Ins (Tab Texte & Menü)
+				textEntries.description – Die Beschreibung des Cookie Opt-Ins (Tab Texte & Menü)
+				cookieGroups – Eine Liste der definierten Cookies
+				cookieData (Name, Provider, Lifetime, Purpose) - Die Daten für jedes Cookie und deren jeweiliger Wert
+				textEntries.cookie_name_text – Der Text für die Namensbeschriftung
+				textEntries.cookie_provider_text – Der Text für die Bezeichnung des Anbieters
+				textEntries.cookie_lifetime_text – Der Text für die Beschreibung der Lebensdauer
+				textEntries.cookie_purpose_text – Der Text für die Beschreibung des Zwecks
+				textEntries.extend_table_link_text – Der Wert des Feldes "Link zur Anzeige von Informationen über Cookies einer Gruppe (geschlossen)" (Tab Labels & Menü)
+				textEntries.extend_box_link_text – Der Wert des Feldes Link zur Anzeige von Informationen über Cookies einer Gruppe (offen) (Tab Labels & Menü)
+				textEntries.user_hash_text – Die Beschriftung des Hash-Feldes (Tab Texte & Menü)
+				footerLinks (name) – Eine Liste der Footer-Links mit ihrem jeweiligen Namen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.template_overwritten" approved="yes">
+        <source><![CDATA[Overwrite Template]]></source>
+        <target state="final"><![CDATA[Vorlage überschreiben]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.template_overwritten.description" approved="yes">
+        <source><![CDATA[Allows to change the template code below. If this is selected, changes in future updates are not automatically applied. Unset this option to reset the template below]]></source>
+        <target state="final"><![CDATA[Erlaubt die Änderung des untenstehenden Template-Codes. Änderungen in zukünftigen Updates werden dann nicht mehr automatisch übernommen. Deaktiviere diese Option, um das untenstehende Template zurückzusetzen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.template_selection" approved="yes">
+        <source><![CDATA[Select a Base Design Template]]></source>
+        <target state="final"><![CDATA[Basis-Designvorlage auswählen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.template_selection.description" approved="yes">
+        <source><![CDATA[This form will be saved and reloaded when this setting changes]]></source>
+        <target state="final"><![CDATA[Dieses Formular wird bei Änderung gespeichert und neu geladen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.template_selection.0" approved="yes">
+        <source><![CDATA[Compact]]></source>
+        <target state="final"><![CDATA[Kompakt]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.template_selection.1" approved="yes">
+        <source><![CDATA[Full]]></source>
+        <target state="final"><![CDATA[Umfassend]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.update_version" approved="yes">
+        <source><![CDATA[Update the version number and force the visitors to confirm their preferences]]></source>
+        <target state="final"><![CDATA[Die Versionsnummer aktualisieren und die Besucher zwingen, ihre Angaben zu bestätigen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.user_hash_text" approved="yes">
+        <source><![CDATA[Text for the user hash label]]></source>
+        <target state="final"><![CDATA[Text für die User-Hash-Beschriftung]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_script" approved="yes">
+        <source><![CDATA[Script]]></source>
+        <target state="final"><![CDATA[Skript]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_script.hidden" approved="yes">
+        <source><![CDATA[Deactivate]]></source>
+        <target state="final"><![CDATA[Deaktivieren]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_script.html" approved="yes">
+        <source><![CDATA[HTML that shall be loaded if the user accepts this group]]></source>
+        <target state="final"><![CDATA[HTML, das geladen werden soll, wenn der Benutzer diese Gruppe akzeptiert]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_script.html.description" approved="yes">
+        <source><![CDATA[Do not use "document.write" as this will cause errors on the website. You can use the ###NONCE### marker to automatically inject the current request CSP nonce at runtime. Example: <script nonce="###NONCE###" src="https://example.com/example.js">]]></source>
+        <target state="final"><![CDATA[Verwenden Sie nicht "document.write", da dies zu Fehlern auf der Website führt. Sie können den Platzhalter ###NONCE### verwenden, um zur Laufzeit automatisch die aktuelle Request-CSP-Nonce einzufügen. Beispiel: <script nonce="###NONCE###" src="https://example.com/example.js">]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_script.parent_group" approved="yes">
+        <source><![CDATA[Group]]></source>
+        <target state="final"><![CDATA[Gruppe]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_script.parent_optin" approved="yes">
+        <source><![CDATA[Opt In]]></source>
+        <target state="final"><![CDATA[Opt-In]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_script.script" approved="yes">
+        <source><![CDATA[JavaScript that shall be loaded if the user accepts this group]]></source>
+        <target state="final"><![CDATA[JavaScript, das geladen werden soll, wenn der Benutzer diese Gruppe akzeptiert]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_script.title" approved="yes">
+        <source><![CDATA[Script Name]]></source>
+        <target state="final"><![CDATA[Skript-Name]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.domains_to_delete_cookies_for" approved="yes">
+        <source><![CDATA[When a group is not accepted, also delete cookies from the following domains separated by newline. Cookies from the current domain are always automatically deleted.]]></source>
+        <target state="final"><![CDATA[Wenn eine Gruppe nicht akzeptiert wird, Cookies auch von den nachfolgenden, per Zeilenumbruch separierten, Domains löschen. Cookies von der aktuellen Domain werden immer automatisch gelöscht.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.unified_cookie_name" approved="yes">
+        <source><![CDATA[Unified Cookie Name]]></source>
+        <target state="final"><![CDATA[Einheitlicher Cookie-Name]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.unified_cookie_name.description" approved="yes">
+        <source><![CDATA[Unchecking this box would lead to having separate configurations for each language and site root. This would lead to visitors having to select their preferences for each different language and site root.]]></source>
+        <target state="final"><![CDATA[Das Deaktivieren dieses Häkchens würde dazu führen, dass für jede Sprache und jedes Site-Root separate Konfigurationen vorhanden sind. Dies würde dazu führen, dass die Besucher ihre Präferenzen für jede Sprache und jedes Site-Root auswählen müssten.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.disable_usage_statistics" approved="yes">
+        <source><![CDATA[Disable Usage Statistics and Trackability]]></source>
+        <target state="final"><![CDATA[Nutzungsstatistiken und Rückverfolgbarkeit deaktivieren]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.show_fingerprint" approved="yes">
+        <source><![CDATA[Show fingerprint symbol]]></source>
+        <target state="final"><![CDATA[Fingerabdruck-Symbol anzeigen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.fingerprint_position" approved="yes">
+        <source><![CDATA[Position of the fingerprint symbol]]></source>
+        <target state="final"><![CDATA[Position des Fingerabdruck-Symbols]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.fingerprint_position.0" approved="yes">
+        <source><![CDATA[None]]></source>
+        <target state="final"><![CDATA[Keine]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.fingerprint_position.1" approved="yes">
+        <source><![CDATA[Bottom Left]]></source>
+        <target state="final"><![CDATA[Unten Links]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.fingerprint_position.2" approved="yes">
+        <source><![CDATA[Bottom Right]]></source>
+        <target state="final"><![CDATA[Unten Rechts]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.fingerprint_position.3" approved="yes">
+        <source><![CDATA[Top Left]]></source>
+        <target state="final"><![CDATA[Oben Links]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.fingerprint_position.4" approved="yes">
+        <source><![CDATA[Top Right]]></source>
+        <target state="final"><![CDATA[Oben Rechts]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_fingerprint_background" approved="yes">
+        <source><![CDATA[Fingerprint Background Color]]></source>
+        <target state="final"><![CDATA[Fingerabdruck - Hintergrundfarbe]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_fingerprint_image" approved="yes">
+        <source><![CDATA[Fingerprint Image Color]]></source>
+        <target state="final"><![CDATA[Fingerabdruck - Bildfarbe]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_fingerprint_border" approved="yes">
+        <source><![CDATA[Fingerprint Border Color]]></source>
+        <target state="final"><![CDATA[Fingerabdruck - Randfarbe]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.fingerprint" approved="yes">
+        <source><![CDATA[Fingerprint]]></source>
+        <target state="final"><![CDATA[Fingerabdruck]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_service" approved="yes">
+        <source><![CDATA[Services]]></source>
+        <target state="final"><![CDATA[Service]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_service.identifier" approved="yes">
+        <source><![CDATA[Identifier (Unique Name)]]></source>
+        <target state="final"><![CDATA[Identifikator (Eindeutiger Name)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.services" approved="yes">
+        <source><![CDATA[Services]]></source>
+        <target state="final"><![CDATA[Services]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_replacement_background_image" approved="yes">
+        <source><![CDATA[iFrame Replacement Background Image]]></source>
+        <target state="final"><![CDATA[iFrame-Ersatz - Hintergrundbild]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.iframe_replacement_background_image.description" approved="yes">
+        <source><![CDATA[Enter a URL to a background image if you would like to use it instead of the background color. Please make sure the origin is allowed in your content security policy.]]></source>
+        <target state="final"><![CDATA[Geben Sie eine URL zu einem Hintergrundbild ein, wenn Sie es anstelle der Hintergrundfarbe verwenden möchten. Vergewissern Sie sich, dass der Ursprung in Ihrer Sicherheitsrichtlinie für Inhalte erlaubt ist.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.replacement_html_overwritten" approved="yes">
+        <source><![CDATA[Overwrite Template]]></source>
+        <target state="final"><![CDATA[Vorlage überschreiben]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.tab.iframe_settings" approved="yes">
+        <source><![CDATA[Services]]></source>
+        <target state="final"><![CDATA[Services]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_cookielist.settings" approved="yes">
+        <source><![CDATA[Settings]]></source>
+        <target state="final"><![CDATA[Einstellungen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_cookielist.headline" approved="yes">
+        <source><![CDATA[Headline]]></source>
+        <target state="final"><![CDATA[Überschrift]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_cookielist.description" approved="yes">
+        <source><![CDATA[Description]]></source>
+        <target state="final"><![CDATA[Beschreibung]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_service.source_regex" approved="yes">
+        <source><![CDATA[Automatically assign the service template to all external content elements whose source matches the following regular expressions. Every new line is interpreted as a new regular expression. Syntax errors may lead to issues on your website!]]></source>
+        <target state="final"><![CDATA[Automatisch allen externen Inhaltselementen, deren Quelle mit den folgenden regulären Ausdrücken übereinstimmt, die Dienstvorlage zuweisen. Jede neue Zeile wird als neuer regulärer Ausdruck interpretiert. Syntaxfehler können zu Problemen auf Ihrer Website führen!]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.monochrome_enabled.title" approved="yes">
+        <source><![CDATA[Enable High Contrast Mode]]></source>
+        <target state="final"><![CDATA[Hochkontrastmodus aktivieren]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.monochrome_enabled.description" approved="yes">
+        <source><![CDATA[Enable automatic high contrast mode for better accessibility. The cookie banner will automatically switch to a high contrast theme when users have dark mode or high contrast preferences enabled in their browser, or when the CSS class "sg-cookie-optin-dark-theme" is added to the page body.]]></source>
+        <target state="final"><![CDATA[Aktiviert den automatischen Hochkontrastmodus für bessere Zugänglichkeit. Das Cookie-Banner wechselt automatisch zu einem Hochkontrast-Theme, wenn Benutzer den Dunkelmodus oder Hochkontrasteinstellungen in ihrem Browser aktiviert haben oder wenn die CSS-Klasse "sg-cookie-optin-dark-theme" zum Body-Element der Seite hinzugefügt wird.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_service.iframe_replacement_html" approved="yes">
+        <source><![CDATA[iFrame Replacement Template Code (HTML, variables and logic are processed with Mustache, see http://mustache.github.io/mustache.5.html)]]></source>
+        <target state="final"><![CDATA[iFrame-Ersatz Template-Code (HTML, Variablen und Logik werden mit Mustache verarbeitet, siehe http://mustache.github.io/mustache.5.html)]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_service.iframe_replacement_html.description" approved="yes">
+        <source><![CDATA[Please refer to the template code used in the External Content Tab and use it as an example. The templating engine supports markers that you can move inside the code. This template supports the following markers:
+				textEntries.iframe_button_load_one_text – The value of the Button: "Load external content" field
+				placeholders.iframe_consent_description – The description, provided for this specific element, or the global additional description, set in this tab
+				textEntries.iframe_open_settings_text – The value of the Link: "Open settings" field]]></source>
+        <target state="final"><![CDATA[Bitte beachten Sie den Vorlagencode, der auf der Registerkarte "Externe Inhalte" verwendet wird und benutzen Sie ihn als Beispiel. Die Templating-Engine unterstützt Marker, die Sie innerhalb des Codes verschieben können. Diese Vorlage unterstützt die folgenden Marker:
+				textEntries.iframe_button_load_one_text – Der Wert des Feldes: "Externen Inhalt laden"
+				placeholders.iframe_consent_description – Die Beschreibung, die für dieses spezifische Element bereitgestellt wird, oder die globale zusätzliche Beschreibung, die in dieser Registerkarte festgelegt wird
+				textEntries.iframe_open_settings_text – Der Wert des Feldes Link: "Einstellungen öffnen"]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_cookie.name.description" approved="yes">
+        <source><![CDATA[This field is interpreted as a regular expression. Syntax errors in this expression may lead to errors on your website. Therefore please always test your website after you change this value. For more information hover over the field label. You can also test the syntax on https://regex101.com. We enforce exact matches. If your regular expression does not include the ^ and $ symbols, we will automatically add them to the regular expression when evaluating it.]]></source>
+        <target state="final"><![CDATA[Dieses Feld wird als regulärer Ausdruck interpretiert. Syntaxfehler in diesem Ausdruck können zu Fehlern auf Ihrer Website führen. Testen Sie daher bitte immer Ihre Website, nachdem Sie diesen Wert geändert haben. Für weitere Informationen fahren Sie mit dem Mauszeiger über die Feldbezeichnung. Sie können die Syntax zudem auf regex101.com testen. Wenn Ihr regulärer Ausdruck keine ^- und $-Symbole enthält, werden sie bei der Auswertung des Ausdrucks automatisch hinzugefügt.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.disable_automatic_loading" approved="yes">
+        <source><![CDATA[Activate Google Advanced Consent mode]]></source>
+        <target state="final"><![CDATA[Aktivieren Sie den erweiterten Google-Zustimmungsmodus]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.disable_automatic_loading.description" approved="yes">
+        <source><![CDATA[When you activate Google Advanced Consent mode, we will no longer automatically inject the cookieOptin.js file and send the default consent template to Google Services. You will have to do this on your own from Google Tag Manager or other 3rd party tag management service.]]></source>
+        <target state="final"><![CDATA[Wenn Sie den erweiterten Google-Zustimmungsmodus aktivieren, wird die Datei cookieOptin.js nicht mehr automatisch eingebunden und die Standard-Zustimmungsvorlage an Google Services gesendet. Sie müssen dies dann selbst über den Google Tag Manager oder einen anderen Tag-Management-Dienst eines Drittanbieters tun.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.google_service" approved="yes">
+        <source><![CDATA[Google Service]]></source>
+        <target state="final"><![CDATA[Google Service]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.google_service.description" approved="yes">
+        <source><![CDATA[If you select a service from the list we would automatically set the corresponding Google consent name.]]></source>
+        <target state="final"><![CDATA[Wenn Sie einen Dienst aus der Liste auswählen, wird automatisch der entsprechende Google Einwilligungsmodus-Name festgelegt.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.google_service.0" approved="yes">
+        <source><![CDATA[None]]></source>
+        <target state="final"><![CDATA[Keins]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.google_service.1" approved="yes">
+        <source><![CDATA[Google Analytics]]></source>
+        <target state="final"><![CDATA[Google Analytics]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.google_service.2" approved="yes">
+        <source><![CDATA[Google Ads]]></source>
+        <target state="final"><![CDATA[Google Ads]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.google_service.3" approved="yes">
+        <source><![CDATA[Google Analytics + Google Ads]]></source>
+        <target state="final"><![CDATA[Google Analytics + Google Ads]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.auto_action_for_bots" approved="yes">
+        <source><![CDATA[Treat bots like]]></source>
+        <target state="final"><![CDATA[Bots behandeln wie]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.auto_action_for_bots.0" approved="yes">
+        <source><![CDATA[Normal visitors]]></source>
+        <target state="final"><![CDATA[Normale Besucher]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.auto_action_for_bots.1" approved="yes">
+        <source><![CDATA[Accepted all]]></source>
+        <target state="final"><![CDATA[Alles akzeptiert]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.auto_action_for_bots.2" approved="yes">
+        <source><![CDATA[Rejected all]]></source>
+        <target state="final"><![CDATA[Nichts akzeptiert]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.color_focus_outline" approved="yes">
+        <source><![CDATA[Focus outline color]]></source>
+        <target state="final"><![CDATA[Umrissfarbe des Fokus]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.fingerprint_aria_label_text" approved="yes">
+        <source><![CDATA[Aria-label text for the fingerprint icon]]></source>
+        <target state="final"><![CDATA[Aria-Beschriftungstext für das Fingerabdrucksymbol]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_group.dependent_groups_text" approved="yes">
+        <source><![CDATA[Text for the dependent groups label]]></source>
+        <target state="final"><![CDATA[Text für die Beschriftung der abhängigen Gruppen]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.contrast_toggle_aria_label_text" approved="yes">
+        <source><![CDATA[Contrast toggle button aria-label]]></source>
+        <target state="final"><![CDATA[Kontrast umschalten Button aria-label]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.accessibility" approved="yes">
+        <source><![CDATA[Accessibility]]></source>
+        <target state="final"><![CDATA[Barrierefreiheit]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.general" approved="yes">
+        <source><![CDATA[General]]></source>
+        <target state="final"><![CDATA[Allgemein]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.performance" approved="yes">
+        <source><![CDATA[Performance]]></source>
+        <target state="final"><![CDATA[Leistung]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.privacy" approved="yes">
+        <source><![CDATA[Privacy & Security]]></source>
+        <target state="final"><![CDATA[Datenschutz & Sicherheit]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.testing" approved="yes">
+        <source><![CDATA[Testing & Development]]></source>
+        <target state="final"><![CDATA[Testen & Entwicklung]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.statistics" approved="yes">
+        <source><![CDATA[Statistics & Tracking]]></source>
+        <target state="final"><![CDATA[Statistiken & Tracking]]></target>
+      </trans-unit>
+      <trans-unit id="tx_sgcookieoptin_domain_model_optin.palette.advanced" approved="yes">
+        <source><![CDATA[Advanced]]></source>
+        <target state="final"><![CDATA[Erweitert]]></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
