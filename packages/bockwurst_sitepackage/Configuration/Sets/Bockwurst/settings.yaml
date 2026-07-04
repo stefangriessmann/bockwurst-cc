@@ -4,6 +4,10 @@ page:
     # Google-Font aus – Schriften self-hosted (kein Google CDN, kein Consent)
     googleFont:
       enable: false
+    # BSP-Cookie-Consent-Banner aus: die Seite setzt keine nicht-essenziellen
+    # Cookies (Schriften self-hosted, GTM inert, externe Medien via Click-to-Load).
+    cookieconsent:
+      enable: false
   fluidtemplate:
     # Eigenes Page-Template (Default.html) + Partials (Header/Logo) überschreiben bootstrap_package.
     # layoutRootPath NICHT überschrieben – unser Default.html ist self-contained.
