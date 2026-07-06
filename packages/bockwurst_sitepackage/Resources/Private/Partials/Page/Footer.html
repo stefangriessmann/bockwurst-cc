@@ -1,9 +1,57 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:comment>Gemeinsamer Slim-Footer für Default.html und Tour.html.</f:comment>
+<f:comment>Gemeinsamer Footer (Default.html + Tour.html) nach Homepage-Handoff:
+Engagement-Band (6 Points + Triathlon Chemnitz, freigestellte White-Logos auf
+Schwarz), Spalten, Leiste. DE vorerst; EN mit Sprache 1. Kein Tracking-Claim.</f:comment>
 <footer class="bw-footer">
-    <div class="bw-container bw-footer-inner">
-        <span class="bw-footer-brand">bockwurst<span class="bw-dot">.</span>cc</span>
-        <p class="bw-footer-meta">&#169; <f:format.date date="now" format="Y" /> Stefan Grie&#223;mann &middot; bockwurst.cc &middot; Werbefrei</p>
+    <div class="bw-container">
+
+        <div class="bw-fengage">
+            <p class="bw-flab">Engagement &amp; Mitgliedschaft</p>
+            <h2 class="bw-feh">Wof&uuml;r ich mit im Sattel sitze</h2>
+            <div class="bw-fcards">
+                <a class="bw-partner" href="https://6pointschallenges.com" target="_blank" rel="noopener">
+                    <span class="bw-plogo"><img src="{f:uri.resource(path: 'EXT:bockwurst_sitepackage/Resources/Public/Images/6points-logo-white.png')}" alt="6 Points Cycling Challenges"></span>
+                    <span class="bw-prole">Markenbotschafter Deutschland</span>
+                    <span class="bw-pname">Cycling-Challenge auf Mallorca</span>
+                </a>
+                <span class="bw-fsep"></span>
+                <a class="bw-partner" href="https://www.triathlonchemnitz.de" target="_blank" rel="noopener">
+                    <span class="bw-plogo"><img src="{f:uri.resource(path: 'EXT:bockwurst_sitepackage/Resources/Public/Images/triathlon-chemnitz-white.png')}" alt="Triathlon Chemnitz e.V."></span>
+                    <span class="bw-prole">Mitglied &amp; Aushilfstrainer</span>
+                    <span class="bw-pname">Wir bewegen Chemnitz</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="bw-fgrid">
+            <div>
+                <span class="bw-footer-brand">bockwurst<span class="bw-dot">.</span>cc</span>
+                <p class="bw-fclaim">Stefans Rennrad Welt &mdash; echte Touren, ein Event-Guide und eine gute Sache.</p>
+            </div>
+            <div class="bw-fcol">
+                <h3>Entdecken</h3>
+                <a href="/">Touren &amp; Videos</a>
+                <a href="https://bockwurst-events.netlify.app/event-guide" target="_blank" rel="noopener">Event-Guide</a>
+                <a href="https://6pointschallenges.com" target="_blank" rel="noopener">6 Points Mallorca</a>
+                <a href="/">&Uuml;ber Bockwurst</a>
+            </div>
+            <div class="bw-fcol">
+                <h3>Kan&auml;le</h3>
+                <a href="https://www.youtube.com/@Stefan_Rennrad_Chemnitz" target="_blank" rel="noopener">YouTube</a>
+                <a href="https://6pointschallenges.com" target="_blank" rel="noopener">6 Points</a>
+                <a href="https://www.strava.com/athletes/13989099" target="_blank" rel="noopener">Strava</a>
+            </div>
+            <div class="bw-fcol">
+                <h3>Rechtliches</h3>
+                <a href="/impressum">Impressum</a>
+                <a href="/datenschutz">Datenschutz</a>
+            </div>
+        </div>
+
+        <div class="bw-fbar">
+            <span>&#169; <f:format.date date="now" format="Y" /> Stefan Grie&#223;mann &middot; bockwurst.cc</span>
+        </div>
+
     </div>
 </footer>
 </html>

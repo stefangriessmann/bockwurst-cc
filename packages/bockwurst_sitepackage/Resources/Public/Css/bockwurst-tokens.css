@@ -90,8 +90,29 @@ a:hover { color: var(--pink); }
 .bw-nav-link { font-family: var(--ff-mono); font-size: var(--fs-label); text-transform: uppercase; letter-spacing: .1em; color: var(--ink); text-decoration: none; }
 .bw-nav-link:hover { color: var(--pink); }
 .bw-main { min-height: 40vh; padding: clamp(32px,5vw,72px) 0; }
-.bw-footer { background: var(--ink); color: #fff; padding: 28px 0; margin-top: 48px; }
-.bw-footer-inner { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.bw-footer { background: var(--ink); color: #fff; margin-top: 48px; }
 .bw-footer-brand { font-family: var(--ff-display); font-weight: 800; letter-spacing: -.03em; font-size: 20px; color: #fff; }
 .bw-footer-brand .bw-dot { color: var(--cobalt); }
-.bw-footer-meta { font-family: var(--ff-mono); font-size: var(--fs-micro); letter-spacing: .08em; color: rgba(255,255,255,.6); margin: 0; text-transform: uppercase; }
+
+/* Engagement-Band (Handoff): freigestellte White-Logos auf Schwarz */
+.bw-fengage { border-bottom: 1px solid #232a3c; padding: 44px 0; text-align: center; }
+.bw-flab { font-family: var(--ff-mono); font-size: var(--fs-micro); letter-spacing: .2em; text-transform: uppercase; color: #8b93a5; margin: 0 0 6px; }
+.bw-feh { font-family: var(--ff-display); font-weight: 800; font-size: var(--fs-h3); letter-spacing: -.01em; color: #fff; margin: 0 0 30px; }
+.bw-fcards { display: flex; align-items: stretch; justify-content: center; gap: clamp(20px,5vw,72px); flex-wrap: wrap; }
+.bw-partner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; max-width: 280px; text-decoration: none; transition: transform .15s ease; }
+.bw-partner:hover { transform: translateY(-3px); }
+.bw-plogo { height: 70px; display: flex; align-items: center; justify-content: center; }
+.bw-plogo img { height: 100%; width: auto; object-fit: contain; }
+.bw-prole { font-family: var(--ff-mono); font-size: var(--fs-micro); letter-spacing: .12em; text-transform: uppercase; color: var(--volt); }
+.bw-pname { font-family: var(--ff-body); font-weight: 600; font-size: var(--fs-sm); color: #cdd2dc; margin-top: -6px; }
+.bw-fsep { width: 1px; align-self: stretch; background: #232a3c; }
+
+.bw-fgrid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 30px; padding: 56px 0 28px; }
+.bw-fclaim { font-size: var(--fs-sm); color: #aeb4c2; line-height: 1.5; margin: 14px 0 0; max-width: 250px; }
+.bw-fcol h3 { font-family: var(--ff-mono); font-size: var(--fs-micro); letter-spacing: .16em; text-transform: uppercase; color: #8b93a5; margin: 0 0 14px; font-weight: 400; }
+.bw-fcol a { display: block; font-size: var(--fs-sm); color: #cdd2dc; padding: 6px 0; text-decoration: none; }
+.bw-fcol a:hover { color: #fff; }
+.bw-fbar { border-top: 1px solid #232a3c; padding: 20px 0; font-family: var(--ff-mono); font-size: var(--fs-micro); color: #8b93a5; letter-spacing: .04em; }
+
+@media (max-width: 900px) { .bw-fgrid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .bw-fsep { display: none; } .bw-fgrid { grid-template-columns: 1fr; } }
