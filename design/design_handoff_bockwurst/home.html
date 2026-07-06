@@ -1,0 +1,463 @@
+<!-- @dsCard group="Bockwurst Website" viewport="1280x900" name="Startseite" subtitle="Marken-Wegweiser — Hero, Touren, 6 Points, Events, Shorts, Über" -->
+<!-- @startingPoint section="Bockwurst Website" subtitle="Homepage / Marken-Wegweiser" viewport="1280x900" -->
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bockwurst.cc — Stefans Rennrad Welt</title>
+<meta name="description" content="Stefans Rennrad Welt — echte Rennrad-Touren als Video mit Strecke und Daten, ein Event-Guide mit über 1000 Terminen, Zwift-Indoor und die 6 Points Charity-Challenge auf Mallorca. Werbefrei, kein Tracking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C0E14; --bg:#FFFFFF; --soft:#F4F6F9; --line:#E7EAF0; --mut:#4C5363;
+    --cobalt:#2B5BFF; --pink:#FF2E86; --green:#13C766; --cyan:#1FB6C9; --yellow:#FBC400; --volt:#C7F23A;
+    --maxw:1200px;
+    --fs-hero:clamp(38px,6vw,74px); --fs-h2:clamp(26px,3.4vw,40px); --fs-h3:20px; --fs-lead:18px; --fs-body:16px; --fs-sm:14px; --fs-label:12px; --fs-micro:11px;
+    --card-sh:0 1px 2px rgba(16,20,30,.05),0 14px 28px -16px rgba(16,20,30,.16);
+    --card-sh-h:0 2px 6px rgba(16,20,30,.07),0 26px 46px -20px rgba(16,20,30,.30);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  html{scroll-behavior:smooth;}
+  body{ font-family:"Familjen Grotesk",system-ui,sans-serif; color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; }
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 clamp(16px,4vw,44px); }
+  .mono{ font-family:"JetBrains Mono",monospace; }
+  h1,h2,h3{ font-family:"Bricolage Grotesque",sans-serif; font-weight:800; letter-spacing:-.02em; margin:0; }
+  h1{ letter-spacing:-.03em; }
+
+  /* reveal */
+  .js .reveal{ opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+  .js .reveal.in{ opacity:1; transform:none; }
+
+  /* section label */
+  .seclab{ display:flex; align-items:center; gap:12px; font-family:"JetBrains Mono",monospace; font-size:var(--fs-label); letter-spacing:.22em; text-transform:uppercase; color:var(--mut); margin-bottom:16px; }
+  .seclab .line{ width:34px; height:2px; background:var(--cobalt); flex:none; }
+  section{ padding:clamp(52px,8vh,96px) 0; }
+  .shead{ display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:34px; }
+  .shead h2{ font-size:var(--fs-h2); }
+  .morelink{ font-family:"Familjen Grotesk"; font-weight:600; font-size:var(--fs-sm); color:var(--cobalt); white-space:nowrap; display:inline-flex; align-items:center; gap:6px; }
+  .morelink:hover{ gap:9px; }
+
+  /* buttons */
+  .btn{ font-family:"Familjen Grotesk"; font-weight:700; font-size:var(--fs-sm); padding:13px 22px; border-radius:999px; border:1.5px solid var(--ink); cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:transform .15s ease, box-shadow .15s ease, background .15s; }
+  .btn-pri{ background:var(--cobalt); color:#fff; border-color:var(--cobalt); }
+  .btn-pri:hover{ transform:translateY(-2px); box-shadow:0 12px 24px -10px var(--cobalt); }
+  .btn-volt{ background:var(--volt); color:var(--ink); border-color:var(--ink); }
+  .btn-volt:hover{ transform:translateY(-2px); box-shadow:0 10px 22px -10px rgba(12,14,20,.5); }
+  .btn-ghost{ background:transparent; color:var(--ink); }
+  .btn-ghost:hover{ transform:translateY(-2px); }
+
+  /* header */
+  header{ position:sticky; top:0; z-index:600; background:rgba(255,255,255,.86); backdrop-filter:saturate(1.4) blur(10px); border-bottom:1px solid var(--line); }
+  .nav{ display:flex; align-items:center; gap:26px; height:74px; }
+  .logo .lk{ display:flex; flex-direction:column; }
+  .logo .claim{ font-family:"JetBrains Mono",monospace; font-size:9.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--mut); margin-top:3px; }
+  .nlinks{ display:flex; gap:22px; margin-left:8px; }
+  .nlinks a{ font-size:var(--fs-sm); color:var(--ink); opacity:.72; transition:opacity .15s, color .15s; }
+  .nlinks a:hover{ opacity:1; color:var(--cobalt); }
+  .nright{ margin-left:auto; display:flex; align-items:center; gap:14px; }
+  .lng{ display:flex; border:1.5px solid var(--ink); border-radius:999px; overflow:hidden; font-family:"JetBrains Mono",monospace; font-size:10px; }
+  .lng button{ border:0; background:transparent; padding:6px 9px; cursor:pointer; color:var(--ink); font-family:inherit; }
+  .lng button.on{ background:var(--ink); color:#fff; }
+  .burger{ display:none; background:none; border:0; cursor:pointer; padding:6px; }
+  .burger svg{ width:26px; height:26px; stroke:var(--ink); stroke-width:2; fill:none; }
+
+  /* HERO */
+  .hero{ position:relative; padding:clamp(48px,7vh,88px) 0 clamp(40px,6vh,72px); }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(28px,5vw,60px); align-items:center; }
+  .hero .kick{ font-family:"JetBrains Mono",monospace; font-size:var(--fs-label); letter-spacing:.24em; text-transform:uppercase; color:var(--mut); display:inline-flex; align-items:center; gap:9px; }
+  .hero .kick .pulse{ width:7px; height:7px; border-radius:50%; background:var(--cobalt); }
+  .hero h1{ font-size:var(--fs-hero); line-height:.96; margin:18px 0 0; }
+  .hero h1 .pink{ color:var(--pink); }
+  .hero .sub{ font-size:var(--fs-lead); line-height:1.55; color:var(--mut); max-width:440px; margin:22px 0 0; }
+  .hero .cta{ display:flex; gap:12px; margin-top:30px; flex-wrap:wrap; }
+  .hstats{ display:flex; gap:clamp(18px,3vw,40px); margin-top:42px; }
+  .hstat .v{ font-family:"Bricolage Grotesque"; font-weight:800; font-size:clamp(26px,3vw,34px); letter-spacing:-.02em; line-height:1; }
+  .hstat .v small{ font-size:.5em; color:var(--cobalt); margin-left:2px; }
+  .hstat .l{ font-family:"JetBrains Mono",monospace; font-size:var(--fs-micro); letter-spacing:.1em; text-transform:uppercase; color:var(--mut); margin-top:7px; }
+
+  .hcard{ position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/4.2; box-shadow:0 40px 80px -36px rgba(12,14,20,.5); }
+  .hcard img{ width:100%; height:106%; object-fit:cover; object-position:56% 30%; }
+  .hcard .grad{ position:absolute; inset:0; background:linear-gradient(to top, rgba(12,14,20,.72), transparent 48%); }
+  .hcard .tag{ position:absolute; top:16px; left:16px; }
+  .hcard .meta{ position:absolute; left:20px; right:20px; bottom:20px; color:#fff; }
+  .hcard .meta .t{ font-family:"Bricolage Grotesque"; font-weight:800; font-size:22px; letter-spacing:-.02em; }
+  .hcard .meta .m{ font-family:"JetBrains Mono",monospace; font-size:var(--fs-sm); opacity:.9; margin-top:6px; }
+  .hcard .play{ position:absolute; right:18px; bottom:18px; width:56px; height:56px; border-radius:50%; background:var(--volt); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px -8px rgba(0,0,0,.5); }
+  .hcard .play i{ width:0;height:0;border-left:17px solid var(--ink);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px; }
+
+  .tag{ display:inline-flex; align-items:center; gap:6px; font-family:"JetBrains Mono",monospace; font-size:var(--fs-micro); letter-spacing:.08em; text-transform:uppercase; padding:6px 11px; border-radius:999px; font-weight:500; }
+
+  /* TOUREN grid */
+  .tours{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .tour{ border:1px solid var(--line); border-radius:18px; overflow:hidden; background:#fff; box-shadow:var(--card-sh); transition:transform .2s ease, box-shadow .2s ease; }
+  .tour:hover{ transform:translateY(-4px); box-shadow:var(--card-sh-h); }
+  .tour .ph{ position:relative; aspect-ratio:16/10; overflow:hidden; }
+  .tour .ph img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .tour:hover .ph img{ transform:scale(1.05); }
+  .tour .ph .play{ position:absolute; right:12px; bottom:12px; width:40px; height:40px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; }
+  .tour .ph .play i{ width:0;height:0;border-left:12px solid var(--ink);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px; }
+  .tour .bd{ padding:16px 17px 18px; }
+  .tour h3{ font-size:var(--fs-h3); margin:10px 0 0; }
+  .tour .rm{ font-family:"JetBrains Mono",monospace; font-size:var(--fs-sm); color:var(--mut); margin-top:9px; display:flex; gap:12px; flex-wrap:wrap; }
+
+  /* 6 POINTS banner */
+  .sixp{ position:relative; background:var(--ink); color:#fff; border-radius:26px; overflow:hidden; box-shadow:var(--card-sh); }
+  .sixp-grid{ display:grid; grid-template-columns:1.15fr .85fr; align-items:stretch; }
+  .sixp .pad{ padding:clamp(28px,4vw,48px); }
+  .sixp .plogo{ height:40px; width:auto; margin-bottom:18px; }
+  .sixp h2{ font-size:var(--fs-h2); margin:6px 0 0; }
+  .sixp h2 .sun{ color:var(--yellow); }
+  .sixp p{ color:#aeb4c2; font-size:var(--fs-body); line-height:1.55; margin:14px 0 0; max-width:420px; }
+  .sixp .amb{ display:inline-flex; align-items:center; gap:7px; font-family:"JetBrains Mono",monospace; font-size:var(--fs-micro); letter-spacing:.14em; text-transform:uppercase; color:var(--yellow); }
+  .sixp .cd{ display:flex; gap:10px; margin-top:22px; }
+  .sixp .cd .u{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:9px 0; min-width:60px; text-align:center; }
+  .sixp .cd .u b{ font-family:"Bricolage Grotesque"; font-weight:800; font-size:24px; color:#fff; display:block; line-height:1; letter-spacing:-.02em; }
+  .sixp .cd .u span{ font-family:"JetBrains Mono",monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:#8b93a5; margin-top:5px; display:block; }
+  .sixp .sixp-photo{ background-size:cover; background-position:center; min-height:260px; position:relative; }
+  .sixp .sixp-photo::after{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, var(--ink), transparent 40%); }
+
+  /* EVENTS teaser */
+  .events{ background:var(--soft); background-image:radial-gradient(rgba(16,20,30,.045) 1px, transparent 1.5px); background-size:24px 24px; }
+  .evlist{ display:flex; flex-direction:column; gap:10px; }
+  .evrow{ display:grid; grid-template-columns:64px 1fr auto; gap:16px; align-items:center; background:#fff; border:1px solid var(--line); border-left:4px solid var(--c); border-radius:14px; padding:13px 18px; box-shadow:var(--card-sh); transition:transform .15s ease, box-shadow .15s ease; }
+  .evrow:hover{ transform:translateX(3px); box-shadow:var(--card-sh-h); }
+  .evrow .date{ text-align:center; }
+  .evrow .date .d{ font-family:"Bricolage Grotesque"; font-weight:800; font-size:24px; line-height:1; }
+  .evrow .date .mo{ font-family:"JetBrains Mono",monospace; font-size:var(--fs-micro); letter-spacing:.1em; text-transform:uppercase; color:var(--mut); margin-top:3px; }
+  .evrow h3{ font-size:var(--fs-h3); }
+  .evrow .m{ font-family:"JetBrains Mono",monospace; font-size:var(--fs-sm); color:var(--mut); margin-top:6px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .evrow .badge{ display:inline-flex; align-items:center; gap:5px; font-family:"JetBrains Mono",monospace; font-size:var(--fs-micro); letter-spacing:.04em; text-transform:uppercase; padding:3px 8px; border-radius:5px; }
+  .evrow .badge .bd{ width:7px; height:7px; border-radius:50%; }
+  .evrow .go{ color:var(--mut); }
+
+  /* SHORTS */
+  .shorts{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .short{ position:relative; border-radius:16px; overflow:hidden; aspect-ratio:9/13; box-shadow:var(--card-sh); display:block; }
+  .short img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+  .short:hover img{ transform:scale(1.05); }
+  .short .ov{ position:absolute; inset:0; background:linear-gradient(to top, rgba(12,14,20,.78), transparent 46%); }
+  .short .yt{ position:absolute; top:10px; left:10px; width:30px; height:22px; background:#FF0033; border-radius:6px; display:flex; align-items:center; justify-content:center; }
+  .short .yt i{ width:0;height:0;border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px; }
+  .short .cap{ position:absolute; left:12px; right:12px; bottom:12px; color:#fff; font-family:"Bricolage Grotesque"; font-weight:700; font-size:14px; line-height:1.15; }
+
+  /* ÜBER */
+  .about{ display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(28px,5vw,56px); align-items:center; }
+  .about .ph{ border-radius:22px; overflow:hidden; aspect-ratio:4/4.4; box-shadow:var(--card-sh); }
+  .about .ph img{ width:100%; height:100%; object-fit:cover; object-position:center; }
+  .about h2{ font-size:var(--fs-h2); margin:10px 0 0; }
+  .about p{ font-size:var(--fs-lead); line-height:1.6; color:var(--mut); margin:16px 0 0; }
+  .about .btn{ margin-top:24px; }
+
+  /* FOOTER */
+  footer{ background:var(--ink); color:#fff; }
+  .engage{ border-bottom:1px solid #232a3c; padding:44px 0; text-align:center; }
+  .engage .lab{ font-family:"JetBrains Mono",monospace; font-size:var(--fs-micro); letter-spacing:.2em; text-transform:uppercase; color:#8b93a5; margin:0 0 6px; }
+  .engage .eh{ font-family:"Bricolage Grotesque"; font-weight:800; font-size:var(--fs-h3); letter-spacing:-.01em; color:#fff; margin:0 0 30px; }
+  .engage .cards{ display:flex; align-items:stretch; justify-content:center; gap:clamp(20px,5vw,72px); flex-wrap:wrap; }
+  .partner{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:14px; max-width:280px; transition:transform .15s ease; }
+  .partner:hover{ transform:translateY(-3px); }
+  .partner .plogo{ height:70px; display:flex; align-items:center; justify-content:center; }
+  .partner .plogo img{ height:100%; width:auto; object-fit:contain; }
+  .partner .plogo.onlight{ background:#fff; border-radius:14px; padding:12px 18px; height:74px; }
+  .partner .plogo.crest{ width:66px; border-radius:50%; background:linear-gradient(135deg,var(--cobalt),var(--pink)); }
+  .partner .plogo.crest span{ font-family:"Bricolage Grotesque"; font-weight:800; font-size:24px; color:#fff; letter-spacing:-.02em; }
+  .partner .role{ font-family:"JetBrains Mono",monospace; font-size:var(--fs-micro); letter-spacing:.12em; text-transform:uppercase; color:var(--volt); }
+  .partner .pname{ font-family:"Familjen Grotesk"; font-weight:600; font-size:var(--fs-sm); color:#cdd2dc; margin-top:-6px; }
+  .engage .cards .sep{ width:1px; align-self:stretch; background:#232a3c; }
+  @media (max-width:560px){ .engage .cards .sep{ display:none; } }
+  .fgrid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:30px; padding:56px 0 28px; }
+  .fclaim{ font-size:var(--fs-sm); color:#aeb4c2; line-height:1.5; margin:14px 0 0; max-width:250px; }
+  .fcol h4{ font-family:"JetBrains Mono",monospace; font-size:var(--fs-micro); letter-spacing:.16em; text-transform:uppercase; color:#8b93a5; margin:0 0 14px; }
+  .fcol a{ display:block; font-size:var(--fs-sm); color:#cdd2dc; padding:6px 0; }
+  .fcol a:hover{ color:#fff; }
+  .fbar{ display:flex; justify-content:space-between; align-items:center; gap:16px; border-top:1px solid #232a3c; padding:20px 0; font-family:"JetBrains Mono",monospace; font-size:var(--fs-micro); color:#8b93a5; letter-spacing:.04em; flex-wrap:wrap; }
+
+  @media (max-width:900px){
+    .hero-grid{ grid-template-columns:1fr; } .hcard{ aspect-ratio:16/11; }
+    .sixp-grid{ grid-template-columns:1fr; } .sixp .sixp-photo{ min-height:180px; order:-1; }
+    .sixp .sixp-photo::after{ background:linear-gradient(0deg, var(--ink), transparent 55%); }
+    .tours{ grid-template-columns:1fr 1fr; } .shorts{ grid-template-columns:1fr 1fr; }
+    .about{ grid-template-columns:1fr; } .about .ph{ aspect-ratio:16/10; max-height:320px; }
+    .nlinks{ display:none; } .burger{ display:inline-flex; } .fgrid{ grid-template-columns:1fr 1fr; } .engage .cards{ grid-template-columns:1fr; }
+  }
+  @media (max-width:520px){
+    .tours{ grid-template-columns:1fr; } .shorts{ grid-template-columns:1fr 1fr; }
+    .evrow{ grid-template-columns:56px 1fr; } .evrow .go{ display:none; }
+    .hstats{ flex-wrap:wrap; gap:20px; }
+  }
+  @media (prefers-reduced-motion: reduce){ *{ transition:none!important; animation:none!important; scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#" id="logo" aria-label="bockwurst.cc"></a>
+      <nav class="nlinks">
+        <a href="#events" data-de="Events" data-en="Events">Events</a>
+        <a href="#touren" data-de="Touren" data-en="Rides">Touren</a>
+        <a href="#ueber" data-de="Über" data-en="About">Über</a>
+        <a href="#zwift" data-de="Zwift" data-en="Zwift">Zwift</a>
+        <a href="#sixpoints" data-de="6 Points" data-en="6 Points">6 Points</a>
+      </nav>
+      <div class="nright">
+        <div class="lng"><button data-lang="de" class="on">DE</button><button data-lang="en">EN</button></div>
+        <button class="burger" aria-label="Menü"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1 HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="kick reveal"><span class="pulse"></span><span data-de="Rennrad · Indoor · Abenteuer" data-en="Road · Indoor · Adventure">Rennrad · Indoor · Abenteuer</span></span>
+          <h1 class="reveal" data-de="Stefans&#10;Rennrad Welt." data-en="Stefan's&#10;Cycling World."></h1>
+          <p class="sub reveal" data-de="Echte Touren als Video — mit Strecke, Höhenmetern und Musik im Ohr. Ein Event-Guide mit über 1.000 Terminen. Und eine gute Sache auf Mallorca. Werbefrei, kein Tracking." data-en="Real rides as video — with route, elevation and music in your ears. An event guide with 1,000+ dates. And a good cause on Mallorca. Ad-free, no tracking.">…</p>
+          <div class="cta reveal">
+            <a class="btn btn-pri" href="#touren" data-de="Neueste Tour ansehen" data-en="Watch latest ride">Neueste Tour ansehen</a>
+            <a class="btn btn-ghost" href="#events" data-de="Zum Event-Guide" data-en="To the Event Guide">Zum Event-Guide</a>
+          </div>
+          <div class="hstats reveal">
+            <div class="hstat"><div class="v" data-count="90" data-suf="+">0</div><div class="l" data-de="Videos" data-en="Videos">Videos</div></div>
+            <div class="hstat"><div class="v" data-count="1000" data-suf="+">0</div><div class="l" data-de="Events im Guide" data-en="Events in guide">Events im Guide</div></div>
+            <div class="hstat"><div class="v" data-count="4">0</div><div class="l" data-de="Länder" data-en="Countries">Länder</div></div>
+          </div>
+        </div>
+        <a class="hcard reveal" href="#touren" aria-label="Neueste Tour">
+          <img src="assets/stefan-mallorca.jpg" alt="">
+          <div class="grad"></div>
+          <span class="tag" style="background:var(--cobalt);color:#fff" data-de="Neueste Tour · Video" data-en="Latest ride · Video">Neueste Tour · Video</span>
+          <div class="meta"><div class="t" data-de="MSR300 — Nachtfahrt" data-en="MSR300 — Night ride">MSR300 — Nachtfahrt</div><div class="m">306 KM · 1.480 HM · MECKLENBURG</div></div>
+          <span class="play"><i></i></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2 TOUREN -->
+    <section id="touren">
+      <div class="wrap">
+        <div class="shead reveal">
+          <div><div class="seclab"><span class="line"></span><span data-de="Touren & Videos" data-en="Rides & Videos">Touren & Videos</span></div><h2 data-de="Rausfahren, filmen, erzählen." data-en="Ride out, film it, tell the story.">Rausfahren, filmen, erzählen.</h2></div>
+          <a class="morelink" href="#" data-de="Alle Touren →" data-en="All rides →">Alle Touren →</a>
+        </div>
+        <div class="tours" id="toursGrid"></div>
+      </div>
+    </section>
+
+    <!-- 3 6 POINTS -->
+    <section id="sixpoints" style="padding-top:0">
+      <div class="wrap">
+        <div class="sixp reveal">
+          <div class="sixp-grid">
+            <div class="pad">
+              <img class="plogo" src="assets/6points-logo-white.png" alt="6 Points Cycling Challenges">
+              <span class="amb"><span>★</span><span data-de="Markenbotschafter Deutschland · Stefan" data-en="Brand ambassador Germany · Stefan">Markenbotschafter Deutschland · Stefan</span></span>
+              <h2 data-de="Rund um <span class='sun'>Mallorca</span>. Fahr mit mir mit." data-en="Around <span class='sun'>Mallorca</span>. Ride along with me."></h2>
+              <p data-de="Rund um Mallorca. 3 Tage, traumhafte Strecke, eine gute Sache. Die 6 Points Charity-Challenge im Mai 2027 — ich bin dabei, und du kannst mitfahren." data-en="Around Mallorca. 3 days, a dream route, one good cause. The 6 Points charity challenge in May 2027 — I'm in, and you can ride along.">…</p>
+              <div class="cd" id="cd"></div>
+              <div style="margin-top:26px"><a class="btn btn-volt" href="https://6pointschallenges.com/product/mallorca-may-2027/" target="_blank" rel="noopener" data-de="Startplatz sichern →" data-en="Grab your spot →">Startplatz sichern →</a></div>
+            </div>
+            <div class="sixp-photo" style="background-image:url('assets/stefan-mallorca.jpg')"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 EVENTS -->
+    <section id="events" class="events">
+      <div class="wrap">
+        <div class="shead reveal">
+          <div><div class="seclab"><span class="line"></span><span data-de="Event-Guide" data-en="Event Guide">Event-Guide</span></div><h2 data-de="Dein nächstes Rennen in der Nähe." data-en="Your next race, nearby.">Dein nächstes Rennen in der Nähe.</h2></div>
+          <a class="morelink" href="#" data-de="Alle Events →" data-en="All events →">Alle Events →</a>
+        </div>
+        <div class="evlist" id="evList"></div>
+        <div class="reveal" style="margin-top:22px"><a class="btn btn-pri" href="#" data-de="Zum Event-Guide →" data-en="To the Event Guide →">Zum Event-Guide →</a></div>
+      </div>
+    </section>
+
+    <!-- 5 SHORTS -->
+    <section id="shorts">
+      <div class="wrap">
+        <div class="shead reveal">
+          <div><div class="seclab"><span class="line"></span><span data-de="YouTube Shorts" data-en="YouTube Shorts">YouTube Shorts</span></div><h2 data-de="Kurz reingeschaut." data-en="A quick look.">Kurz reingeschaut.</h2></div>
+          <a class="morelink" href="https://www.youtube.com/@Stefan_Rennrad_Chemnitz" target="_blank" rel="noopener" data-de="Zum Kanal →" data-en="To the channel →">Zum Kanal →</a>
+        </div>
+        <div class="shorts" id="shortsGrid"></div>
+      </div>
+    </section>
+
+    <!-- 6 ÜBER -->
+    <section id="ueber" style="padding-top:0">
+      <div class="wrap about">
+        <div class="ph reveal"><img src="assets/stefan-mallorca.jpg" alt="Stefan"></div>
+        <div class="reveal">
+          <div class="seclab"><span class="line"></span><span data-de="Über Bockwurst" data-en="About Bockwurst">Über Bockwurst</span></div>
+          <h2 data-de="Positiv bekloppt. Rennrad-verliebt. Immer für einen Spruch zu haben." data-en="Cheerfully mad. Road-bike smitten. Always up for a laugh.">Positiv bekloppt. Rennrad-verliebt. Immer für einen Spruch zu haben.</h2>
+          <p data-de="Ich bin Stefan aus Chemnitz — fahre Rennrad aus purer Freude, filme meine Touren, unterstütze Kids im Triathlon und rolle im Winter bei Zwift durch virtuelle Welten. Bockwurst.cc ist mein Platz dafür: ehrlich, werbefrei, mit Musik und guter Laune." data-en="I'm Stefan from Chemnitz — I ride for the pure joy of it, film my tours, support kids in triathlon and spin through virtual worlds on Zwift in winter. Bockwurst.cc is my place for all of it: honest, ad-free, with music and good vibes.">…</p>
+          <a class="btn btn-ghost" href="#" data-de="Meine Geschichte →" data-en="My story →">Meine Geschichte →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7 FOOTER -->
+  <footer id="zwift">
+    <div class="wrap">
+      <div class="engage">
+        <p class="lab" data-de="Engagement &amp; Mitgliedschaft" data-en="Involvement &amp; membership">Engagement &amp; Mitgliedschaft</p>
+        <h3 class="eh" data-de="Wofür ich mit im Sattel sitze" data-en="What I ride for">Wofür ich mit im Sattel sitze</h3>
+        <div class="cards">
+          <a class="partner" href="https://6pointschallenges.com" target="_blank" rel="noopener">
+            <span class="plogo"><img src="assets/6points-logo-white.png" alt="6 Points Cycling Challenges"></span>
+            <span class="role" data-de="Markenbotschafter Deutschland" data-en="Brand ambassador Germany">Markenbotschafter Deutschland</span>
+            <span class="pname" data-de="Cycling-Challenge auf Mallorca" data-en="Cycling challenge on Mallorca">Cycling-Challenge auf Mallorca</span>
+          </a>
+          <span class="sep"></span>
+          <a class="partner" href="https://www.triathlonchemnitz.de" target="_blank" rel="noopener">
+            <span class="plogo"><img src="assets/triathlon-chemnitz-white.png" alt="Triathlon Chemnitz e.V."></span>
+            <span class="role" data-de="Mitglied &amp; Aushilfstrainer" data-en="Member &amp; assistant coach">Mitglied &amp; Aushilfstrainer</span>
+            <span class="pname" data-de="Wir bewegen Chemnitz" data-en="We move Chemnitz">Wir bewegen Chemnitz</span>
+          </a>
+        </div>
+      </div>
+      <div class="fgrid">
+        <div>
+          <a class="logo" href="#" id="flogo"></a>
+          <p class="fclaim" data-de="Stefans Rennrad Welt — echte Touren, ein Event-Guide und eine gute Sache. Werbefrei, kein Tracking." data-en="Stefan's Cycling World — real rides, an event guide and one good cause. Ad-free, no tracking.">…</p>
+        </div>
+        <div class="fcol"><h4 data-de="Entdecken" data-en="Explore">Entdecken</h4>
+          <a href="#touren" data-de="Touren & Videos" data-en="Rides & Videos">Touren & Videos</a>
+          <a href="#events" data-de="Event-Guide" data-en="Event Guide">Event-Guide</a>
+          <a href="#sixpoints" data-de="6 Points Mallorca" data-en="6 Points Mallorca">6 Points Mallorca</a>
+          <a href="#ueber" data-de="Über Bockwurst" data-en="About Bockwurst">Über Bockwurst</a>
+        </div>
+        <div class="fcol"><h4 data-de="Kanäle" data-en="Channels">Kanäle</h4>
+          <a href="https://www.youtube.com/@Stefan_Rennrad_Chemnitz" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://6pointschallenges.com" target="_blank" rel="noopener">6 Points</a>
+          <a href="#" data-de="Zwift" data-en="Zwift">Zwift</a>
+          <a href="#">Strava</a>
+        </div>
+        <div class="fcol"><h4 data-de="Rechtliches" data-en="Legal">Rechtliches</h4>
+          <a href="#" data-de="Impressum" data-en="Imprint">Impressum</a>
+          <a href="#" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+        </div>
+      </div>
+      <div class="fbar">
+        <span>© 2026 Stefan Grießmann · bockwurst.cc</span>
+      </div>
+    </div>
+  </footer>
+
+<script>
+const COB="#2B5BFF", PINK="#FF2E86", GREEN="#13C766", CYAN="#1FB6C9", YELLOW="#FBC400", VOLT="#C7F23A", INK="#0C0E14", MUT="#4C5363";
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce) document.documentElement.classList.add('js');
+
+/* logo */
+function cWheel(col, fontPx){
+  const r=18,cx=20,cy=22,a0=42,a1=318,steps=40; let pts=[];
+  for(let i=0;i<=steps;i++){const a=(a0+(a1-a0)*i/steps)*Math.PI/180;pts.push((cx+Math.cos(a)*r).toFixed(1)+","+(cy-Math.sin(a)*r).toFixed(1));}
+  let sp="";[70,110,160,200,250,290].forEach(d=>{const a=d*Math.PI/180;sp+=`<line x1="${cx}" y1="${cy}" x2="${(cx+Math.cos(a)*(r-2)).toFixed(1)}" y2="${(cy-Math.sin(a)*(r-2)).toFixed(1)}" stroke="${col}" stroke-width="1.2" opacity=".55"/>`;});
+  const sz=fontPx*0.74;
+  return `<svg width="${sz.toFixed(1)}" height="${(sz*44/40).toFixed(1)}" viewBox="0 0 40 44" fill="none" style="display:inline-block;vertical-align:-0.17em"><polyline points="${pts.join(' ')}" stroke="${col}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>${sp}<circle cx="${cx}" cy="${cy}" r="2.4" fill="${col}"/></svg>`;
+}
+function logoMarkup(txt,dot,c1,c2,claimCol){
+  return `<span class="lk"><span style="font-family:'Bricolage Grotesque';font-weight:800;letter-spacing:-.035em;font-size:22px;color:${txt};display:inline-flex;align-items:center">bockwurst<span style="color:${dot}">.</span><span style="display:inline-flex">${cWheel(c1,22)}${cWheel(c2,22)}</span></span><span class="claim" style="color:${claimCol}" data-de="Stefans Rennrad Welt" data-en="Stefan's Cycling World">Stefans Rennrad Welt</span></span>`;
+}
+document.getElementById('logo').innerHTML=logoMarkup(INK,COB,COB,PINK,MUT);
+document.getElementById('flogo').innerHTML=logoMarkup('#fff',COB,COB,PINK,'#8b93a5');
+
+/* touren */
+const TOURS=[
+  {img:"assets/msr1.jpg",de:"MSR300 — Nachtfahrt",en:"MSR300 — Night ride",tag:["Rennrad","Road"],c:COB,region:"Mecklenburg",km:"306 km"},
+  {img:"assets/msr5.jpg",de:"Erzgebirgs-Schotter",en:"Ore Mountains gravel",tag:["Gravel","Gravel"],c:GREEN,region:"Sachsen",km:"78 km"},
+  {img:"assets/msr9.jpg",de:"Die große Inselrunde",en:"The big island loop",tag:["Abenteuer","Adventure"],c:PINK,region:"Mallorca",km:"312 km"},
+];
+document.getElementById('toursGrid').innerHTML=TOURS.map((t,i)=>`
+  <a class="tour reveal" href="#" style="transition-delay:${i*0.06}s">
+    <div class="ph"><img src="${t.img}" alt=""><span class="play"><i></i></span></div>
+    <div class="bd"><span class="tag" style="background:${t.c}1f;color:${t.c}" data-de="${t.tag[0]}" data-en="${t.tag[1]}">${t.tag[0]}</span>
+      <h3 data-de="${t.de}" data-en="${t.en}">${t.de}</h3>
+      <div class="rm"><span>${t.region}</span><span>${t.km}</span><span>▶ Video</span></div>
+    </div>
+  </a>`).join('');
+
+/* events */
+const SPORTS={rad:COB,tri:PINK,swim:CYAN,lauf:GREEN};
+const EVENTS=[
+  {d:"04",mo:"JUL",art:"Triathlon",c:PINK,de:"Chemnitzer City-Triathlon",en:"Chemnitz City Triathlon",ort:"Chemnitz",lv:"SAC",dist:"~0 km"},
+  {d:"05",mo:"JUL",art:"Laufen",c:GREEN,de:"Chemnitzer Stadtlauf",en:"Chemnitz City Run",ort:"Chemnitz",lv:"SAC",dist:"~0 km"},
+  {d:"11",mo:"JUL",art:"Freiwasser",c:CYAN,de:"Werbellinsee Freiwasser-Cup",en:"Werbellinsee open-water cup",ort:"Joachimsthal",lv:"BER",dist:"~190 km"},
+  {d:"18",mo:"JUL",art:"Trail",c:GREEN,de:"Kammweg Trail Marathon",en:"Kammweg trail marathon",ort:"Oberwiesenthal",lv:"SAC",dist:"~70 km"},
+  {d:"02",mo:"AUG",art:"Triathlon",c:PINK,de:"Ostsee-Triathlon Glücksburg",en:"Baltic triathlon Glücksburg",ort:"Glücksburg",lv:"SCH",dist:"~610 km"},
+];
+document.getElementById('evList').innerHTML=EVENTS.map(e=>`
+  <a class="evrow reveal" href="#" style="--c:${e.c}">
+    <div class="date"><div class="d">${e.d}</div><div class="mo">${e.mo}</div></div>
+    <div><h3 data-de="${e.de}" data-en="${e.en}">${e.de}</h3>
+      <div class="m"><span class="badge" style="background:${e.c}1f;color:${e.c}"><span class="bd" style="background:${e.c}"></span>${e.art}</span><span>${e.ort}</span><span>DE · ${e.lv}</span></div>
+    </div>
+    <div class="go">${e.dist} →</div>
+  </a>`).join('');
+
+/* shorts */
+const SHORTS=[
+  {img:"assets/msr3.jpg",de:"Sitzposition-Hack",en:"Saddle position hack"},
+  {img:"assets/msr7.jpg",de:"Nachts allein — warum?",en:"Alone at night — why?"},
+  {img:"assets/msr1.jpg",de:"Reifen flicken in 60s",en:"Fix a flat in 60s"},
+  {img:"assets/msr5.jpg",de:"Mallorca-Vorfreude",en:"Mallorca hype"},
+];
+document.getElementById('shortsGrid').innerHTML=SHORTS.map(s=>`
+  <a class="short reveal" href="https://www.youtube.com/@Stefan_Rennrad_Chemnitz" target="_blank" rel="noopener">
+    <img src="${s.img}" alt=""><span class="ov"></span><span class="yt"><i></i></span>
+    <span class="cap" data-de="${s.de}" data-en="${s.en}">${s.de}</span>
+  </a>`).join('');
+
+/* i18n */
+let lang='de';
+function applyLang(l){ lang=l; document.documentElement.lang=l;
+  document.querySelectorAll('[data-de]').forEach(el=>{ const v=el.getAttribute('data-'+l); if(v==null) return;
+    if(el.tagName==='H1'){ const lines=v.split('\n'); el.innerHTML=lines.map((s,i)=>`<span style="display:block"${i===lines.length-1?' class="pink"':''}>${s}</span>`).join(''); }
+    else el.innerHTML=v;
+  });
+  document.querySelectorAll('.lng button').forEach(b=>b.classList.toggle('on',b.dataset.lang===l));
+}
+document.querySelectorAll('.lng button').forEach(b=>b.onclick=()=>applyLang(b.dataset.lang));
+applyLang('de');
+
+/* countdown to 2027-05-14 09:00 */
+const TARGET=new Date('2027-05-14T09:00:00').getTime();
+function cd(){
+  const el=document.getElementById('cd'); if(!el) return;
+  let s=Math.max(0,Math.floor((TARGET-Date.now())/1000));
+  const d=Math.floor(s/86400); s-=d*86400; const h=Math.floor(s/3600); s-=h*3600; const m=Math.floor(s/60);
+  const U=[[d,lang==='de'?'Tage':'days'],[h,lang==='de'?'Std':'hrs'],[m,lang==='de'?'Min':'min']];
+  el.innerHTML=U.map(u=>`<div class="u"><b>${u[0]}</b><span>${u[1]}</span></div>`).join('');
+}
+cd(); setInterval(cd,60000);
+
+/* reveal + count-up */
+if(!reduce){
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+    e.target.querySelectorAll('[data-count]').forEach(cu); if(e.target.matches('[data-count]')) cu(e.target); io.unobserve(e.target);}});},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  document.querySelectorAll('[data-count]').forEach(el=>io.observe(el));
+} else {
+  document.querySelectorAll('[data-count]').forEach(el=>el.textContent=(+el.dataset.count).toLocaleString('de-DE')+(el.dataset.suf||''));
+}
+function cu(node){ if(node.dataset.done) return; node.dataset.done=1;
+  const to=+node.dataset.count, suf=node.dataset.suf||'', dur=1200, t0=performance.now();
+  function step(t){ const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3);
+    node.textContent=Math.round(to*e).toLocaleString('de-DE')+suf; if(p<1) requestAnimationFrame(step); }
+  requestAnimationFrame(step);
+}
+</script>
+</body>
+</html>
