@@ -1,10 +1,11 @@
 # bockwurst.cc – Projektstatus & Wiedereinstieg
 
-> Stand: 2026-07-03. **Zweck:** verlustfreier Wiedereinstieg (neue Session / nach Kontext-Zusammenfassung). Kurz & aktuell halten.
+> Stand: 2026-07-06. **Zweck:** verlustfreier Wiedereinstieg (neue Session / nach Kontext-Zusammenfassung). Kurz & aktuell halten.
 
 ## Wo wir stehen
 - **TYPO3 v14.3.4** lokal via **DDEV**, läuft unter `https://bockwurst-cc.ddev.site/`.
-- **bockwurst-Theme** (`packages/bockwurst_sitepackage/`) auf **Bootstrap Package**: eigener **Rahmen rendert** (Header mit Logo-SVG + Slim-Footer „Kein Tracking …"), **Schriften self-hosted**, **Design-Tokens**, eigenes Page-Template.
+- **bockwurst-Theme** (`packages/bockwurst_sitepackage/`) auf **Bootstrap Package**: eigener **Rahmen rendert** (Header mit Logo-SVG + Footer-Partial), **Schriften self-hosted**, **Design-Tokens**, eigenes Page-Template.
+- **Footer (2026-07-06):** Engagement-Band nach Homepage-Handoff — 6 Points (Markenbotschafter) + Triathlon Chemnitz (Mitglied/Aushilfstrainer), freigestellte White-Logos auf Schwarz (`Resources/Public/Images/*-white.png`), Spalten (Entdecken/Kanäle/Rechtliches), Leiste nur „© Stefan Grießmann · bockwurst.cc". Partial `Partials/Page/Footer.html` (Default+Tour), CSS in `bockwurst-tokens.css`. Nur DE; „Kein Tracking/Werbefrei" ganz raus.
 - **Tourenportal-Kern steht** (2026-07-03): 9 kuratierte Touren als `public/data/touren/<id>.json`+`.gpx` (Strava via MCP, res=300, downsampled). Drei Custom-CEs im Sitepackage: **`bockwurst_tourstats`** (Eckdaten), **`bockwurst_tourmap`** (Leaflet-Karte + Höhenprofil-SVG), **`bockwurst_tourvideo`** (2-Klick-YouTube, kein Embed/Consent). Gemeinsamer `TourDataProcessor` (DI) liest die JSON; Feld `tx_bockwurst_strava_id` an tt_content **und pages**. Leaflet **self-hosted**, Assets bedingt via `f:asset`.
 - **Tour-Seitenlayout** (`backend_layout` „tour" → `Tour.html`): Hero (einziges `<h1>`, Region/Datum/Flag/Schwierigkeit aus Strava, Hero-Bild aus Seiten-Medium mit Gradient-Fallback), **1080px-Spalte**, `Article`-JSON-LD, Landmarks, vertikaler Rhythmus, Prose-Maß. Beispielseite **MSR300** unter `/tour-msr300` (Seite uid 2, Layout „tour", Strava-ID als Seiteneigenschaft): Hero → Stats → Karte+Höhenprofil → Video → Bericht. Serverseitig verifiziert (1× h1, JSON-LD, 0 Exceptions).
 - **Design-Feedback R1** (`Downloads/FEEDBACK-tour-detail.md`) abgearbeitet: Bug km-/Höhen-Label gefixt; 1080-Spalte, Reihenfolge, ein h1, JSON-LD, Prose, Video-Block erledigt. **Offen (brauchen Assets):** Hero-**Foto**, Galerie-**Fotos** (Upload; kein Strava-Foto-Endpoint), **Spotify-Playlist-URL** (Embed/Klick-zum-Laden), Highlights-Texte, echter Bericht-Text; dazu Motion/Scroll-Reveal.
@@ -23,10 +24,14 @@ Reihenfolge Hero(Foto IMG_3584) → Stats → Highlights → Karte+Höhenprofil 
 **Noch von Stefan ersetzbar (Platzhalter):** Highlights-Texte (JSON `highlights`).
 
 ## Nächster Bau-Schritt
+- **Startseite** (großer Block): Spec liegt jetzt vor — `design/design_handoff_bockwurst/HANDOFF-homepage.md` (+ `home.html` Referenz), vom Kunden abgenommen. Blöcke: Hero (ein h1) · Touren/Videos-Raster · 6-Points-Banner mit Live-Countdown (2027-05-14) · Event-Teaser (5 aktuellste) · YouTube-Shorts (2-Klick) · Über · Footer (schon gebaut). Muster wie Tour-CEs: datengetrieben, Click-to-Load für externe Medien.
 - **Restliche 8 Tour-Seiten** anlegen (Datendateien + youtube_id liegen vor; #7/#8 YT-IDs fehlen, Spotify/Highlights/Fotos je Tour optional). Muster: Seite mit backend_layout „tour" + Strava-ID als Seiteneigenschaft + die Tour-CEs.
 - **Touren-Übersicht/Grid** (BSP `MenuCardList`) auf Startseite/Portalseite.
-- **Startseite** (braucht Design von Claude Design).
-- Optional: Karten-Tiles Click-to-Load/Proxy; DE/EN-Zweitsprache.
+- **Impressum + Datenschutz** als Seiten anlegen (Footer verlinkt `/impressum`, `/datenschutz` – noch tot; vor Launch rechtlich Pflicht).
+- **DE/EN-Zweitsprache** (Sprache 1): dann Footer-Claims/Nav zweisprachig; optional Karten-Tiles Click-to-Load/Proxy.
+
+## Separates Projekt / offene Frage (Event-Guide `sport-events`)
+Stefan bemerkte: live werden noch Events vom 01.07. gezeigt. **Diagnose:** Scraper-Cron ist gesund (weekly Mo + monthly; nächster Lauf Mo 06.07.), aber die Browse-Liste (Zeitraum „alle") filtert **nicht** nach heute → vergangene Tage bleiben bis zum nächsten Scrape sichtbar. **Fix offen (Freigabe abwarten):** in `sport-events/index.html` Basisfilter `e.datum >= TODAY_ISO` ergänzen, committen/pushen → Cloudflare Pages. (Live-Seite → vorher OK einholen.)
 
 ## Wiedereinstieg – so läuft die Umgebung wieder
 - **DDEV starten:** neues Terminal → `cd C:\Users\stefan.griessmann\claude\bockwurst-cc` → `ddev start` (Container liegen auf Platte). `ddev launch typo3` öffnet das Backend.
