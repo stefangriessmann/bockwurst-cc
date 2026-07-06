@@ -46,8 +46,13 @@ _(Gemessen = live getrackte „auto"-Blöcke. Zeilen 1 & 2 sind Rückblick ohne 
 | Datum | 5h-Session-Fenster | Woche (alle Modelle) | $ (Grenzkosten) |
 |---|---|---|---|
 | 2026-07-03 ~08:25 | 13 % (Reset 12:49) | 17 % (Reset 06.07.) | $0,00 (Abo-inklusiv) |
+| 2026-07-06 (Vormittag) | 18 % (Reset 11:30) | 34 % (Reset 06.07. 15:00); Fable 7 % | $0,00 (Abo-inklusiv) |
 
 _Bei Bedarf weitere Schnappschüsse ergänzen; ein €-Posten entfällt (Abo)._
+_Zwischen den Snapshots 07-03→07-06 entstanden: Tourenportal-Kern + MSR300-Detailseite komplett (7 CE-Typen, Hero/Galerie/Lightbox, Click-to-Load YouTube/Spotify), Consent-Entscheidung, Footer-Engagement-Band, DE-BE. Wochen-Anteil daher 17 %→34 %._
+
+### Effizienz-Hinweis (aus App → Usage)
+- **~99 % der Nutzung lief bei >150k Kontext.** Lange Sessions sind auch mit Cache teurer. Empfehlung der Anzeige: **`/compact` mitten in einer Aufgabe** (kürzt Kontext, Arbeit läuft weiter) bzw. **`/clear` beim Wechsel auf eine neue Aufgabe**. Für dieses Projekt: nach abgeschlossenen Blöcken (z. B. „MSR300 fertig") ruhig `/clear` — Wiedereinstieg über `docs/STATUS.md` ist verlustfrei.
 
 ## Entscheidungen (Bezug)
 - Basis-Distribution: **Bootstrap Package** (`bk2k/bootstrap-package` ^16, v14) + eigenes bockwurst-Theme-Sitepackage darüber. Entschieden 2026-07-02.
