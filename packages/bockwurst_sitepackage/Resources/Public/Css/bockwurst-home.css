@@ -90,6 +90,25 @@
 .bw-sixp-photo { background: linear-gradient(135deg, var(--cobalt), var(--pink)); background-size: cover; background-position: center; min-height: 260px; position: relative; }
 .bw-sixp-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--ink), transparent 40%); }
 
+/* EVENT-TEASER ---------------------------------------------------------- */
+.bw-sec--dots { background-image: radial-gradient(rgba(16,20,30,.045) 1px, transparent 1.5px); background-size: 24px 24px; }
+.bw-evlist { display: flex; flex-direction: column; gap: 10px; }
+.bw-evrow { --c: var(--cobalt); display: grid; grid-template-columns: 64px 1fr auto; gap: 16px; align-items: center; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: 14px; padding: 13px 18px; box-shadow: var(--card-sh); text-decoration: none; color: inherit; transition: transform .15s ease, box-shadow .15s ease; }
+.bw-evrow:hover { transform: translateX(3px); box-shadow: var(--card-sh-h); }
+.bw-evrow--rad { --c: var(--cobalt); }
+.bw-evrow--tri { --c: var(--pink); }
+.bw-evrow--lauf { --c: var(--green); }
+.bw-evrow--swim { --c: var(--cyan); }
+.bw-ev-date { text-align: center; }
+.bw-ev-d { display: block; font-family: var(--ff-display); font-weight: 800; font-size: 24px; line-height: 1; }
+.bw-ev-mo { display: block; font-family: var(--ff-mono); font-size: var(--fs-micro); letter-spacing: .1em; text-transform: uppercase; color: var(--mut); margin-top: 3px; }
+.bw-ev-t { display: block; font-family: var(--ff-display); font-weight: 800; letter-spacing: -.01em; font-size: var(--fs-h3); line-height: 1.2; }
+.bw-ev-m { font-family: var(--ff-mono); font-size: var(--fs-sm); color: var(--mut); margin-top: 6px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.bw-ev-badge { display: inline-flex; align-items: center; gap: 5px; font-size: var(--fs-micro); letter-spacing: .04em; text-transform: uppercase; padding: 3px 8px; border-radius: 5px; background: color-mix(in srgb, var(--c) 12%, transparent); color: var(--c); }
+.bw-ev-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--c); }
+.bw-ev-go { color: var(--mut); font-family: var(--ff-mono); font-size: var(--fs-sm); white-space: nowrap; }
+.bw-evmore { margin-top: 22px; }
+
 @media (max-width: 900px) {
     .bw-hero-grid { grid-template-columns: 1fr; }
     .bw-hcard { aspect-ratio: 16/11; }
@@ -97,6 +116,8 @@
     .bw-sixp-grid { grid-template-columns: 1fr; }
     .bw-sixp-photo { min-height: 180px; order: -1; }
     .bw-sixp-photo::after { background: linear-gradient(0deg, var(--ink), transparent 55%); }
+    .bw-evrow { grid-template-columns: 56px 1fr; }
+    .bw-ev-go { display: none; }
 }
 @media (max-width: 560px) {
     .bw-tours { grid-template-columns: 1fr; }

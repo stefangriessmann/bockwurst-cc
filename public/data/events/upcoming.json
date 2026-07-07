@@ -1,0 +1,110 @@
+[
+    {
+        "sport": "lauf",
+        "art": "Laufen",
+        "date_iso": "2026-07-07",
+        "titel": "42. Flora-Westfalica Marathon",
+        "ort": "Rheda-Wiedenbrück",
+        "lv": "",
+        "km": null
+    },
+    {
+        "sport": "lauf",
+        "art": "Laufen",
+        "date_iso": "2026-07-08",
+        "titel": "Gütersloh Läuft - für den guten Zweck",
+        "ort": "Gütersloh",
+        "lv": "",
+        "km": null
+    },
+    {
+        "sport": "rad",
+        "art": "RTF",
+        "date_iso": "2026-07-09",
+        "titel": "BRT",
+        "ort": "Lünen Brunnen vor dem Rathaus",
+        "lv": "NRW",
+        "km": null
+    },
+    {
+        "sport": "tri",
+        "art": "Triathlon",
+        "date_iso": "2026-07-09",
+        "titel": "Volksbank Schultriathlon Ahlen 2026",
+        "ort": "Ahlen",
+        "lv": "",
+        "km": null
+    },
+    {
+        "sport": "tri",
+        "art": "Triathlon",
+        "date_iso": "2026-07-10",
+        "titel": "10. Schulmeisterschaft im Triathlon",
+        "ort": "Deggendorf",
+        "lv": "",
+        "km": null
+    },
+    {
+        "sport": "lauf",
+        "art": "Laufen",
+        "date_iso": "2026-07-10",
+        "titel": "4. Dorstener 24-Stunden-Lauf",
+        "ort": "Dorsten",
+        "lv": "",
+        "km": null
+    },
+    {
+        "sport": "tri",
+        "art": "Triathlon",
+        "date_iso": "2026-07-11",
+        "titel": "11. Wuggi-Triathlon",
+        "ort": "Prackenbach",
+        "lv": "",
+        "km": null
+    },
+    {
+        "sport": "tri",
+        "art": "Triathlon",
+        "date_iso": "2026-07-11",
+        "titel": "14. Stadtwerke Düsseldorf Familientriathlon",
+        "ort": "Düsseldorf",
+        "lv": "",
+        "km": null
+    },
+    {
+        "sport": "tri",
+        "art": "Triathlon",
+        "date_iso": "2026-07-11",
+        "titel": "19. Langenfelder Kindertriathlon",
+        "ort": "Langenfeld (Rheinland)",
+        "lv": "",
+        "km": null
+    },
+    {
+        "sport": "tri",
+        "art": "Triathlon",
+        "date_iso": "2026-07-11",
+        "titel": "26.Ammerseetriathlon",
+        "ort": "Dießen am Ammersee",
+        "lv": "",
+        "km": null
+    },
+    {
+        "sport": "lauf",
+        "art": "Laufen",
+        "date_iso": "2026-07-11",
+        "titel": "27. Gläserner Mönch Lauf",
+        "ort": "Langenstein (Halberstadt)",
+        "lv": "",
+        "km": null
+    },
+    {
+        "sport": "tri",
+        "art": "SwimRun",
+        "date_iso": "2026-07-11",
+        "titel": "4. Kirchzartener Swim & Run",
+        "ort": "Kirchzarten",
+        "lv": "",
+        "km": null
+    }
+]

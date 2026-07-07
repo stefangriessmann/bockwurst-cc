@@ -117,13 +117,38 @@ DE vorerst (EN mit Sprache 1). Sektionen ab „Touren" werden schrittweise gefü
             </div>
         </section>
 
-        <section id="events" class="bw-sec bw-sec--tint">
+        <section id="events" class="bw-sec bw-sec--tint bw-sec--dots">
             <div class="bw-container">
                 <div class="bw-shead bw-reveal">
                     <div><div class="bw-seclab"><span class="bw-seclab-line"></span>Event-Guide</div><h2 class="bw-h2">Dein n&auml;chstes Rennen in der N&auml;he.</h2></div>
                     <a class="bw-morelink" href="https://bockwurst-events.netlify.app/event-guide" target="_blank" rel="noopener">Alle Events &rarr;</a>
                 </div>
-                <p class="bw-soon">Event-Teaser folgt.</p>
+                <f:if condition="{eventTeaser}">
+                    <f:then>
+                        <div class="bw-evlist">
+                            <f:for each="{eventTeaser}" as="ev" iteration="it">
+                                <a class="bw-evrow bw-reveal bw-evrow--{ev.sport}" href="https://bockwurst-events.netlify.app/event-guide" target="_blank" rel="noopener" style="transition-delay:{it.index * 0.05}s">
+                                    <span class="bw-ev-date"><span class="bw-ev-d">{ev.day}</span><span class="bw-ev-mo">{ev.month}</span></span>
+                                    <span class="bw-ev-main">
+                                        <span class="bw-ev-t">{ev.title}</span>
+                                        <span class="bw-ev-m">
+                                            <f:if condition="{ev.art}"><span class="bw-ev-badge"><span class="bw-ev-dot" aria-hidden="true"></span>{ev.art}</span></f:if>
+                                            <f:if condition="{ev.ort}"><span>{ev.ort}</span></f:if>
+                                            <f:if condition="{ev.lv}"><span>DE &middot; {ev.lv}</span></f:if>
+                                        </span>
+                                    </span>
+                                    <span class="bw-ev-go"><f:if condition="{ev.km}">{ev.km} km </f:if>&rarr;</span>
+                                </a>
+                            </f:for>
+                        </div>
+                        <div class="bw-reveal bw-evmore">
+                            <a class="bw-btn bw-btn-pri" href="https://bockwurst-events.netlify.app/event-guide" target="_blank" rel="noopener">Zum Event-Guide &rarr;</a>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <p class="bw-soon">Aktuell keine kommenden Termine im Snapshot &ndash; schau direkt in den <a href="https://bockwurst-events.netlify.app/event-guide" target="_blank" rel="noopener">Event-Guide</a>.</p>
+                    </f:else>
+                </f:if>
             </div>
         </section>
 

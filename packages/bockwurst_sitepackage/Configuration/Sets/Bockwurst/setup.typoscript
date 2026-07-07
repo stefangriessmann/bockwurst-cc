@@ -51,6 +51,13 @@ page {
             30 {
                 as = tourGrid
             }
+            # Event-Teaser der Startseite: nächste kommende Termine aus
+            # data/events/upcoming.json (Snapshot aus dem Event-Guide-Bestand).
+            40 = Bockwurst\Sitepackage\DataProcessing\EventTeaserProcessor
+            40 {
+                as = eventTeaser
+                limit = 5
+            }
         }
     }
 }
