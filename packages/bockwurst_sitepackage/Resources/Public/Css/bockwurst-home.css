@@ -7,7 +7,21 @@
 
 /* Header-Nav (Startseite: mehrere Links) ------------------------------- */
 .bw-nav--home { display: flex; gap: 22px; flex-wrap: wrap; }
-@media (max-width: 720px) { .bw-nav--home { display: none; } }
+
+/* Burger (nur mobil sichtbar) ------------------------------------------ */
+.bw-burger { display: none; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line); border-radius: 10px; background: #fff; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+.bw-burger span { display: block; width: 20px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .2s ease, opacity .2s ease; }
+.bw-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.bw-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.bw-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 720px) {
+    .bw-burger { display: inline-flex; }
+    .bw-nav--home { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 24px 34px -22px rgba(12,14,20,.4); padding: 6px clamp(16px,4vw,40px) 14px; }
+    .bw-nav--home.is-open { display: flex; }
+    .bw-nav--home .bw-nav-link { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: var(--fs-sm); }
+    .bw-nav--home .bw-nav-link:last-child { border-bottom: 0; }
+}
 
 /* Section-Grundgerüst --------------------------------------------------- */
 .bw-sec { padding: clamp(52px, 8vh, 96px) 0; }

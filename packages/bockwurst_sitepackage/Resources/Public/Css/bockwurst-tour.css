@@ -4,19 +4,8 @@
    design/design_handoff_bockwurst/tour-detail.html.
    ========================================================================= */
 
-/* Section-Label (kleines Mono-Label mit Strich) ------------------------- */
-.bw-seclab {
-    font-family: var(--ff-mono);
-    font-size: var(--fs-label);
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--cobalt);
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    margin-bottom: 14px;
-}
-.bw-seclab-line { width: 26px; height: 2px; background: var(--cobalt); display: inline-block; }
+/* Section-Label (.bw-seclab / .bw-seclab-line) jetzt in bockwurst-tokens.css
+   (geteilte Basis, damit auch die Home ohne tour.css das Label bekommt). */
 
 /* Eckdaten-Leiste ------------------------------------------------------- */
 .bw-stats {

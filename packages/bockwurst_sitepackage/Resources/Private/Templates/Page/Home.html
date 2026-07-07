@@ -11,7 +11,10 @@ DE vorerst (EN mit Sprache 1). Sektionen ab „Touren" werden schrittweise gefü
     <header class="bw-header">
         <div class="bw-container bw-header-inner">
             <f:render partial="Header/Logo" arguments="{_all}" />
-            <nav class="bw-nav bw-nav--home" aria-label="Hauptnavigation">
+            <button type="button" class="bw-burger" aria-label="Men&uuml; &ouml;ffnen" aria-expanded="false" aria-controls="bw-nav-home">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="bw-nav-home" class="bw-nav bw-nav--home" aria-label="Hauptnavigation">
                 <a class="bw-nav-link" href="#touren">Touren</a>
                 <a class="bw-nav-link" href="#sixpoints">6 Points</a>
                 <a class="bw-nav-link" href="#events">Events</a>

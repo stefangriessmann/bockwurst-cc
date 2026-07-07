@@ -89,6 +89,10 @@ a:hover { color: var(--pink); }
 .bw-nav { display: flex; gap: 20px; }
 .bw-nav-link { font-family: var(--ff-mono); font-size: var(--fs-label); text-transform: uppercase; letter-spacing: .1em; color: var(--ink); text-decoration: none; }
 .bw-nav-link:hover { color: var(--pink); }
+
+/* Section-Label (Mono-Kicker mit Strich) – geteilt von Home + Tour ------- */
+.bw-seclab { font-family: var(--ff-mono); font-size: var(--fs-label); letter-spacing: .18em; text-transform: uppercase; color: var(--cobalt); display: flex; align-items: center; gap: 9px; margin-bottom: 14px; }
+.bw-seclab-line { width: 26px; height: 2px; background: var(--cobalt); display: inline-block; }
 .bw-main { min-height: 40vh; padding: clamp(32px,5vw,72px) 0; }
 .bw-footer { background: var(--ink); color: #fff; margin-top: 48px; }
 .bw-footer-brand { font-family: var(--ff-display); font-weight: 800; letter-spacing: -.03em; font-size: 20px; color: #fff; }

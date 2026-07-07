@@ -49,8 +49,30 @@
     setInterval(tick, 60000);
   }
 
+  // Mobile-Navigation: Burger toggelt das Nav-Panel (≤720px). Schließt beim
+  // Klick auf einen Link. Ohne JS bleibt die Nav auf Mobile ausgeblendet
+  // (Sektionen sind auch per Scroll erreichbar).
+  function initNav() {
+    var burger = document.querySelector('.bw-burger');
+    var nav = document.getElementById('bw-nav-home');
+    if (!burger || !nav) { return; }
+    burger.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) {
+        nav.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.setAttribute('aria-label', 'Menü öffnen');
+      }
+    });
+  }
+
   function boot() {
     initCountdown();
+    initNav();
     if (reduce || !hasIO) { return; }
     document.documentElement.classList.add('bw-anim');
 
