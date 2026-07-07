@@ -109,6 +109,16 @@
 .bw-ev-go { color: var(--mut); font-family: var(--ff-mono); font-size: var(--fs-sm); white-space: nowrap; }
 .bw-evmore { margin-top: 22px; }
 
+/* YOUTUBE SHORTS -------------------------------------------------------- */
+.bw-shorts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.bw-short { position: relative; display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 9 / 13; box-shadow: var(--card-sh); text-decoration: none; }
+.bw-short img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.bw-short:hover img { transform: scale(1.05); }
+.bw-short-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,14,20,.78), transparent 46%); }
+.bw-short-yt { position: absolute; top: 10px; left: 10px; width: 30px; height: 22px; background: #FF0033; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.bw-short-yt i { width: 0; height: 0; border-left: 8px solid #fff; border-top: 5px solid transparent; border-bottom: 5px solid transparent; margin-left: 2px; }
+.bw-short-cap { position: absolute; left: 12px; right: 12px; bottom: 12px; color: #fff; font-family: var(--ff-display); font-weight: 700; font-size: 14px; line-height: 1.15; }
+
 @media (max-width: 900px) {
     .bw-hero-grid { grid-template-columns: 1fr; }
     .bw-hcard { aspect-ratio: 16/11; }
@@ -118,6 +128,7 @@
     .bw-sixp-photo::after { background: linear-gradient(0deg, var(--ink), transparent 55%); }
     .bw-evrow { grid-template-columns: 56px 1fr; }
     .bw-ev-go { display: none; }
+    .bw-shorts { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
     .bw-tours { grid-template-columns: 1fr; }
