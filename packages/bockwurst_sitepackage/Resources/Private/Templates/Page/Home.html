@@ -1,0 +1,106 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>bockwurst.cc – Startseite (backend_layout „home"). Marken-Wegweiser nach
+HANDOFF-homepage.md. Hero + Sektionen aus dem Template; Footer = Partial.
+DE vorerst (EN mit Sprache 1). Sektionen ab „Touren" werden schrittweise gefüllt.</f:comment>
+
+<f:asset.css identifier="bockwurst-home" href="EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-home.css" />
+<f:asset.script identifier="bockwurst-home" src="EXT:bockwurst_sitepackage/Resources/Public/JavaScript/bockwurst-home.js" priority="false" />
+
+<div id="top" class="bw-page bw-page--home">
+
+    <header class="bw-header">
+        <div class="bw-container bw-header-inner">
+            <f:render partial="Header/Logo" arguments="{_all}" />
+            <nav class="bw-nav bw-nav--home" aria-label="Hauptnavigation">
+                <a class="bw-nav-link" href="#touren">Touren</a>
+                <a class="bw-nav-link" href="#sixpoints">6 Points</a>
+                <a class="bw-nav-link" href="#events">Events</a>
+                <a class="bw-nav-link" href="#ueber">&Uuml;ber</a>
+                <a class="bw-nav-link" href="https://bockwurst-events.netlify.app/event-guide" target="_blank" rel="noopener">Event-Guide</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="page-content">
+
+        <!-- 1 HERO -->
+        <section class="bw-hero-home">
+            <div class="bw-container bw-hero-grid">
+                <div>
+                    <span class="bw-kick bw-reveal"><span class="bw-pulse"></span>Rennrad &middot; Indoor &middot; Abenteuer</span>
+                    <h1 class="bw-hh1 bw-reveal">Stefans<br><span class="bw-pink">Rennrad Welt.</span></h1>
+                    <p class="bw-hsub bw-reveal">Echte Touren als Video &mdash; mit Strecke, H&ouml;henmetern und Musik im Ohr. Ein Event-Guide mit &uuml;ber 1.000 Terminen. Und eine gute Sache auf Mallorca.</p>
+                    <div class="bw-hcta bw-reveal">
+                        <a class="bw-btn bw-btn-pri" href="/tour-msr300">Neueste Tour ansehen</a>
+                        <a class="bw-btn bw-btn-ghost" href="https://bockwurst-events.netlify.app/event-guide" target="_blank" rel="noopener">Zum Event-Guide</a>
+                    </div>
+                    <div class="bw-hstats bw-reveal">
+                        <div class="bw-hstat"><div class="bw-hstat-v" data-count="90" data-suffix="+">90+</div><div class="bw-hstat-l">Videos</div></div>
+                        <div class="bw-hstat"><div class="bw-hstat-v" data-count="1000" data-suffix="+">1.000+</div><div class="bw-hstat-l">Events im Guide</div></div>
+                        <div class="bw-hstat"><div class="bw-hstat-v" data-count="4">4</div><div class="bw-hstat-l">L&auml;nder</div></div>
+                    </div>
+                </div>
+                <a class="bw-hcard bw-reveal" href="/tour-msr300" aria-label="Neueste Tour: Grenzerfahrung MSR300">
+                    <img src="/fileadmin/user_upload/IMG_3584.jpeg" alt="" loading="eager">
+                    <span class="bw-hcard-grad"></span>
+                    <span class="bw-tag" style="background:var(--cobalt);color:#fff">Neueste Tour &middot; Video</span>
+                    <span class="bw-hcard-meta">
+                        <span class="bw-hcard-t">Grenzerfahrung MSR300 &mdash; Nachtfahrt</span>
+                        <span class="bw-hcard-m">306 KM &middot; 1.908 HM &middot; MECKLENBURG</span>
+                    </span>
+                    <span class="bw-hcard-play"><i></i></span>
+                </a>
+            </div>
+        </section>
+
+        <f:comment>Sektions-Gerüst – Inhalte folgen inkrementell.</f:comment>
+        <section id="touren" class="bw-sec">
+            <div class="bw-container">
+                <div class="bw-shead bw-reveal">
+                    <div><div class="bw-seclab"><span class="bw-seclab-line"></span>Touren &amp; Videos</div><h2 class="bw-h2">Rausfahren, filmen, erz&auml;hlen.</h2></div>
+                    <a class="bw-morelink" href="/tour-msr300">Alle Touren &rarr;</a>
+                </div>
+                <p class="bw-soon">Touren-Raster folgt.</p>
+            </div>
+        </section>
+
+        <section id="sixpoints" class="bw-sec">
+            <div class="bw-container">
+                <div class="bw-seclab bw-reveal"><span class="bw-seclab-line"></span>6 Points Mallorca</div>
+                <p class="bw-soon">6-Points-Banner mit Countdown folgt.</p>
+            </div>
+        </section>
+
+        <section id="events" class="bw-sec bw-sec--tint">
+            <div class="bw-container">
+                <div class="bw-shead bw-reveal">
+                    <div><div class="bw-seclab"><span class="bw-seclab-line"></span>Event-Guide</div><h2 class="bw-h2">Dein n&auml;chstes Rennen in der N&auml;he.</h2></div>
+                    <a class="bw-morelink" href="https://bockwurst-events.netlify.app/event-guide" target="_blank" rel="noopener">Alle Events &rarr;</a>
+                </div>
+                <p class="bw-soon">Event-Teaser folgt.</p>
+            </div>
+        </section>
+
+        <section id="shorts" class="bw-sec">
+            <div class="bw-container">
+                <div class="bw-shead bw-reveal">
+                    <div><div class="bw-seclab"><span class="bw-seclab-line"></span>YouTube Shorts</div><h2 class="bw-h2">Kurz reingeschaut.</h2></div>
+                    <a class="bw-morelink" href="https://www.youtube.com/@Stefan_Rennrad_Chemnitz" target="_blank" rel="noopener">Zum Kanal &rarr;</a>
+                </div>
+                <p class="bw-soon">Shorts-Kacheln folgen.</p>
+            </div>
+        </section>
+
+        <section id="ueber" class="bw-sec">
+            <div class="bw-container">
+                <div class="bw-seclab bw-reveal"><span class="bw-seclab-line"></span>&Uuml;ber Bockwurst</div>
+                <p class="bw-soon">&Uuml;ber-Sektion folgt.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <f:render partial="Footer" arguments="{_all}" />
+
+</div>
+</html>

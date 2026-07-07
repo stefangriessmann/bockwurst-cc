@@ -21,4 +21,23 @@ mod.web_layout.BackendLayouts {
             }
         }
     }
+    home {
+        title = Startseite (Marken-Wegweiser)
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Zusatz-Inhalt (optional; Hero/Sektionen kommen aus dem Template)
+                                colPos = 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
