@@ -40,4 +40,23 @@ mod.web_layout.BackendLayouts {
             }
         }
     }
+    touren {
+        title = Touren-Übersicht (Portal-Grid)
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Zusatz-Inhalt (optional; Grid + Rahmen kommen aus dem Template)
+                                colPos = 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>bockwurst.cc – Touren-Übersicht (backend_layout „touren"). Listet alle
+Tour-Seiten der Startseite als Karten-Raster (TourGridProcessor, parentPage=1
+via TypoScript). Grid-Styles + Reveal aus bockwurst-home.css/js; Grid-Markup
+= geteiltes Partial TourGrid (auch auf der Startseite genutzt).</f:comment>
+
+<f:asset.css identifier="bockwurst-home" href="EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-home.css" />
+<f:asset.script identifier="bockwurst-home" src="EXT:bockwurst_sitepackage/Resources/Public/JavaScript/bockwurst-home.js" priority="false" />
+
+<div id="top" class="bw-page bw-page--home">
+
+    <header class="bw-header">
+        <div class="bw-container bw-header-inner">
+            <f:render partial="Header/Logo" arguments="{_all}" />
+            <nav class="bw-nav" aria-label="Hauptnavigation">
+                <a class="bw-nav-link" href="/">Startseite</a>
+                <a class="bw-nav-link" href="https://bockwurst-events.netlify.app/event-guide" target="_blank" rel="noopener">Event-Guide</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="page-content" class="bw-main">
+        <section class="bw-sec">
+            <div class="bw-container">
+                <div class="bw-shead bw-reveal">
+                    <div>
+                        <div class="bw-seclab"><span class="bw-seclab-line"></span>Tourenportal</div>
+                        <h1 class="bw-h2">Alle Touren.</h1>
+                    </div>
+                </div>
+                <p class="bw-tourenportal-intro bw-reveal">Kuratierte Rennrad-Touren &mdash; mit Strecke, H&ouml;henmetern, Video und Musik. Klick dich rein.</p>
+                <f:render partial="TourGrid" arguments="{tourGrid: tourGrid}" />
+            </div>
+        </section>
+    </main>
+
+    <f:render partial="Footer" arguments="{_all}" />
+
+</div>
+</html>

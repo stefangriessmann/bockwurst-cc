@@ -37,7 +37,14 @@ final class TourGridProcessor implements DataProcessorInterface
         $as = (string)($processorConfiguration['as'] ?? 'tourGrid');
         $processedData[$as] = [];
 
-        $pageUid = (int)($processedData['data']['uid'] ?? 0);
+        // Elternseite, deren Tour-Kinder gelistet werden. Standard: aktuelle
+        // Seite (Startseite listet ihre Tour-Kinder). Für die Touren-Übersicht
+        // wird per TypoScript parentPage = Startseite gesetzt (die Tour-Seiten
+        // sind dort Geschwister der Übersicht).
+        $pageUid = (int)($processorConfiguration['parentPage'] ?? 0);
+        if ($pageUid === 0) {
+            $pageUid = (int)($processedData['data']['uid'] ?? 0);
+        }
         if ($pageUid === 0) {
             return $processedData;
         }

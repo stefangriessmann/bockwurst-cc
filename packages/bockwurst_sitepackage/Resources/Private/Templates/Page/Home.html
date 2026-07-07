@@ -61,40 +61,9 @@ DE vorerst (EN mit Sprache 1). Sektionen ab „Touren" werden schrittweise gefü
             <div class="bw-container">
                 <div class="bw-shead bw-reveal">
                     <div><div class="bw-seclab"><span class="bw-seclab-line"></span>Touren &amp; Videos</div><h2 class="bw-h2">Rausfahren, filmen, erz&auml;hlen.</h2></div>
+                    <a class="bw-morelink" href="/touren">Alle Touren &rarr;</a>
                 </div>
-                <f:if condition="{tourGrid}">
-                    <f:then>
-                        <div class="bw-tours">
-                            <f:for each="{tourGrid}" as="tour" iteration="it">
-                                <f:link.page pageUid="{tour.uid}" class="bw-tour bw-reveal" additionalAttributes="{style: 'transition-delay:{it.index * 0.06}s'}">
-                                    <span class="bw-tour-ph">
-                                        <f:if condition="{tour.image}">
-                                            <f:then><img src="{tour.image}" alt="" loading="lazy"></f:then>
-                                            <f:else><span class="bw-tour-grad" aria-hidden="true"></span></f:else>
-                                        </f:if>
-                                        <f:if condition="{tour.hasVideo}">
-                                            <span class="bw-tour-play" aria-hidden="true"><i></i></span>
-                                        </f:if>
-                                    </span>
-                                    <span class="bw-tour-bd">
-                                        <f:if condition="{tour.difficulty}">
-                                            <span class="bw-tag bw-tour-tag bw-tour-tag--{tour.difficultyModifier}">{tour.difficulty}</span>
-                                        </f:if>
-                                        <span class="bw-tour-t">{tour.title}</span>
-                                        <span class="bw-tour-rm">
-                                            <f:if condition="{tour.region}"><span>{tour.region}</span></f:if>
-                                            <f:if condition="{tour.distanceKm}"><span>{tour.distanceKm} km</span></f:if>
-                                            <f:if condition="{tour.hasVideo}"><span class="bw-tour-vid">&#9654; Video</span></f:if>
-                                        </span>
-                                    </span>
-                                </f:link.page>
-                            </f:for>
-                        </div>
-                    </f:then>
-                    <f:else>
-                        <p class="bw-soon">Touren-Raster folgt.</p>
-                    </f:else>
-                </f:if>
+                <f:render partial="TourGrid" arguments="{tourGrid: tourGrid}" />
             </div>
         </section>
 

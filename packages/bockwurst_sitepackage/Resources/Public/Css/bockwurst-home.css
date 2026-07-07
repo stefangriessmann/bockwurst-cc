@@ -85,6 +85,7 @@
 .bw-tour-t { font-family: var(--ff-display); font-weight: 800; letter-spacing: -.02em; font-size: 20px; line-height: 1.15; }
 .bw-tour-rm { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--ff-mono); font-size: var(--fs-micro); letter-spacing: .04em; text-transform: uppercase; color: var(--mut); }
 .bw-tour-vid { color: var(--ink); font-weight: 600; }
+.bw-tourenportal-intro { font-family: var(--ff-body); font-size: var(--fs-lead); line-height: 1.55; color: var(--mut); max-width: 640px; margin: 0 0 34px; }
 
 /* 6 POINTS BANNER ------------------------------------------------------- */
 .bw-sixp { position: relative; background: var(--ink); color: #fff; border-radius: 26px; overflow: hidden; box-shadow: var(--card-sh); }

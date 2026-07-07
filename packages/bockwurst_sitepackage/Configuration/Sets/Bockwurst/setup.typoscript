@@ -124,3 +124,10 @@ tt_content {
         }
     }
 }
+
+# Touren-Übersicht (backend_layout „touren" → Touren.html): das Karten-Grid
+# listet die Tour-Seiten der Startseite (uid 1), da die Übersicht selbst deren
+# Geschwister ist. Für alle anderen Seiten bleibt parentPage leer (= aktuelle Seite).
+[page["backend_layout"] == "pagets__touren"]
+    page.10.dataProcessing.30.parentPage = 1
+[END]
