@@ -53,9 +53,32 @@
 
 .bw-tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--ff-mono); font-size: var(--fs-micro); letter-spacing: .08em; text-transform: uppercase; padding: 6px 11px; border-radius: var(--radius-pill); font-weight: 500; }
 
+/* TOUREN-RASTER --------------------------------------------------------- */
+.bw-tours { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.bw-tour { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: var(--card-sh); transition: transform .2s ease, box-shadow .2s ease; }
+.bw-tour:hover { transform: translateY(-4px); box-shadow: 0 24px 44px -22px rgba(12,14,20,.4); }
+.bw-tour-ph { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--soft); }
+.bw-tour-ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.bw-tour:hover .bw-tour-ph img { transform: scale(1.05); }
+.bw-tour-grad { position: absolute; inset: 0; background: linear-gradient(135deg, var(--cobalt), var(--pink) 130%); }
+.bw-tour-grad::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.18), transparent 45%); }
+.bw-tour-play { position: absolute; right: 14px; bottom: 14px; width: 46px; height: 46px; border-radius: 50%; background: var(--volt); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px -8px rgba(0,0,0,.5); }
+.bw-tour-play i { width: 0; height: 0; border-left: 14px solid var(--ink); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+.bw-tour-bd { padding: 16px 18px 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.bw-tour-tag--leicht { background: color-mix(in srgb, var(--green) 14%, transparent); color: var(--green); }
+.bw-tour-tag--mittel { background: color-mix(in srgb, var(--cobalt) 14%, transparent); color: var(--cobalt); }
+.bw-tour-tag--schwer { background: color-mix(in srgb, var(--pink) 14%, transparent); color: var(--pink); }
+.bw-tour-t { font-family: var(--ff-display); font-weight: 800; letter-spacing: -.02em; font-size: 20px; line-height: 1.15; }
+.bw-tour-rm { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--ff-mono); font-size: var(--fs-micro); letter-spacing: .04em; text-transform: uppercase; color: var(--mut); }
+.bw-tour-vid { color: var(--ink); font-weight: 600; }
+
 @media (max-width: 900px) {
     .bw-hero-grid { grid-template-columns: 1fr; }
     .bw-hcard { aspect-ratio: 16/11; }
+    .bw-tours { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+    .bw-tours { grid-template-columns: 1fr; }
 }
 
 /* Scroll-Reveal (nur wenn JS die Animation aktiviert) ------------------- */

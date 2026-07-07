@@ -23,6 +23,13 @@ page {
                 references.fieldName = media
                 as = pageMedia
             }
+            # Touren-Raster der Startseite: alle Kind-Tour-Seiten (mit Strava-ID),
+            # angereichert um die Kartendaten aus data/touren/<id>.json.
+            # Auf Seiten ohne Tour-Kinder bleibt tourGrid leer.
+            30 = Bockwurst\Sitepackage\DataProcessing\TourGridProcessor
+            30 {
+                as = tourGrid
+            }
         }
     }
 }
