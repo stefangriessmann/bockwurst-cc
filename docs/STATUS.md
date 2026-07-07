@@ -26,8 +26,10 @@ Reihenfolge Hero(Foto IMG_3584) → Stats → Highlights → Karte+Höhenprofil 
 ## Startseite (in Arbeit, inkrementell) — `backend_layout „home"` → `Home.html`
 Spec: `design/design_handoff_bockwurst/HANDOFF-homepage.md` (+ `home.html`). Home-Seite (uid 1) auf Layout „home".
 - **Increment 1 ✅ (2026-07-06):** Gerüst + **Hero** (Kicker, einziges h1, 2 CTAs, Count-up-Stats, MSR300-Tour-Karte mit echtem Bild) + Header-Nav + Sektions-Gerüst (Touren/6 Points/Events/Shorts/Über als Stubs) + Footer. `bockwurst-home.css` + `bockwurst-home.js` (Count-up + Reveal). Nur DE.
-- **Offen je Sektion (Blocker):** Touren-Grid → braucht weitere **Tour-Seiten + Fotos** (bisher nur MSR300 komplett); 6 Points → **Mallorca-Foto**; Events → Daten aus `sport-events` (Integration) oder Link-out; Shorts → **4 Short-IDs**; Über → **Text + Foto**.
-- **Empfohlene Reihenfolge:** erst restliche Tour-Seiten (schaltet Touren-Grid frei), dann asset-abhängige Sektionen.
+- **Offen je Sektion:** Touren-Grid → jetzt baubar (9 Seiten da, s. u.), Fotos je Tour fehlen (Gradient-Fallback); 6 Points → **Mallorca-Foto**; Events → Daten aus `sport-events` (Integration) oder Link-out; Shorts → **4 Short-IDs**; Über → **Text + Foto**.
+
+## Alle 9 Tour-Detailseiten angelegt (2026-07-06) — DB-Inhalt (lokale Instanz, nicht in git)
+Slugs: `/tour-msr300` (komplett) · `/tour-rund-um-berlin` · `/tour-bayrischzell-sudelfeldpass`* · `/tour-schliersee-tegernsee-spitzingsee`* · `/tour-spreewaldmarathon-200` · `/tour-mallorca-etappe-1/2/3` · `/tour-rochlitzer-berg-colditz-100`. Alle Layout „tour" + Strava-ID als Seiteneigenschaft. Bausteine: Eckdaten + Karte/Höhenprofil + Video (außer *= keine YouTube-ID) + **Blindtext-Bericht** (Platzhalter). Offen je Tour: Hero-Foto (Gradient-Fallback), Highlights, Galerie/Fotos, Soundtrack, echter Bericht.
 - **Restliche 8 Tour-Seiten** anlegen (Datendateien + youtube_id liegen vor; #7/#8 YT-IDs fehlen, Spotify/Highlights/Fotos je Tour optional). Muster: Seite mit backend_layout „tour" + Strava-ID als Seiteneigenschaft + die Tour-CEs.
 - **Touren-Übersicht/Grid** (BSP `MenuCardList`) auf Startseite/Portalseite.
 - **Impressum + Datenschutz** als Seiten anlegen (Footer verlinkt `/impressum`, `/datenschutz` – noch tot; vor Launch rechtlich Pflicht).
