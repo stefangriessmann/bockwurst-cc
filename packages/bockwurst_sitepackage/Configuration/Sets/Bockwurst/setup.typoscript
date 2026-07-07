@@ -6,6 +6,27 @@ page {
         bockwurstFonts = EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-fonts.css
         bockwurstTokens = EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tokens.css
     }
+
+    # Favicon-Set (Claude-Design-Handoff, design/design_handoff_bockwurst/HANDOFF-favicon.md).
+    # Dateien liegen am Web-Root (public/) – stabile URLs, /favicon.ico wird vom Browser
+    # ohnehin geprobt. BSP-Default-Favicon abschalten und unser Set einhängen.
+    shortcutIcon >
+    headerData {
+        100 = TEXT
+        100.value (
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/favicon-16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+        )
+    }
+    meta {
+        # Social-/OG-Kachel (1200×630). Absolute URL für Scraper via Site-URL.
+        og:image = og-tile.png
+        og:image.stdWrap.dataWrap = {getIndpEnv:TYPO3_SITE_URL}|
+        twitter:card = summary_large_image
+    }
+
     10 {
         templateRootPaths {
             200 = EXT:bockwurst_sitepackage/Resources/Private/Templates/Page/
