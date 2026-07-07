@@ -1,10 +1,9 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:comment>Tour-Video-CE – Click-to-Load: statische Vorschau, auf Klick lädt das
-youtube-nocookie-Embed in-place (nichts lädt zu YouTube vor dem Klick = Zustimmung).
-Ohne JS öffnet der Link YouTube extern (Fallback). YouTube-ID aus den Strava-Daten.</f:comment>
+<f:comment>Tour-Video-CE – direktes YouTube-Embed (youtube-nocookie). Consent-frei ist
+kein Muss mehr (Entscheidung 2026-07-07); Datenschutzerklärung deckt den
+Drittabruf ab. YouTube-ID aus den Strava-Daten.</f:comment>
 
 <f:asset.css identifier="bockwurst-tour" href="EXT:bockwurst_sitepackage/Resources/Public/Css/bockwurst-tour.css" />
-<f:asset.script identifier="bockwurst-tour-embed" src="EXT:bockwurst_sitepackage/Resources/Public/JavaScript/tour-embed.js" priority="false" />
 
 <f:if condition="{tour.youtube_id}">
     <f:then>
@@ -13,13 +12,13 @@ Ohne JS öffnet der Link YouTube extern (Fallback). YouTube-ID aus den Strava-Da
                 <div class="bw-seclab"><span class="bw-seclab-line"></span>{data.header}</div>
             </f:if>
             <f:variable name="ytUrl">https://www.youtube.com/watch?v={tour.youtube_id}</f:variable>
-            <f:variable name="ytEmbed">https://www.youtube-nocookie.com/embed/{tour.youtube_id}?autoplay=1</f:variable>
+            <f:variable name="ytEmbed">https://www.youtube-nocookie.com/embed/{tour.youtube_id}</f:variable>
             <div class="bw-ytcard">
-                <a class="bw-ytthumb" href="{ytUrl}" target="_blank" rel="noopener" data-embed-src="{ytEmbed}" data-embed-title="{tour.display_name}" aria-label="Video laden und abspielen (lädt YouTube; ohne JavaScript öffnet es YouTube extern)">
-                    <img decoding="async" loading="lazy" src="{f:uri.resource(path: 'EXT:bockwurst_sitepackage/Resources/Public/Images/yt-preview.png')}" alt="">
-                    <span class="bw-ytscrim"></span>
-                    <span class="bw-ytplay"><i></i></span>
-                </a>
+                <div class="bw-embedframe">
+                    <iframe src="{ytEmbed}" title="{tour.display_name}" loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
                 <div class="bw-ytbar">
                     <div class="bw-ytmeta">
                         <span class="bw-ytch">Stefans Rennrad Welt · YouTube</span>
@@ -27,7 +26,6 @@ Ohne JS öffnet der Link YouTube extern (Fallback). YouTube-ID aus den Strava-Da
                     </div>
                     <a class="bw-ytsub" href="{ytUrl}" target="_blank" rel="noopener"><span class="bw-ytpi"></span><span>Auf YouTube ansehen</span></a>
                 </div>
-                <p class="bw-yt-privacy">Erst mit Klick wird das Video von YouTube geladen – vorher werden keine Daten an YouTube übertragen.</p>
             </div>
         </section>
     </f:then>

@@ -158,34 +158,33 @@ DE vorerst (EN mit Sprache 1). Sektionen ab „Touren" werden schrittweise gefü
                     <div><div class="bw-seclab"><span class="bw-seclab-line"></span>YouTube Shorts</div><h2 class="bw-h2">Kurz reingeschaut.</h2></div>
                     <a class="bw-morelink" href="https://www.youtube.com/@Stefan_Rennrad_Chemnitz" target="_blank" rel="noopener">Zum Kanal &rarr;</a>
                 </div>
-                <f:comment>4 kuratierte Shorts. Consent-frei: lokales Vorschaubild + Link zu YouTube,
-                kein Embed/iframe, kein Drittabruf vor dem Klick. Vorschaubilder committet
-                unter Resources/Public/Images/shorts/. Neue Shorts: Bild ersetzen + href/Caption anpassen.</f:comment>
+                <f:comment>4 kuratierte Shorts als eingebettete Player (youtube-nocookie, lazy).
+                Neue Shorts: Embed-ID + Caption-href + Text anpassen.</f:comment>
                 <div class="bw-shorts">
-                    <a class="bw-short bw-reveal" href="https://www.youtube.com/shorts/qpIeDoj-slQ" target="_blank" rel="noopener" style="transition-delay:0s">
-                        <img src="{f:uri.resource(path: 'EXT:bockwurst_sitepackage/Resources/Public/Images/shorts/short-1.jpg')}" alt="" loading="lazy">
-                        <span class="bw-short-ov" aria-hidden="true"></span>
-                        <span class="bw-short-yt" aria-hidden="true"><i></i></span>
-                        <span class="bw-short-cap">100&nbsp;km bei 38&nbsp;&deg;C &mdash; Hitze-Tipps</span>
-                    </a>
-                    <a class="bw-short bw-reveal" href="https://www.youtube.com/shorts/K_Uo0-Tgt60" target="_blank" rel="noopener" style="transition-delay:0.06s">
-                        <img src="{f:uri.resource(path: 'EXT:bockwurst_sitepackage/Resources/Public/Images/shorts/short-2.jpg')}" alt="" loading="lazy">
-                        <span class="bw-short-ov" aria-hidden="true"></span>
-                        <span class="bw-short-yt" aria-hidden="true"><i></i></span>
-                        <span class="bw-short-cap">Tour-de-France-Feeling: MSR300</span>
-                    </a>
-                    <a class="bw-short bw-reveal" href="https://www.youtube.com/shorts/5PSb6hGQpIQ" target="_blank" rel="noopener" style="transition-delay:0.12s">
-                        <img src="{f:uri.resource(path: 'EXT:bockwurst_sitepackage/Resources/Public/Images/shorts/short-3.jpg')}" alt="" loading="lazy">
-                        <span class="bw-short-ov" aria-hidden="true"></span>
-                        <span class="bw-short-yt" aria-hidden="true"><i></i></span>
-                        <span class="bw-short-cap">Was anziehen im Fr&uuml;hling?</span>
-                    </a>
-                    <a class="bw-short bw-reveal" href="https://www.youtube.com/shorts/kV6iw0grRbE" target="_blank" rel="noopener" style="transition-delay:0.18s">
-                        <img src="{f:uri.resource(path: 'EXT:bockwurst_sitepackage/Resources/Public/Images/shorts/short-4.jpg')}" alt="" loading="lazy">
-                        <span class="bw-short-ov" aria-hidden="true"></span>
-                        <span class="bw-short-yt" aria-hidden="true"><i></i></span>
-                        <span class="bw-short-cap">Was drunter unter die Radhose?</span>
-                    </a>
+                    <div class="bw-short bw-reveal" style="transition-delay:0s">
+                        <div class="bw-short-frame">
+                            <iframe src="https://www.youtube-nocookie.com/embed/qpIeDoj-slQ" title="100 km bei 38 °C – Hitze-Tipps" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <a class="bw-short-cap" href="https://www.youtube.com/shorts/qpIeDoj-slQ" target="_blank" rel="noopener">100&nbsp;km bei 38&nbsp;&deg;C &mdash; Hitze-Tipps</a>
+                    </div>
+                    <div class="bw-short bw-reveal" style="transition-delay:0.06s">
+                        <div class="bw-short-frame">
+                            <iframe src="https://www.youtube-nocookie.com/embed/K_Uo0-Tgt60" title="Tour-de-France-Feeling: MSR300" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <a class="bw-short-cap" href="https://www.youtube.com/shorts/K_Uo0-Tgt60" target="_blank" rel="noopener">Tour-de-France-Feeling: MSR300</a>
+                    </div>
+                    <div class="bw-short bw-reveal" style="transition-delay:0.12s">
+                        <div class="bw-short-frame">
+                            <iframe src="https://www.youtube-nocookie.com/embed/5PSb6hGQpIQ" title="Was anziehen im Frühling?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <a class="bw-short-cap" href="https://www.youtube.com/shorts/5PSb6hGQpIQ" target="_blank" rel="noopener">Was anziehen im Fr&uuml;hling?</a>
+                    </div>
+                    <div class="bw-short bw-reveal" style="transition-delay:0.18s">
+                        <div class="bw-short-frame">
+                            <iframe src="https://www.youtube-nocookie.com/embed/kV6iw0grRbE" title="Was drunter unter die Radhose?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <a class="bw-short-cap" href="https://www.youtube.com/shorts/kV6iw0grRbE" target="_blank" rel="noopener">Was drunter unter die Radhose?</a>
+                    </div>
                 </div>
             </div>
         </section>
