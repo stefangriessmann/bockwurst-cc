@@ -15,8 +15,8 @@ nbproject
 !/public/favicon-16.png
 !/public/favicon-32.png
 !/public/favicon-48.png
-!/public/favicon-180.png
 !/public/favicon-512.png
+!/public/favicon-maskable-512.png
 !/public/og-tile.png
 
 # Umgebungsspezifisch (Secrets: encryptionKey, DB) – nicht versionieren
