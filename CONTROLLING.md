@@ -19,6 +19,12 @@
 | 3 | 2026-07-02 | 14:20 | 17:34 | 3:14 | TYPO3 · Setup | DDEV + TYPO3 v14 lokal, Bootstrap Package, eigenes Theme-Sitepackage (Schriften self-hosted, Design-Tokens, Logo-SVG, eigenes Page-Template), Design-Pipeline (GitHub-Repo `bockwurst-cc` + `design/`), Governance/Controlling, Frame-Blocker-Diagnose | auto |
 | 4 | 2026-07-02 | ~21:15 | 21:35 | ~0:20 | TYPO3 · Setup | **Frame-Blocker gelöst**: setup-generierte `config/sites/main/setup.typoscript` entfernt → eigener Header (Logo) + Slim-Footer rendert; Doku/Memory aktualisiert. (Wall-Clock 17:34→21:35 war lange Pause – NICHT gezählt.) | auto (geschätzt) |
 | 5 | 2026-07-03 | ~08:11 | 08:22 | ~0:11 | TYPO3 · Planung | Umsetzungs-Konzept (Baustein-Wiederverwendung Core/BSP, Strava-Datenpfad via MCP validiert), Entwickler-Quellen, Kontext-Absicherung (STATUS.md + Resume-Memory + Wiedereinstiegs-Prompt). (Nacht 07-02→07-03 = Pause, nicht gezählt.) | auto |
+| 6 | 2026-07-03 | 08:52 | 10:42 | 1:50 | Tourenportal | Strava-Daten der 9 Touren holen (inkl. ~1 h MCP-Fetch im Hintergrund) → data/touren/*.json+gpx; Tour-Stats- + Tour-Map-CE; Standardsprache Deutsch + BE-Sprachpakete | geschätzt (Commits) |
+| 7 | 2026-07-03 | 15:09 | 15:27 | 0:18 | Tourenportal | Repo-public-Vorbereitung (lokales BE-PW aus Doku + rotiert), Höhenprofil-Achsenlabel-Fix | geschätzt (Commits) |
+| 8 | 2026-07-03 | 19:21 | 19:39 | 0:18 | Tourenportal | Tour-Seitenlayout (backend_layout „tour", Hero, 1080-Spalte, JSON-LD) + Video-CE | geschätzt (Commits) |
+| 9 | 2026-07-04 | 15:51 | 16:17 | 0:26 | Tourenportal | Consent-Weg: sg_cookie_optin installiert→verworfen→freies BSP-cookie-consent; Video Click-to-Load; Banner weg; Soundtrack-CE (Spotify) | geschätzt (Commits) |
+| 10 | 2026-07-04 | 18:39 | 19:26 | 0:47 | Tourenportal | Scroll-Reveal, Highlights-CE, Galerie-CE + Lightbox + Hero-Foto → **MSR300-Detailseite komplett** | geschätzt (Commits) |
+| 11 | 2026-07-06 | 07:00 | 08:33 | 0:50 | Startseite/Footer | Homepage-Handoff ins Repo übernommen; Footer-Engagement-Band (6 Points + Triathlon Chemnitz) umgesetzt | geschätzt (Commits) |
 
 ## Summen je Phase (h:mm)
 
@@ -27,9 +33,11 @@
 | Event-Guide | _Rückblick, offen_ |
 | TYPO3 · Planung | ~0:11 (+ Rückblick offen) |
 | TYPO3 · Setup | ~3:34 |
-| **Gesamt (gemessen)** | **~3:45** |
+| Tourenportal (Blöcke 6–10) | ~3:39 |
+| Startseite/Footer (Block 11) | ~0:50 |
+| **Gesamt (gemessen + geschätzt)** | **~8:15** |
 
-_(Gemessen = live getrackte „auto"-Blöcke. Zeilen 1 & 2 sind Rückblick ohne exakte Messung. „auto" enthält Denk-/Interaktionspausen.)_
+_(Blöcke 1–5 = live getrackte „auto"-Zeit (~3:45). Blöcke 6–11 = **aus Git-Commit-Zeitstempeln geschätzt** (~4:30): aktive Fenster zwischen erstem/letztem Commit eines Blocks, lange Pausen dazwischen ausgeschlossen; enthält Claude-Arbeit + Interaktion/Reviews, inkl. ~1 h Hintergrund-MCP-Fetch in Block 6. Zeilen 1 & 2 sind Rückblick ohne Messung. Nicht enthalten: kurze Event-Guide-Diagnose am 06.07., reine Denkpausen.)_
 
 ## Hinweise
 - **Modus (mit dir abgestimmt):** automatisch — getrackt wird die Zeit, während Claude arbeitet (Interaktions-/Arbeitszeit). Keine manuellen Schätzungen nötig.
