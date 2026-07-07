@@ -28,7 +28,29 @@
     requestAnimationFrame(step);
   }
 
+  // 6-Points-Countdown bis 2027-05-14 09:00 (Europe/Berlin). Läuft unabhängig
+  // von prefers-reduced-motion (Information, keine Animation). Ohne JS bleibt
+  // der serverseitige Fallback („14. Mai 2027 · Mallorca") stehen.
+  function initCountdown() {
+    var el = document.getElementById('bw-cd');
+    if (!el) { return; }
+    var target = new Date('2027-05-14T09:00:00').getTime();
+    function tick() {
+      var s = Math.max(0, Math.floor((target - Date.now()) / 1000));
+      var d = Math.floor(s / 86400); s -= d * 86400;
+      var h = Math.floor(s / 3600); s -= h * 3600;
+      var m = Math.floor(s / 60);
+      var units = [[d, 'Tage'], [h, 'Std'], [m, 'Min']];
+      el.innerHTML = units.map(function (u) {
+        return '<div class="bw-cd-u"><b>' + u[0] + '</b><span>' + u[1] + '</span></div>';
+      }).join('');
+    }
+    tick();
+    setInterval(tick, 60000);
+  }
+
   function boot() {
+    initCountdown();
     if (reduce || !hasIO) { return; }
     document.documentElement.classList.add('bw-anim');
 
