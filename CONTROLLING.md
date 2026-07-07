@@ -25,6 +25,10 @@
 | 9 | 2026-07-04 | 15:51 | 16:17 | 0:26 | Tourenportal | Consent-Weg: sg_cookie_optin installiert→verworfen→freies BSP-cookie-consent; Video Click-to-Load; Banner weg; Soundtrack-CE (Spotify) | geschätzt (Commits) |
 | 10 | 2026-07-04 | 18:39 | 19:26 | 0:47 | Tourenportal | Scroll-Reveal, Highlights-CE, Galerie-CE + Lightbox + Hero-Foto → **MSR300-Detailseite komplett** | geschätzt (Commits) |
 | 11 | 2026-07-06 | 07:00 | 08:33 | 0:50 | Startseite/Footer | Homepage-Handoff ins Repo übernommen; Footer-Engagement-Band (6 Points + Triathlon Chemnitz) umgesetzt | geschätzt (Commits) |
+| 12 | 2026-07-07 | 19:52 | 20:13 | 0:21 | Startseite | Increment 1 (Hero + Gerüst + Nav) committet; 9 Tour-Detailseiten angelegt (DB); Controlling-Backfill Blöcke 6–11 | geschätzt (Commits) |
+| 13 | 2026-07-07 | 20:13 | 21:04 | 0:51 | Startseite | Touren-Grid (`TourGridProcessor`, datengetrieben) + 6-Points-Sektion (Live-Countdown) + Mallorca-Foto (aus Event-Guide-Repo, optimiert) | geschätzt (Commits) |
+| 14 | 2026-07-07 | 21:04 | 21:50 | 0:46 | Startseite | Favicon+OG (v1), Event-Teaser (echte Daten via Snapshot + `EventTeaserProcessor`), YouTube-Shorts, externe Medien → direkte Embeds (Consent-Stance gelockert), Über-Sektion → **Startseite komplett** | geschätzt (Commits) |
+| 15 | 2026-07-07 | 21:50 | 22:33 | 0:43 | Startseite · QA | Deep-QA Claude Design abgearbeitet: #1 Section-Label (→ tokens.css), #6 Mobile-Burger-Nav, #4 Touren-Übersicht `/touren` (neues Layout + Grid-Partial); Favicon v2 (freigestellt + maskable) | geschätzt (Commits) |
 
 ## Summen je Phase (h:mm)
 
@@ -35,9 +39,12 @@
 | TYPO3 · Setup | ~3:34 |
 | Tourenportal (Blöcke 6–10) | ~3:39 |
 | Startseite/Footer (Block 11) | ~0:50 |
-| **Gesamt (gemessen + geschätzt)** | **~8:15** |
+| Startseite + QA (Blöcke 12–15) | ~2:41 |
+| **Gesamt (gemessen + geschätzt)** | **~10:56** |
 
-_(Blöcke 1–5 = live getrackte „auto"-Zeit (~3:45). Blöcke 6–11 = **aus Git-Commit-Zeitstempeln geschätzt** (~4:30): aktive Fenster zwischen erstem/letztem Commit eines Blocks, lange Pausen dazwischen ausgeschlossen; enthält Claude-Arbeit + Interaktion/Reviews, inkl. ~1 h Hintergrund-MCP-Fetch in Block 6. Zeilen 1 & 2 sind Rückblick ohne Messung. Nicht enthalten: kurze Event-Guide-Diagnose am 06.07., reine Denkpausen.)_
+_(Blöcke 1–5 = live getrackte „auto"-Zeit (~3:45). Blöcke 6–15 = **aus Git-Commit-Zeitstempeln geschätzt** (~7:11): aktive Fenster zwischen erstem/letztem Commit eines Blocks, lange Pausen dazwischen ausgeschlossen; enthält Claude-Arbeit + Interaktion/Reviews, inkl. ~1 h Hintergrund-MCP-Fetch in Block 6. Zeilen 1 & 2 sind Rückblick ohne Messung. Nicht enthalten: kurze Event-Guide-Diagnose am 06.07., reine Denkpausen.)_
+
+_(Block 12–15 = Session 2026-07-07 abends, ~2:41 weitgehend durchgehend: gesamte Startseite mit echten Daten fertiggestellt — Touren-Grid, 6 Points + Countdown, Event-Teaser, Shorts, Über —, externe Medien auf direkte Embeds umgestellt, Favicon v1→v2, Deep-QA von Claude Design abgearbeitet inkl. neuer `/touren`-Übersicht.)_
 
 ## Hinweise
 - **Modus (mit dir abgestimmt):** automatisch — getrackt wird die Zeit, während Claude arbeitet (Interaktions-/Arbeitszeit). Keine manuellen Schätzungen nötig.
@@ -55,8 +62,10 @@ _(Blöcke 1–5 = live getrackte „auto"-Zeit (~3:45). Blöcke 6–11 = **aus G
 |---|---|---|---|
 | 2026-07-03 ~08:25 | 13 % (Reset 12:49) | 17 % (Reset 06.07.) | $0,00 (Abo-inklusiv) |
 | 2026-07-06 (Vormittag) | 18 % (Reset 11:30) | 34 % (Reset 06.07. 15:00); Fable 7 % | $0,00 (Abo-inklusiv) |
+| 2026-07-07 (Session-Ende ~22:33) | _nachtragen (App → Usage)_ | _nachtragen_ | $0,00 (Abo-inklusiv) |
 
-_Bei Bedarf weitere Schnappschüsse ergänzen; ein €-Posten entfällt (Abo)._
+_Bei Bedarf weitere Schnappschüsse ergänzen; ein €-Posten entfällt (Abo). Die %-Werte kann Claude nicht selbst auslesen — bitte aus **App → Usage** eintragen._
+_Zwischen 07-06→07-07 entstanden: komplette Startseite (Touren-Grid · 6 Points+Countdown · Event-Teaser aus echten Daten · Shorts-Embeds · Über), Umstellung externer Medien auf direkte Embeds, Favicon v1→v2 (+ maskable), Deep-QA-Runde inkl. `/touren`-Übersicht._
 _Zwischen den Snapshots 07-03→07-06 entstanden: Tourenportal-Kern + MSR300-Detailseite komplett (7 CE-Typen, Hero/Galerie/Lightbox, Click-to-Load YouTube/Spotify), Consent-Entscheidung, Footer-Engagement-Band, DE-BE. Wochen-Anteil daher 17 %→34 %._
 
 ### Effizienz-Hinweis (aus App → Usage)
