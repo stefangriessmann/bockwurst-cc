@@ -1,6 +1,6 @@
 # bockwurst.cc – Projektstatus & Wiedereinstieg
 
-> Stand: 2026-07-06. **Zweck:** verlustfreier Wiedereinstieg (neue Session / nach Kontext-Zusammenfassung). Kurz & aktuell halten.
+> Stand: 2026-07-07. **Zweck:** verlustfreier Wiedereinstieg (neue Session / nach Kontext-Zusammenfassung). Kurz & aktuell halten.
 
 ## Wo wir stehen
 - **TYPO3 v14.3.4** lokal via **DDEV**, läuft unter `https://bockwurst-cc.ddev.site/`.
@@ -10,7 +10,7 @@
 - **Tour-Seitenlayout** (`backend_layout` „tour" → `Tour.html`): Hero (einziges `<h1>`, Region/Datum/Flag/Schwierigkeit aus Strava, Hero-Bild aus Seiten-Medium mit Gradient-Fallback), **1080px-Spalte**, `Article`-JSON-LD, Landmarks, vertikaler Rhythmus, Prose-Maß. Beispielseite **MSR300** unter `/tour-msr300` (Seite uid 2, Layout „tour", Strava-ID als Seiteneigenschaft): Hero → Stats → Karte+Höhenprofil → Video → Bericht. Serverseitig verifiziert (1× h1, JSON-LD, 0 Exceptions).
 - **Design-Feedback R1** (`Downloads/FEEDBACK-tour-detail.md`) abgearbeitet: Bug km-/Höhen-Label gefixt; 1080-Spalte, Reihenfolge, ein h1, JSON-LD, Prose, Video-Block erledigt. **Offen (brauchen Assets):** Hero-**Foto**, Galerie-**Fotos** (Upload; kein Strava-Foto-Endpoint), **Spotify-Playlist-URL** (Embed/Klick-zum-Laden), Highlights-Texte, echter Bericht-Text; dazu Motion/Scroll-Reveal.
 - **Design-Pipeline**: Handoff + Konzepte in `design/`; Claude Design **liest** Repo, Claude Code **schreibt**. Neues Design: ZIP herunterladen → nach `design/` committen.
-- Alles auf GitHub `stefangriessmann/bockwurst-cc`, Branch **`main`** (einziger Branch). Repo ist **öffentlich** (für Claude-Design-Zugriff; Secrets sauber, lokales BE-PW rotiert). Letzte Commits: Tour-Layout (`d75f46b`), Video-CE (`3080440`).
+- Alles auf GitHub `stefangriessmann/bockwurst-cc`, Branch **`main`** (einziger Branch). Repo ist **öffentlich** (für Claude-Design-Zugriff; Secrets sauber, lokales BE-PW rotiert). Letzte Commits: Tour-Layout (`d75f46b`), Video-CE (`3080440`), Touren-Raster Startseite (`7c4de19`).
 
 ## CE-Baukasten (Sitepackage, alle datengetrieben aus data/touren/<id>.json)
 `bockwurst_tourhighlights` (Karten km/Titel/Text) · `bockwurst_tourstats` (Eckdaten) · `bockwurst_tourmap` (Leaflet+Höhenprofil) · `bockwurst_tourvideo` (YouTube Click-to-Load) · `bockwurst_toursound` (Spotify Click-to-Load). Bericht = BSP `text`. Reihenfolge MSR300: Hero → Stats → Highlights → Karte → Video → Soundtrack → Bericht.
@@ -26,7 +26,8 @@ Reihenfolge Hero(Foto IMG_3584) → Stats → Highlights → Karte+Höhenprofil 
 ## Startseite (in Arbeit, inkrementell) — `backend_layout „home"` → `Home.html`
 Spec: `design/design_handoff_bockwurst/HANDOFF-homepage.md` (+ `home.html`). Home-Seite (uid 1) auf Layout „home".
 - **Increment 1 ✅ (2026-07-06):** Gerüst + **Hero** (Kicker, einziges h1, 2 CTAs, Count-up-Stats, MSR300-Tour-Karte mit echtem Bild) + Header-Nav + Sektions-Gerüst (Touren/6 Points/Events/Shorts/Über als Stubs) + Footer. `bockwurst-home.css` + `bockwurst-home.js` (Count-up + Reveal). Nur DE.
-- **Offen je Sektion:** Touren-Grid → jetzt baubar (9 Seiten da, s. u.), Fotos je Tour fehlen (Gradient-Fallback); 6 Points → **Mallorca-Foto**; Events → Daten aus `sport-events` (Integration) oder Link-out; Shorts → **4 Short-IDs**; Über → **Text + Foto**.
+- **Increment 2 ✅ (2026-07-07):** **Touren-Raster** (Sektion „Touren"). Serverseitig via neuem **`TourGridProcessor`** (`page.10.dataProcessing.30`, `as=tourGrid`): `PageRepository::getMenu()` über die Kind-Tour-Seiten (mit Strava-ID), angereichert aus `data/touren/<id>.json` (Titel, Region, km, Schwierigkeit, Video-ja/nein, Hero-Bild). Fluid-`f:for` in `Home.html`, Link je Seite via `f:link.page`. Karten: Foto oder **Gradient-Fallback** (aktuell 1× Foto/MSR300, 8× Gradient), Play-/Video-Marker nur bei YouTube-ID (7/9), Badge = **Schwierigkeit** farbcodiert (Leicht=green/Mittel=cobalt/Schwer=pink). Responsive 3/2/1 Spalten. **„Alle Touren →"-Morelink entfernt** (alle 9 Touren stehen inline; ein dediziertes `/touren`-Overview wäre die künftige Heimat des Links). Verifiziert: HTTP 200, keine Exceptions, Tour-Detailseiten unberührt.
+- **Offen je Sektion:** ~~Touren-Grid~~ ✅; **6 Points** → **Mallorca-Foto** (`stefan-mallorca.jpg`) + Live-Countdown bis 2027-05-14 09:00; **Events** → Daten aus `sport-events` (Integration) oder Link-out; **Shorts** → **4 Short-IDs**; **Über** → **Text + Foto**. Pro Tour weiterhin offen: Hero-Foto (→ füllt automatisch die Grid-Karte statt Gradient), Highlights, Bericht, Bayern-YT-IDs.
 
 ## Alle 9 Tour-Detailseiten angelegt (2026-07-06) — DB-Inhalt (lokale Instanz, nicht in git)
 Slugs: `/tour-msr300` (komplett) · `/tour-rund-um-berlin` · `/tour-bayrischzell-sudelfeldpass`* · `/tour-schliersee-tegernsee-spitzingsee`* · `/tour-spreewaldmarathon-200` · `/tour-mallorca-etappe-1/2/3` · `/tour-rochlitzer-berg-colditz-100`. Alle Layout „tour" + Strava-ID als Seiteneigenschaft. Bausteine: Eckdaten + Karte/Höhenprofil + Video (außer *= keine YouTube-ID) + **Blindtext-Bericht** (Platzhalter). Offen je Tour: Hero-Foto (Gradient-Fallback), Highlights, Galerie/Fotos, Soundtrack, echter Bericht.
