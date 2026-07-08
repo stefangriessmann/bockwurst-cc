@@ -62,7 +62,7 @@ _(Block 12–15 = Session 2026-07-07 abends, ~2:41 weitgehend durchgehend: gesam
 |---|---|---|---|
 | 2026-07-03 ~08:25 | 13 % (Reset 12:49) | 17 % (Reset 06.07.) | $0,00 (Abo-inklusiv) |
 | 2026-07-06 (Vormittag) | 18 % (Reset 11:30) | 34 % (Reset 06.07. 15:00); Fable 7 % | $0,00 (Abo-inklusiv) |
-| 2026-07-07 (Session-Ende ~22:33) | _nachtragen (App → Usage)_ | _nachtragen_ | $0,00 (Abo-inklusiv) |
+| 2026-07-07 (Session-Ende ~22:33) | 52 % (Reset 00:50) | 26 % (Reset 13.07. 15:00); Fable 19 % | $0,00 (Abo-inklusiv) |
 
 _Bei Bedarf weitere Schnappschüsse ergänzen; ein €-Posten entfällt (Abo). Die %-Werte kann Claude nicht selbst auslesen — bitte aus **App → Usage** eintragen._
 _Zwischen 07-06→07-07 entstanden: komplette Startseite (Touren-Grid · 6 Points+Countdown · Event-Teaser aus echten Daten · Shorts-Embeds · Über), Umstellung externer Medien auf direkte Embeds, Favicon v1→v2 (+ maskable), Deep-QA-Runde inkl. `/touren`-Übersicht._

@@ -120,3 +120,17 @@ a:hover { color: var(--pink); }
 
 @media (max-width: 900px) { .bw-fgrid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .bw-fsep { display: none; } .bw-fgrid { grid-template-columns: 1fr; } }
+
+/* ---- Rechtsseiten (Impressum / Datenschutz): schlichte Prosa ---- */
+.bw-legal { max-width: 760px; }
+.bw-legal .bw-legal-h1 { font-family: var(--ff-display); font-weight: 800; letter-spacing: -.02em; font-size: var(--fs-h2); margin: 0 0 8px; }
+.bw-legal .bw-legal-lead { color: var(--mut); font-size: var(--fs-lead); line-height: 1.55; margin: 0 0 28px; }
+.bw-legal h2 { font-family: var(--ff-display); font-weight: 800; letter-spacing: -.01em; font-size: 20px; margin: 30px 0 8px; }
+.bw-legal p, .bw-legal li { font-size: 16px; line-height: 1.65; color: var(--ink); }
+.bw-legal p { margin: 0 0 12px; }
+.bw-legal ul { margin: 0 0 12px; padding-left: 20px; }
+.bw-legal li { margin: 4px 0; }
+.bw-legal a { color: var(--cobalt); }
+.bw-legal a:hover { color: var(--pink); }
+.bw-legal .bw-legal-note { font-family: var(--ff-mono); font-size: var(--fs-sm); color: var(--mut); background: var(--soft); border: 1px dashed var(--line); border-radius: 12px; padding: 14px 16px; margin: 8px 0 24px; }
+.bw-legal .bw-legal-stand { font-family: var(--ff-mono); font-size: var(--fs-micro); letter-spacing: .06em; text-transform: uppercase; color: var(--mut); margin-top: 32px; }

@@ -1,0 +1,82 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>bockwurst.cc – Datenschutzerklärung (backend_layout „datenschutz").
+Rechtstext versioniert im Template. HINWEIS an Stefan: anwaltlich / durch die
+Verbraucherzentrale prüfen lassen – kein Rechtsrat. Beschreibt den REAL-Zustand:
+direkte youtube-nocookie-Embeds (Tour-Videos + Home-Shorts), CARTO-Kartentiles
+(Leaflet auf Tour-Seiten), Spotify erst auf Klick, keine Cookies/kein Tracking,
+Hosting Hetzner + Cloudflare (Ziel Phase 2). Bei Infrastruktur-/Feature-Änderung anpassen.</f:comment>
+
+<div id="top" class="bw-page">
+
+    <header class="bw-header">
+        <div class="bw-container bw-header-inner">
+            <f:render partial="Header/Logo" arguments="{_all}" />
+            <nav class="bw-nav" aria-label="Hauptnavigation">
+                <a class="bw-nav-link" href="/">Startseite</a>
+                <a class="bw-nav-link" href="https://bockwurst-events.netlify.app/event-guide" target="_blank" rel="noopener">Event-Guide</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="page-content" class="bw-main">
+        <div class="bw-container">
+            <article class="bw-legal">
+                <h1 class="bw-legal-h1">Datenschutzerkl&auml;rung</h1>
+                <p class="bw-legal-lead">bockwurst.cc ist werbefrei und setzt <strong>keine Cookies</strong>, kein Tracking und
+                keine Analyse- oder Marketing-Dienste ein. Personenbezogene Daten fallen nur dort an, wo sie technisch
+                unvermeidbar sind (Server-Auslieferung) oder wenn eingebettete Inhalte Dritter geladen werden.</p>
+
+                <h2>Verantwortlicher</h2>
+                <p>Stefan Grie&szlig;mann, Salzstra&szlig;e 34, 09111 Chemnitz, Deutschland<br>
+                E-Mail: <a href="mailto:stefan.griessmann@web.de">stefan.griessmann@web.de</a></p>
+
+                <h2>Hosting &amp; Server-Logfiles</h2>
+                <p>Die Website wird bei der <strong>Hetzner Online GmbH</strong> (Gunzenhausen, Deutschland) gehostet;
+                die Auslieferung erfolgt &uuml;ber das Content-Delivery-Netz von <strong>Cloudflare</strong>. Beim Aufruf
+                erhebt der Server automatisch technisch notwendige Zugriffsdaten in Logdateien: gek&uuml;rzte/anonymisierte
+                IP-Adresse, Datum und Uhrzeit, angeforderte Datei, Referrer und Browser-/Ger&auml;tekennung (User-Agent).</p>
+                <p>Zweck ist der sichere und stabile Betrieb der Website. Rechtsgrundlage ist unser berechtigtes Interesse
+                (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO). Die Logs werden nur kurzzeitig gespeichert und dann gel&ouml;scht.
+                Mit den Anbietern besteht jeweils ein Vertrag zur Auftragsverarbeitung (Art.&nbsp;28 DSGVO).</p>
+
+                <h2>Eingebettete YouTube-Videos</h2>
+                <p>Auf Tour-Seiten und der Startseite sind Videos im <strong>erweiterten Datenschutzmodus</strong>
+                (<code>youtube-nocookie.com</code>) eingebettet, betrieben von der Google Ireland Limited. Beim Laden einer
+                Seite mit Video wird eine Verbindung zu Google/YouTube aufgebaut und dabei u.&nbsp;a. Ihre IP-Adresse
+                &uuml;bertragen; im erweiterten Datenschutzmodus setzt YouTube erst bei der Wiedergabe Cookies bzw.
+                vergleichbare Kennungen. Rechtsgrundlage ist unser berechtigtes Interesse an einer ansprechenden Darstellung
+                (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO). Details:
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+                <h2>Kartendarstellung (Streckenkarten)</h2>
+                <p>Auf Tour-Seiten zeigen wir Streckenkarten mit der quelloffenen Bibliothek Leaflet; das Kartenmaterial
+                (Tiles) wird von <strong>CARTO</strong> geladen. Dabei wird Ihre IP-Adresse an den Kartenanbieter &uuml;bertragen.
+                Rechtsgrundlage ist unser berechtigtes Interesse an der Veranschaulichung der Touren
+                (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO).</p>
+
+                <h2>Soundtrack (Spotify)</h2>
+                <p>Der Spotify-Player auf einzelnen Tour-Seiten l&auml;dt <strong>erst nach aktivem Klick</strong>. Vorher werden
+                keine Daten an Spotify &uuml;bertragen. Mit dem Klick willigen Sie in das Laden ein
+                (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO).</p>
+
+                <h2>Externe Links</h2>
+                <p>Wir verlinken auf externe Angebote (u.&nbsp;a. YouTube, Strava, 6&nbsp;Points, Zwift, den Event-Guide).
+                Nach dem Verlassen dieser Website gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+
+                <h2>Ihre Rechte</h2>
+                <p>Sie haben im Rahmen der gesetzlichen Vorgaben das Recht auf Auskunft (Art.&nbsp;15), Berichtigung
+                (Art.&nbsp;16), L&ouml;schung (Art.&nbsp;17), Einschr&auml;nkung der Verarbeitung (Art.&nbsp;18),
+                Daten&uuml;bertragbarkeit (Art.&nbsp;20) sowie Widerspruch (Art.&nbsp;21 DSGVO). Wenden Sie sich dazu an die
+                oben genannte Kontaktadresse.</p>
+                <p>Zudem steht Ihnen ein Beschwerderecht bei einer Aufsichtsbeh&ouml;rde zu, f&uuml;r uns der
+                <a href="https://www.saechsdsb.de/" target="_blank" rel="noopener">S&auml;chsische Datenschutzbeauftragte</a>.</p>
+
+                <p class="bw-legal-stand">Stand: Juli 2026</p>
+            </article>
+        </div>
+    </main>
+
+    <f:render partial="Footer" arguments="{_all}" />
+
+</div>
+</html>

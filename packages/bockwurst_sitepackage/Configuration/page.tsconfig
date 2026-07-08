@@ -59,4 +59,42 @@ mod.web_layout.BackendLayouts {
             }
         }
     }
+    impressum {
+        title = Rechtsseite: Impressum
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Zusatz-Inhalt (optional; Text kommt aus dem Template)
+                                colPos = 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    datenschutz {
+        title = Rechtsseite: Datenschutz
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Zusatz-Inhalt (optional; Text kommt aus dem Template)
+                                colPos = 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
