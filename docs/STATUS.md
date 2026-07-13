@@ -51,8 +51,15 @@ Slugs: `/tour-msr300` (komplett) · `/tour-rund-um-berlin` · `/tour-bayrischzel
 - ~~**Impressum + Datenschutz**~~ ✅ (2026-07-07): beide Seiten live, Footer-Links funktionieren. backend_layouts „impressum"/„datenschutz" → `Impressum.html`/`Datenschutz.html` (Rechtstext **versioniert im Template**, nicht DB-CE). DB-Seiten uid 13/14 (nav_hide). Datenschutz beschreibt Real-Zustand (keine Cookies; Hetzner+Cloudflare; youtube-nocookie-Embeds; CARTO-Tiles; Spotify Click-to-Load). **⚠️ Rechtstexte vor Launch juristisch prüfen lassen** (kein Rechtsrat). Bei Infrastruktur-/Feature-Änderung anpassen.
 - **DE/EN-Zweitsprache** (Sprache 1): dann Footer-Claims/Nav zweisprachig; optional Karten-Tiles Click-to-Load/Proxy.
 
-## Separates Projekt / offene Frage (Event-Guide `sport-events`)
-Stefan bemerkte: live werden noch Events vom 01.07. gezeigt. **Diagnose:** Scraper-Cron ist gesund (weekly Mo + monthly; nächster Lauf Mo 06.07.), aber die Browse-Liste (Zeitraum „alle") filtert **nicht** nach heute → vergangene Tage bleiben bis zum nächsten Scrape sichtbar. **Fix offen (Freigabe abwarten):** in `sport-events/index.html` Basisfilter `e.datum >= TODAY_ISO` ergänzen, committen/pushen → Cloudflare Pages. (Live-Seite → vorher OK einholen.)
+## Separates Projekt (Event-Guide `sport-events`) — 2026-07-13 abgearbeitet
+Hosting = **Netlify** (`main`→Live, `staging`→Staging-Subdomain; nicht Cloudflare). Deploy-Flow: `docs/TECHNISCHE-DOKUMENTATION.md §6`. Erledigt (alles direkt auf `main`, verifiziert):
+- **Vergangene Events ausgefiltert** — Basisfilter `e.datum < TODAY_ISO` in `filtered()` (wirkt Liste/Kalender/Zähler). Live geprüft: Liste ab heute, Treffer 984→911.
+- **„Letzte Aktualisierung: <stand>" im Footer** — lädt `data/meta.json` (`#lastUpdate`, zweisprachig). Macht Datenalter sichtbar.
+- **E2E-Schwellen saisontauglich** (A): `rad 600→400, tri/lauf 150→120` — die „upcoming"-Zahl sinkt übers Jahr (Juli: rad 515); der `≥600`-Test war ein False-Red, nicht Scraper-Defekt.
+- **rad-net Rate-Limit-Backoff** (B): `_http_get()` in `scripts/scrapers/de_radnet.py` (429/Retry-After + „Bitte warten"-Seite, eskalierender Cooldown, Jitter; Listenseiten überspringen statt abbrechen). → bessere Koordinaten-Präzision. **Noch nicht via echtem Scrape validiert** (nur Review) — nächster Lauf bestätigt.
+- **Scraper-Gesundheit:** der 06.07.-Lauf war rate-limited (rad 555), **der 13.07.-`schedule` feuerte gar nicht** (GitHub-Crons sind „best effort"). Manuell nachgestoßen → Stand 13.07 (rad 515). Nächster Cron: Mo 03:00 UTC (nominal 20.07.), monatlich 1. 05:00 UTC — **auf den Zeitplan ist kein Verlass.**
+- **Staging = Live** gezogen (`origin/main`→`staging`, force-with-lease). **Lokaler Deploy-Klon `sport-events-deploy`** hängt dadurch auf altem `staging` (ahead 2/behind 4) + hat eine WIP-`docs/TYPO3-SETUP-PLAN.md` (→ Backup im Scratchpad) — beim nächsten Arbeiten dort `git reset --hard origin/staging` nach WIP-Sicherung.
+- Frontend-Fix E2E **grün** (76 Tests). Rechtstexte/Consent: der Datenschutz auf bockwurst.cc deckt die YouTube/CARTO-Drittabrufe ab.
 
 ## Wiedereinstieg – so läuft die Umgebung wieder
 - **DDEV starten:** neues Terminal → `cd C:\Users\stefan.griessmann\claude\bockwurst-cc` → `ddev start` (Container liegen auf Platte). `ddev launch typo3` öffnet das Backend.
