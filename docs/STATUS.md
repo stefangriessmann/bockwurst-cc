@@ -1,6 +1,6 @@
 # bockwurst.cc – Projektstatus & Wiedereinstieg
 
-> Stand: 2026-07-07. **Zweck:** verlustfreier Wiedereinstieg (neue Session / nach Kontext-Zusammenfassung). Kurz & aktuell halten.
+> Stand: 2026-10-11 (Event-Guide-Scraper-Fix live; bockwurst.cc-Kern unverändert seit 2026-07-07). **Zweck:** verlustfreier Wiedereinstieg (neue Session / nach Kontext-Zusammenfassung). Kurz & aktuell halten.
 
 ## Wo wir stehen
 - **TYPO3 v14.3.4** lokal via **DDEV**, läuft unter `https://bockwurst-cc.ddev.site/`.
@@ -51,8 +51,19 @@ Slugs: `/tour-msr300` (komplett) · `/tour-rund-um-berlin` · `/tour-bayrischzel
 - ~~**Impressum + Datenschutz**~~ ✅ (2026-07-07): beide Seiten live, Footer-Links funktionieren. backend_layouts „impressum"/„datenschutz" → `Impressum.html`/`Datenschutz.html` (Rechtstext **versioniert im Template**, nicht DB-CE). DB-Seiten uid 13/14 (nav_hide). Datenschutz beschreibt Real-Zustand (keine Cookies; Hetzner+Cloudflare; youtube-nocookie-Embeds; CARTO-Tiles; Spotify Click-to-Load). **⚠️ Rechtstexte vor Launch juristisch prüfen lassen** (kein Rechtsrat). Bei Infrastruktur-/Feature-Änderung anpassen.
 - **DE/EN-Zweitsprache** (Sprache 1): dann Footer-Claims/Nav zweisprachig; optional Karten-Tiles Click-to-Load/Proxy.
 
-## Separates Projekt (Event-Guide `sport-events`) — 2026-07-13 abgearbeitet
-Hosting = **Netlify** (`main`→Live, `staging`→Staging-Subdomain; nicht Cloudflare). Deploy-Flow: `docs/TECHNISCHE-DOKUMENTATION.md §6`. Erledigt (alles direkt auf `main`, verifiziert):
+## Separates Projekt (Event-Guide `sport-events`) — zuletzt 2026-10-11
+Hosting = **Netlify** (`main`→Live, `staging`→Staging-Subdomain; nicht Cloudflare). Deploy-Flow: `docs/TECHNISCHE-DOKUMENTATION.md §6`.
+
+### 2026-10-11: radsport-events.de SPA → REST-API (Scraper-Fix, LIVE)
+radsport-events.de wurde auf eine **React-SPA** umgebaut; die alte `…/kalender.php` leitet per 301 um → der HTML-Scraper lieferte konstant **0 Events**. **Dritte, bessere Lösung statt Playwright:** das SPA-Frontend nutzt eine saubere öffentliche REST-API `https://api.radsport-events.de/api/v1/events` (im JS-Bundle entdeckt).
+- **`scripts/scrapers/de_radsport_events.py` neu** auf diese API (nur `requests`, **kein Playwright/Chromium → keine `weekly_update.yml`-/requirements-Änderung**). API liefert fertige `latitude/longitude`, PLZ, Ort, Bundesland, `distances[]`, `endDate`, `cancelled` → **kein Geocoding/Standort-Parsing mehr**.
+- **Scope:** `country=DE`, Kategorien **ROAD+GRAVEL** (MTB per `CATEGORIES`-Konstante im Scraper zuschaltbar), nur Zukunft/Zieljahr; Triathlon/Duathlon/virtuell/abgesagt übersprungen. `eventType`→`art`-Labels kollisionsfrei (`Ultracycling` statt `Ultra`, das sonst mit `TYPE_SPORT`-Key kollidiert; Gravel an radnets `Gravelride` angeglichen).
+- **Daten:** `radsport-de.json` **40 → 187** (radnet 28 + radsport-events.de **143** via API), dedupliziert. **Live verifiziert** (bockwurst-events.netlify.app + Staging, `meta.rad=187`).
+- **Altlasten entfernt** (PR #20): `scripts/de_radsport_events.py` (tote Top-Level-Dublette) + `scripts/update_snapshots.py` (abgelöst).
+- **Branch-Reconciliation:** PR #20 mergte Scraper+Altlasten parallel direkt nach `main` → `main`/`staging` divergierten. Zusammengeführt (Merge auf `staging`, E2E grün), `main` per `--ff-only` nachgezogen → **`main == staging == 57ca4a6`**. Hilfsbranches + `fix/radsport-events-spa` (lokal+remote) aufgeräumt.
+- **Tooling-Erkenntnis:** Host-`python` = nur Store-Stub → lokale Scraper-Tests via **`uv run --with requests`**; `gh` unter `C:\Program Files\GitHub CLI\gh.exe`, authed. **Offen/optional:** MTB-Kategorie zuschaltbar; nächster weekly-Cron erzeugt die Daten ohnehin neu.
+
+### Erledigt (ältere Runde 2026-07-13/20, alles direkt auf `main`, verifiziert):
 - **Vergangene Events ausgefiltert** — Basisfilter `e.datum < TODAY_ISO` in `filtered()` (wirkt Liste/Kalender/Zähler). Live geprüft: Liste ab heute, Treffer 984→911.
 - **„Letzte Aktualisierung: <stand>" im Footer** — lädt `data/meta.json` (`#lastUpdate`, zweisprachig). Macht Datenalter sichtbar.
 - **E2E-Schwellen saisontauglich** (A): `rad 600→400, tri/lauf 150→120` — die „upcoming"-Zahl sinkt übers Jahr (Juli: rad 515); der `≥600`-Test war ein False-Red, nicht Scraper-Defekt.
@@ -61,7 +72,7 @@ Hosting = **Netlify** (`main`→Live, `staging`→Staging-Subdomain; nicht Cloud
 - **⚠️ Regression aus B + Fix (2026-07-20):** Das B-Backoff ließ bei starkem rad-net-Rate-Limiting JEDEN der hunderten Detail-Abrufe retryen → geplante Läufe hingen **6 h → GitHub-Timeout „cancelled"**, keine Updates (Live stand-fest auf 13.07; der Footer hat's aufgedeckt). **Fix (`332a221`):** Detailseiten wieder Einzelversuch (tries=1, LV-Fallback fängt Blockaden), Cooldowns nur zwischen Versuchen & auf 12 s gedeckelt, Listenseiten nur 1 Retry; `timeout-minutes: 30` in weekly/monthly als Backstop. Re-validiert: Lauf ~20 min statt 6 h, **Stand 20.07** (rad 487). Lehre: Retries über hunderte Seiten sind gefährlich — Volumen × Cooldown = Stunden.
 - **Staging = Live** gezogen (`origin/main`→`staging`, force-with-lease); nach jedem Lauf erneut (aktuell `f0eeabe`, Stand 20.07).
 - **✅ „Neuestes Video"-Karte dynamisch (2026-07-20, gelöst):** War hartcodiert (MSR300) → jetzt selbstaktualisierend. **Netlify-Function `latest-video`** liest den YouTube-Kanal-RSS (`UCPgs2w8LKY9-lzu-z2BLAtw`) serverseitig; `loadLatestVideo()` in `index.html` füllt Thumbnail (echtes `i.ytimg.com/.../hqdefault.jpg`)/Titel/Link, blendet die (nicht ableitbare) Dauer aus; Fallback = statische Karte. Live verifiziert: zeigt „CDL300 2026 Sachsendreier". **Root-Cause des vorherigen Deploy-Fails:** das UI-Plugin **`@netlify/plugin-emails`** brach `onBuild` ab (fetch failed) → **von Stefan im Netlify-Dashboard entfernt** (war ungenutzt; Einreichungs-Benachrichtigung läuft über GitHub-Issues via `create-issue.js`, nicht über dieses Plugin). Danach deployt wieder in ~20 s. Commits: reapply `9501550`.
-- **Optional offen:** echte „neues Event"-Mail via **Resend** in `create-issue.js` (statt/zusätzlich GitHub-Issue) — braucht `RESEND_API_KEY` als **Netlify**-Env-Var. **Lokaler Deploy-Klon `sport-events-deploy`** hängt dadurch auf altem `staging` (ahead 2/behind 4) + hat eine WIP-`docs/TYPO3-SETUP-PLAN.md` (→ Backup im Scratchpad) — beim nächsten Arbeiten dort `git reset --hard origin/staging` nach WIP-Sicherung.
+- **Optional offen:** echte „neues Event"-Mail via **Resend** in `create-issue.js` (statt/zusätzlich GitHub-Issue) — braucht `RESEND_API_KEY` als **Netlify**-Env-Var. **Lokaler Deploy-Klon `sport-events-deploy`** hängt dadurch auf altem `staging` (ahead 2/behind 4) + hat eine WIP-`docs/TYPO3-SETUP-PLAN.md` (→ Backup im Scratchpad) — beim nächsten Arbeiten dort `git reset --hard origin/staging` nach WIP-Sicherung. **Update 2026-10-11:** Klon wurde für den Scraper-Fix genutzt und ist funktionsfähig; lokales `main` jetzt = `origin/main`. Lokales `staging` trägt weiterhin die 2 eigenen Commits (u. a. TYPO3-Docs-Plan), **bewusst unangetastet** – erst nach deren Sicherung ggf. zurücksetzen.
 - Frontend-Fix E2E **grün** (76 Tests). Rechtstexte/Consent: der Datenschutz auf bockwurst.cc deckt die YouTube/CARTO-Drittabrufe ab.
 
 ## Wiedereinstieg – so läuft die Umgebung wieder
