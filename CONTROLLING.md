@@ -29,18 +29,20 @@
 | 13 | 2026-07-07 | 20:13 | 21:04 | 0:51 | Startseite | Touren-Grid (`TourGridProcessor`, datengetrieben) + 6-Points-Sektion (Live-Countdown) + Mallorca-Foto (aus Event-Guide-Repo, optimiert) | geschätzt (Commits) |
 | 14 | 2026-07-07 | 21:04 | 21:50 | 0:46 | Startseite | Favicon+OG (v1), Event-Teaser (echte Daten via Snapshot + `EventTeaserProcessor`), YouTube-Shorts, externe Medien → direkte Embeds (Consent-Stance gelockert), Über-Sektion → **Startseite komplett** | geschätzt (Commits) |
 | 15 | 2026-07-07 | 21:50 | 22:33 | 0:43 | Startseite · QA | Deep-QA Claude Design abgearbeitet: #1 Section-Label (→ tokens.css), #6 Mobile-Burger-Nav, #4 Touren-Übersicht `/touren` (neues Layout + Grid-Partial); Favicon v2 (freigestellt + maskable) | geschätzt (Commits) |
+| 16 | 2026-10-10 | – | – | ~1:30 | Event-Guide | **DE-2027-Events sichtbar**: `update_data.py` ruft jahr-gebundene DE-Scraper für [Jahr, Folgejahr] (merge/dedup). **Saisontauglich**: Vergangenes aus ALLEN Dateien purgen + E2E-Schwellen saisonal + Freiwasser-Filtertests off-season übersprungen. Kalender-Monatssortierung-Fix (Null-Padding). radsport-events.de-Migration (React-SPA → REST-API) diagnostiziert (neuer Scraper via Parallel-Session, live). Staging→main, E2E grün. | geschätzt |
+| 17 | 2026-10-11 | – | – | ~2:00 | Event-Guide | **Vorschlag-Formular**: sportart-abhängige Typ-Combobox + Verein-Feld; approve-Parser übernimmt Strecke/PLZ, `approved_events.json` maßgeblich (update-on-match). 3 Events ergänzt (Rund um Berlin, Spreewald-Lauf, RADCORE) + #23-Strecken. **E-Mail-Benachrichtigung** via Resend: notify_issue-Workflow, Domain `bockwurst.cc` in Resend verifiziert (Cloudflare, Auto-configure), NOTIFY_FROM/TO, **Cloudflare-1010 = fehlender User-Agent gefixt**, DMARC gesetzt → Mail an web.de. | geschätzt (viele Wartezeiten DNS/CI/Nutzer nicht gezählt) |
 
 ## Summen je Phase (h:mm)
 
 | Phase | Summe |
 |-------|-------|
-| Event-Guide | _Rückblick, offen_ |
+| Event-Guide (Blöcke 16–17) | ~3:30 (+ Block 1 Rückblick offen) |
 | TYPO3 · Planung | ~0:11 (+ Rückblick offen) |
 | TYPO3 · Setup | ~3:34 |
 | Tourenportal (Blöcke 6–10) | ~3:39 |
 | Startseite/Footer (Block 11) | ~0:50 |
 | Startseite + QA (Blöcke 12–15) | ~2:41 |
-| **Gesamt (gemessen + geschätzt)** | **~10:56** |
+| **Gesamt (gemessen + geschätzt)** | **~14:26** |
 
 _(Blöcke 1–5 = live getrackte „auto"-Zeit (~3:45). Blöcke 6–15 = **aus Git-Commit-Zeitstempeln geschätzt** (~7:11): aktive Fenster zwischen erstem/letztem Commit eines Blocks, lange Pausen dazwischen ausgeschlossen; enthält Claude-Arbeit + Interaktion/Reviews, inkl. ~1 h Hintergrund-MCP-Fetch in Block 6. Zeilen 1 & 2 sind Rückblick ohne Messung. Nicht enthalten: kurze Event-Guide-Diagnose am 06.07., reine Denkpausen.)_
 
